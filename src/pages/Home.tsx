@@ -24,60 +24,35 @@ const Home = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="relative bg-gradient-hero py-20 md:py-32 overflow-hidden">
+      <section className="relative bg-background py-20 md:py-32 overflow-hidden">
         <div className="container">
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-7xl mx-auto">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div className="text-center md:text-left">
-                <h1 className="text-4xl md:text-6xl font-bold text-primary-foreground mb-6 animate-fade-in">
+                <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-6 animate-fade-in">
                   Your path to better credit and faster funding.
                 </h1>
-                <p className="text-lg md:text-xl text-primary-foreground/90 mb-8">
+                <p className="text-xl md:text-2xl text-muted-foreground mb-8">
                   Monexa helps you repair credit, boost scores, and unlock approvals for loans, credit cards, and trade lines.
                 </p>
                 
-                <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start mb-8">
+                <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
                   <Button size="lg" variant="accent" asChild className="hover-scale">
                     <Link to="/apply">Apply Now</Link>
                   </Button>
-                  <Button size="lg" variant="outline" className="bg-background/10 border-primary-foreground/20 text-primary-foreground hover:bg-background/20" asChild>
+                  <Button size="lg" variant="outline" asChild>
                     <Link to="/apply">Free Credit Review</Link>
                   </Button>
                 </div>
-
-                {/* Trust Badges */}
-                <div className="flex flex-wrap gap-3 justify-center md:justify-start">
-                  <TrustBadge icon={CheckCircle} title="High Approval Rate" />
-                  <TrustBadge icon={Shield} title="Bank-level Security" />
-                  <TrustBadge icon={Zap} title="Fast Funding" />
-                </div>
               </div>
 
-              {/* Credit Repair Icon/Visual */}
-              <div className="relative hidden md:flex items-center justify-center">
-                <div className="relative w-64 h-64 animate-scale-in">
-                  {/* Background glow */}
-                  <div className="absolute inset-0 bg-gradient-primary rounded-full blur-3xl opacity-30 animate-pulse" />
-                  
-                  {/* Main circle */}
-                  <div className="relative w-full h-full rounded-full bg-background/20 backdrop-blur-sm border-2 border-primary-foreground/30 flex items-center justify-center">
-                    <div className="text-center">
-                      <Wrench className="h-24 w-24 text-primary-foreground mx-auto mb-4 animate-fade-in" />
-                      <div className="text-primary-foreground">
-                        <div className="text-4xl font-bold mb-1">750+</div>
-                        <div className="text-sm opacity-90">Target Score</div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Floating badges */}
-                  <div className="absolute -top-4 -right-4 bg-background rounded-full p-3 shadow-large animate-fade-in" style={{ animationDelay: "0.2s" }}>
-                    <TrendingUp className="h-6 w-6 text-success" />
-                  </div>
-                  <div className="absolute -bottom-4 -left-4 bg-background rounded-full p-3 shadow-large animate-fade-in" style={{ animationDelay: "0.4s" }}>
-                    <Shield className="h-6 w-6 text-primary" />
-                  </div>
-                </div>
+              {/* Phone Mockup */}
+              <div className="relative flex items-center justify-center animate-scale-in">
+                <img
+                  src={new URL('@/assets/credit-score-phone.png', import.meta.url).href}
+                  alt="Credit score tracking app showing score improvement from 300 to 810"
+                  className="w-full max-w-md mx-auto"
+                />
               </div>
             </div>
           </div>
@@ -85,24 +60,24 @@ const Home = () => {
       </section>
 
       {/* Trust Stats Section */}
-      <section className="py-16 bg-background border-y border-border">
+      <section className="py-16 bg-gradient-primary">
         <div className="container">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
             <div className="text-center animate-fade-in">
-              <div className="text-3xl md:text-5xl font-bold text-primary mb-2">$56M+</div>
-              <div className="text-sm text-muted-foreground">Loans Processed</div>
+              <div className="text-3xl md:text-5xl font-bold text-primary-foreground mb-2">$56M+</div>
+              <div className="text-sm text-primary-foreground/80">Loans Processed</div>
             </div>
             <div className="text-center animate-fade-in" style={{ animationDelay: "0.1s" }}>
-              <div className="text-3xl md:text-5xl font-bold text-primary mb-2">140M+</div>
-              <div className="text-sm text-muted-foreground">Points Increased</div>
+              <div className="text-3xl md:text-5xl font-bold text-primary-foreground mb-2">140M+</div>
+              <div className="text-sm text-primary-foreground/80">Points Increased</div>
             </div>
             <div className="text-center animate-fade-in" style={{ animationDelay: "0.2s" }}>
-              <div className="text-3xl md:text-5xl font-bold text-primary mb-2">12K+</div>
-              <div className="text-sm text-muted-foreground">Businesses Supported</div>
+              <div className="text-3xl md:text-5xl font-bold text-primary-foreground mb-2">12K+</div>
+              <div className="text-sm text-primary-foreground/80">Businesses Supported</div>
             </div>
             <div className="text-center animate-fade-in" style={{ animationDelay: "0.3s" }}>
-              <div className="text-3xl md:text-5xl font-bold text-primary mb-2">4.8★</div>
-              <div className="text-sm text-muted-foreground">Average Rating</div>
+              <div className="text-3xl md:text-5xl font-bold text-primary-foreground mb-2">4.8★</div>
+              <div className="text-sm text-primary-foreground/80">Average Rating</div>
             </div>
           </div>
         </div>

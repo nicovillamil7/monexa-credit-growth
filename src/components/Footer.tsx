@@ -35,11 +35,6 @@ const Footer = () => {
             <h3 className="font-semibold mb-4">Products</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/build" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                  Build
-                </Link>
-              </li>
-              <li>
                 <Link to="/repair" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                   Credit Repair
                 </Link>
@@ -52,6 +47,11 @@ const Footer = () => {
               <li>
                 <Link to="/funding/credit-cards" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                   Credit Cards
+                </Link>
+              </li>
+              <li>
+                <Link to="/funding/trade-line" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                  Trade Line
                 </Link>
               </li>
             </ul>

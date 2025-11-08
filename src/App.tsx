@@ -7,6 +7,9 @@ import Home from "./pages/Home";
 import Build from "./pages/Build";
 import Repair from "./pages/Repair";
 import Funding from "./pages/Funding";
+import PersonalLoans from "./pages/PersonalLoans";
+import CreditCards from "./pages/CreditCards";
+import TradeLine from "./pages/TradeLine";
 import About from "./pages/About";
 import Pricing from "./pages/Pricing";
 import Apply from "./pages/Apply";
@@ -25,6 +28,9 @@ const App = () => (
           <Route path="/build" element={<Build />} />
           <Route path="/repair" element={<Repair />} />
           <Route path="/funding" element={<Funding />} />
+          <Route path="/funding/personal-loans" element={<PersonalLoans />} />
+          <Route path="/funding/credit-cards" element={<CreditCards />} />
+          <Route path="/funding/trade-line" element={<TradeLine />} />
           <Route path="/about" element={<About />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/apply" element={<Apply />} />

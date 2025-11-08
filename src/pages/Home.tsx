@@ -57,25 +57,13 @@ const Home = () => {
       <section className="py-20 bg-background">
         <div className="container">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Build • Repair • Fund</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Services</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Complete solutions to grow your credit and access the funding you need.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            <ProductCard
-              icon={Building2}
-              title="Build"
-              description="Products and tools to establish credit history"
-              href="/build"
-              features={[
-                "Credit builder accounts",
-                "Secured credit cards",
-                "Trade line programs",
-                "Educational resources"
-              ]}
-            />
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             <ProductCard
               icon={Wrench}
               title="Credit Repair"
@@ -90,14 +78,38 @@ const Home = () => {
             />
             <ProductCard
               icon={CreditCard}
-              title="Funding"
-              description="Access loans, cards, and trade lines"
-              href="/funding"
+              title="Personal Loans"
+              description="$1K-$100K with flexible terms"
+              href="/funding/personal-loans"
               features={[
-                "Personal loan options",
-                "Credit card matching",
-                "Trade line access",
-                "High approval rates"
+                "Fast approvals",
+                "Competitive rates",
+                "12-84 month terms",
+                "Multiple use cases"
+              ]}
+            />
+            <ProductCard
+              icon={CreditCard}
+              title="Credit Cards"
+              description="Find your perfect card match"
+              href="/funding/credit-cards"
+              features={[
+                "Rewards & cashback",
+                "Balance transfers",
+                "Credit building",
+                "Secured options"
+              ]}
+            />
+            <ProductCard
+              icon={TrendingUp}
+              title="Trade Line"
+              description="Build credit history fast"
+              href="/funding/trade-line"
+              features={[
+                "No hard inquiry",
+                "Fast results",
+                "Authorized user status",
+                "Score boost potential"
               ]}
             />
           </div>

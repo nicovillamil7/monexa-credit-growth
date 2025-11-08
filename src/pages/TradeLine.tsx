@@ -5,39 +5,81 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ValueProp from "@/components/ValueProp";
-import { TrendingUp, Clock, Shield, CheckCircle, Users, BarChart } from "lucide-react";
+import Timeline from "@/components/Timeline";
+import { TrendingUp, Clock, Shield, CheckCircle, Users, BarChart, AlertCircle } from "lucide-react";
+import creditScoreGauge from "@/assets/credit-score-gauge.jpg";
 
 const TradeLine = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
       
-      {/* Hero Section */}
-      <section className="relative bg-gradient-hero py-20 md:py-32">
+      {/* Hero Section with Gauge */}
+      <section className="relative bg-gradient-hero py-20 md:py-32 overflow-hidden">
         <div className="container">
-          <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-6xl font-bold text-primary-foreground mb-6">
-              Build Credit History Fast
-            </h1>
-            <p className="text-lg md:text-xl text-primary-foreground/90 mb-8">
-              Get added as an authorized user to an established credit card and benefit from its positive payment history.
-            </p>
-            <Button size="lg" variant="accent" asChild>
-              <Link to="/apply">Open a Trade Line</Link>
-            </Button>
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h1 className="text-4xl md:text-6xl font-bold text-primary-foreground mb-6">
+                Build Credit History Fast
+              </h1>
+              <p className="text-lg md:text-xl text-primary-foreground/90 mb-8">
+                Get added as an authorized user to an established credit card and benefit from its positive payment history.
+              </p>
+              <Button size="lg" variant="accent" asChild>
+                <Link to="/apply">Open a Trade Line</Link>
+              </Button>
+            </div>
+            <div className="relative">
+              <div className="relative rounded-lg overflow-hidden shadow-large bg-background/10 p-8 backdrop-blur-sm">
+                <img
+                  src={creditScoreGauge}
+                  alt="Credit score improvement gauge"
+                  className="w-full h-full object-contain"
+                />
+                <div className="text-center mt-4">
+                  <p className="text-primary-foreground/90 font-semibold">Watch Your Score Grow</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* What is a Trade Line */}
+      {/* What is a Trade Line - Infographic Style */}
       <section className="py-20 bg-background">
         <div className="container">
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-5xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">What is a Trade Line?</h2>
               <p className="text-lg text-muted-foreground">
                 A credit-building strategy that adds positive payment history to your credit report
               </p>
+            </div>
+
+            <div className="bg-gradient-to-br from-primary/10 to-secondary/10 rounded-lg p-8 mb-12 border border-primary/20">
+              <div className="grid md:grid-cols-3 gap-8 text-center">
+                <div>
+                  <div className="w-16 h-16 rounded-full bg-gradient-primary flex items-center justify-center mx-auto mb-4">
+                    <Users className="h-8 w-8 text-primary-foreground" />
+                  </div>
+                  <h3 className="font-semibold mb-2">Authorized User</h3>
+                  <p className="text-sm text-muted-foreground">You're added to someone's established credit card</p>
+                </div>
+                <div>
+                  <div className="w-16 h-16 rounded-full bg-gradient-primary flex items-center justify-center mx-auto mb-4">
+                    <BarChart className="h-8 w-8 text-primary-foreground" />
+                  </div>
+                  <h3 className="font-semibold mb-2">History Reports</h3>
+                  <p className="text-sm text-muted-foreground">The card's payment history appears on your report</p>
+                </div>
+                <div>
+                  <div className="w-16 h-16 rounded-full bg-gradient-primary flex items-center justify-center mx-auto mb-4">
+                    <TrendingUp className="h-8 w-8 text-primary-foreground" />
+                  </div>
+                  <h3 className="font-semibold mb-2">Score Grows</h3>
+                  <p className="text-sm text-muted-foreground">Benefit from years of positive credit history</p>
+                </div>
+              </div>
             </div>
 
             <Card className="mb-8">
@@ -80,65 +122,51 @@ const TradeLine = () => {
         </div>
       </section>
 
-      {/* How It Works */}
+      {/* How It Works - Flowchart Timeline */}
       <section className="py-20 bg-muted/30">
         <div className="container">
-          <div className="max-w-3xl mx-auto">
-            <div className="text-center mb-12">
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">How It Works</h2>
               <p className="text-lg text-muted-foreground">Simple process, powerful results</p>
             </div>
 
-            <div className="space-y-6">
-              {[
+            <Timeline
+              steps={[
                 {
                   step: "1",
                   title: "Choose Your Trade Line",
-                  desc: "We match you with an established credit card account based on your goals and timeline."
+                  description: "We match you with an established credit card account based on your goals and timeline."
                 },
                 {
                   step: "2",
                   title: "Get Added as Authorized User",
-                  desc: "You're added to the account. You won't receive a physical card or have spending access."
+                  description: "You're added to the account. You won't receive a physical card or have spending access."
                 },
                 {
                   step: "3",
                   title: "Account Reports to Bureaus",
-                  desc: "The positive payment history, age, and utilization report on your credit file."
+                  description: "The positive payment history, age, and utilization report on your credit file."
                 },
                 {
                   step: "4",
                   title: "Watch Your Score Grow",
-                  desc: "Most users see changes within 30-60 days. Monitor your credit regularly to track progress."
+                  description: "Most users see changes within 30-60 days. Monitor your credit regularly to track progress."
                 }
-              ].map((item) => (
-                <Card key={item.step}>
-                  <CardContent className="pt-6">
-                    <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 rounded-full bg-gradient-primary flex items-center justify-center text-primary-foreground font-bold text-lg flex-shrink-0">
-                        {item.step}
-                      </div>
-                      <div>
-                        <h3 className="font-semibold text-lg mb-2">{item.title}</h3>
-                        <p className="text-sm text-muted-foreground">{item.desc}</p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
+              ]}
+            />
           </div>
         </div>
       </section>
 
-      {/* Benefits */}
+      {/* Benefits - Visual Grid */}
       <section className="py-20 bg-background">
         <div className="container">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Benefits of Trade Lines</h2>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {[
               {
                 icon: TrendingUp,
@@ -171,9 +199,11 @@ const TradeLine = () => {
                 desc: "Choose short-term or long-term placements based on your credit goals and budget."
               }
             ].map((benefit) => (
-              <Card key={benefit.title} className="hover:shadow-lg transition-shadow">
+              <Card key={benefit.title} className="hover:shadow-large transition-all hover:-translate-y-1 bg-gradient-to-br from-background to-muted/20">
                 <CardHeader>
-                  <benefit.icon className="h-10 w-10 text-primary mb-3" />
+                  <div className="w-12 h-12 rounded-full bg-gradient-primary flex items-center justify-center mb-3">
+                    <benefit.icon className="h-6 w-6 text-primary-foreground" />
+                  </div>
                   <CardTitle className="text-lg">{benefit.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
@@ -185,10 +215,10 @@ const TradeLine = () => {
         </div>
       </section>
 
-      {/* Who Should Use Trade Lines */}
+      {/* Who Should Use - Persona Style */}
       <section className="py-20 bg-muted/30">
         <div className="container">
-          <div className="max-w-3xl mx-auto">
+          <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">Who Should Use Trade Lines?</h2>
               <p className="text-lg text-muted-foreground">Trade lines work best for these scenarios</p>
@@ -198,23 +228,28 @@ const TradeLine = () => {
               {[
                 {
                   title: "New to Credit",
-                  desc: "Young adults or recent immigrants with little to no credit history can jumpstart their credit file."
+                  desc: "Young adults or recent immigrants with little to no credit history can jumpstart their credit file.",
+                  icon: "🎓"
                 },
                 {
                   title: "Rebuilding Credit",
-                  desc: "Those recovering from past credit issues can add positive history to offset negative marks."
+                  desc: "Those recovering from past credit issues can add positive history to offset negative marks.",
+                  icon: "🔧"
                 },
                 {
                   title: "Thin Credit Files",
-                  desc: "If you have few accounts or a short credit history, trade lines can bulk up your profile."
+                  desc: "If you have few accounts or a short credit history, trade lines can bulk up your profile.",
+                  icon: "📋"
                 },
                 {
                   title: "Preparing for Major Purchase",
-                  desc: "Need a quick score boost before applying for a mortgage, auto loan, or other major financing."
+                  desc: "Need a quick score boost before applying for a mortgage, auto loan, or other major financing.",
+                  icon: "🏡"
                 }
               ].map((scenario) => (
-                <Card key={scenario.title}>
+                <Card key={scenario.title} className="bg-background">
                   <CardHeader>
+                    <div className="text-4xl mb-3">{scenario.icon}</div>
                     <CardTitle className="text-lg">{scenario.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
@@ -232,30 +267,46 @@ const TradeLine = () => {
         <div className="container">
           <div className="max-w-3xl mx-auto">
             <div className="text-center mb-12">
+              <AlertCircle className="h-12 w-12 text-primary mx-auto mb-4" />
               <h2 className="text-3xl md:text-4xl font-bold mb-4">Important Considerations</h2>
             </div>
 
-            <Card className="border-secondary/50">
+            <Card className="border-primary/30 bg-gradient-to-br from-primary/5 to-background">
               <CardContent className="pt-6 space-y-4">
-                <div>
-                  <h3 className="font-semibold mb-2">✓ Trade lines report to major bureaus</h3>
-                  <p className="text-sm text-muted-foreground">Most primary cardholders report to Experian, Equifax, and TransUnion.</p>
+                <div className="flex items-start gap-3">
+                  <CheckCircle className="h-5 w-5 text-success mt-0.5 flex-shrink-0" />
+                  <div>
+                    <h3 className="font-semibold mb-2">Trade lines report to major bureaus</h3>
+                    <p className="text-sm text-muted-foreground">Most primary cardholders report to Experian, Equifax, and TransUnion.</p>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="font-semibold mb-2">✓ Results vary by lender</h3>
-                  <p className="text-sm text-muted-foreground">Some lenders give full weight to authorized user accounts, others may discount them.</p>
+                <div className="flex items-start gap-3">
+                  <CheckCircle className="h-5 w-5 text-success mt-0.5 flex-shrink-0" />
+                  <div>
+                    <h3 className="font-semibold mb-2">Results vary by lender</h3>
+                    <p className="text-sm text-muted-foreground">Some lenders give full weight to authorized user accounts, others may discount them.</p>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="font-semibold mb-2">✓ Not a permanent fix</h3>
-                  <p className="text-sm text-muted-foreground">Trade lines are best used as part of a broader credit-building strategy, not a standalone solution.</p>
+                <div className="flex items-start gap-3">
+                  <AlertCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                  <div>
+                    <h3 className="font-semibold mb-2">Not a permanent fix</h3>
+                    <p className="text-sm text-muted-foreground">Trade lines are best used as part of a broader credit-building strategy, not a standalone solution.</p>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="font-semibold mb-2">✓ Choose wisely</h3>
-                  <p className="text-sm text-muted-foreground">The account's payment history, age, and utilization must be positive to benefit you.</p>
+                <div className="flex items-start gap-3">
+                  <AlertCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                  <div>
+                    <h3 className="font-semibold mb-2">Choose wisely</h3>
+                    <p className="text-sm text-muted-foreground">The account's payment history, age, and utilization must be positive to benefit you.</p>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="font-semibold mb-2">✓ Timeline matters</h3>
-                  <p className="text-sm text-muted-foreground">Reporting can take 30-60 days, so plan ahead if you have a deadline.</p>
+                <div className="flex items-start gap-3">
+                  <Clock className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                  <div>
+                    <h3 className="font-semibold mb-2">Timeline matters</h3>
+                    <p className="text-sm text-muted-foreground">Reporting can take 30-60 days, so plan ahead if you have a deadline.</p>
+                  </div>
                 </div>
               </CardContent>
             </Card>
@@ -300,12 +351,6 @@ const TradeLine = () => {
                 <AccordionTrigger>Can I be removed from the trade line?</AccordionTrigger>
                 <AccordionContent>
                   Yes. Either you or the primary account holder can request removal at any time. Once removed, the account will typically fall off your credit report.
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-6" className="bg-background rounded-lg px-6">
-                <AccordionTrigger>What if the primary account has late payments?</AccordionTrigger>
-                <AccordionContent>
-                  Negative activity on the primary account can hurt your score. That's why we only match you with accounts that have excellent payment history and low utilization.
                 </AccordionContent>
               </AccordionItem>
             </Accordion>

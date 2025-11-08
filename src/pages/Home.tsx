@@ -150,6 +150,7 @@ const Home = () => {
                 "Remove negative items",
                 "Growth-focused coaching"
               ]}
+              expandedDescription="Remove negative items, dispute errors, and optimize your credit profile with expert guidance. Our proven strategies help you rebuild your credit score and unlock better financial opportunities."
             />
             <ProductCard
               icon={CreditCard}
@@ -162,6 +163,7 @@ const Home = () => {
                 "12-84 month terms",
                 "Multiple use cases"
               ]}
+              expandedDescription="Get the funding you need with personal loans from $1,000 to $100,000. Enjoy competitive rates, flexible repayment terms, and fast approvals for debt consolidation, home improvements, or business growth."
             />
             <ProductCard
               icon={CreditCard}
@@ -174,6 +176,7 @@ const Home = () => {
                 "Credit building",
                 "Secured options"
               ]}
+              expandedDescription="You may benefit from a 0% intro APR credit card offer, better rates, or a rewards program. We match you with cards designed for your credit profile, from secured options to premium travel rewards."
             />
             <ProductCard
               icon={TrendingUp}
@@ -186,6 +189,7 @@ const Home = () => {
                 "Authorized user status",
                 "Score boost potential"
               ]}
+              expandedDescription="Become an authorized user on an established credit account and benefit from years of positive payment history. See results in 30-60 days with no hard inquiry or credit check required."
             />
           </div>
         </div>

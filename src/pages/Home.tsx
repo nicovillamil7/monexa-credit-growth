@@ -51,7 +51,7 @@ const Home = () => {
                 <img
                   src={new URL('@/assets/credit-score-phone.png', import.meta.url).href}
                   alt="Credit score tracking app showing score improvement from 300 to 810"
-                  className="w-full max-w-md mx-auto"
+                  className="w-full max-w-md mx-auto animate-float"
                 />
               </div>
             </div>

@@ -3,7 +3,8 @@ import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { CheckCircle, TrendingUp, FileText, Users, Shield, Zap } from "lucide-react";
+import { CheckCircle, TrendingUp, FileText, Users, Shield, Zap, Wrench, ArrowRight, Target, FileCheck } from "lucide-react";
+import creditRepairIcon from "@/assets/credit-repair-icon.png";
 
 const Repair = () => {
   return (
@@ -14,6 +15,9 @@ const Repair = () => {
       <section className="bg-gradient-hero py-20 md:py-32">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
+            <div className="inline-flex items-center justify-center w-24 h-24 mb-6 rounded-full bg-background/20 backdrop-blur-sm animate-scale-in">
+              <img src={creditRepairIcon} alt="Credit Repair" className="w-16 h-16 animate-float" />
+            </div>
             <h1 className="text-4xl md:text-6xl font-bold text-primary-foreground mb-6">
               Clean up your credit. Grow your score.
             </h1>
@@ -138,48 +142,67 @@ const Repair = () => {
       </section>
 
       {/* Process Section */}
-      <section className="py-20 bg-muted/30">
+      <section className="py-20 bg-muted/30 relative overflow-hidden">
         <div className="container">
-          <div className="text-center mb-12">
+          <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Process</h2>
             <p className="text-lg text-muted-foreground">
               A proven, step-by-step approach to credit repair
             </p>
           </div>
 
-          <div className="grid md:grid-cols-4 gap-6 max-w-6xl mx-auto">
-            {[
-              {
-                step: "1",
-                title: "Credit Audit & Plan",
-                description: "Comprehensive review of your credit reports and personalized action plan"
-              },
-              {
-                step: "2",
-                title: "Dispute & Follow-ups",
-                description: "Challenge errors with credit bureaus and creditors, monitor progress"
-              },
-              {
-                step: "3",
-                title: "Score Growth Checkpoints",
-                description: "Regular check-ins to track improvements and adjust strategies"
-              },
-              {
-                step: "4",
-                title: "Funding Readiness",
-                description: "Prepare you for loan applications and help you access funding"
-              }
-            ].map((item, index) => (
-              <div key={index} className="relative">
-                <div className="text-center">
-                  <div className="inline-flex h-12 w-12 rounded-full bg-gradient-accent items-center justify-center text-accent-foreground font-bold text-lg mb-4 shadow-glow">
-                    {item.step}
+          <div className="max-w-6xl mx-auto relative">
+            {/* Connecting Line */}
+            <div className="hidden md:block absolute top-1/2 left-0 right-0 h-1 bg-gradient-primary transform -translate-y-1/2 opacity-20" />
+            
+            <div className="grid md:grid-cols-4 gap-8 relative">
+              {[
+                {
+                  icon: FileCheck,
+                  title: "Credit Audit & Plan",
+                  description: "Comprehensive review of your credit reports and personalized action plan"
+                },
+                {
+                  icon: FileText,
+                  title: "Dispute & Follow-ups",
+                  description: "Challenge errors with credit bureaus and creditors, monitor progress"
+                },
+                {
+                  icon: TrendingUp,
+                  title: "Score Growth Checkpoints",
+                  description: "Regular check-ins to track improvements and adjust strategies"
+                },
+                {
+                  icon: Target,
+                  title: "Funding Readiness",
+                  description: "Prepare you for loan applications and help you access funding"
+                }
+              ].map((item, index) => {
+                const Icon = item.icon;
+                return (
+                  <div key={index} className="relative animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
+                    <Card className="relative overflow-hidden group hover:shadow-large transition-all duration-300 hover:-translate-y-2 bg-background">
+                      <div className="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-10 transition-opacity duration-300" />
+                      <CardContent className="pt-8 pb-6 text-center relative">
+                        <div className="inline-flex h-16 w-16 rounded-2xl bg-gradient-accent items-center justify-center mb-4 shadow-glow group-hover:scale-110 transition-transform duration-300">
+                          <Icon className="h-8 w-8 text-accent-foreground" />
+                        </div>
+                        <div className="absolute -top-3 -right-3 bg-primary text-primary-foreground w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm shadow-medium">
+                          {index + 1}
+                        </div>
+                        <h3 className="font-bold text-lg mb-3">{item.title}</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">{item.description}</p>
+                      </CardContent>
+                    </Card>
+                    {index < 3 && (
+                      <div className="hidden md:flex absolute -right-4 top-1/2 transform -translate-y-1/2 z-10">
+                        <ArrowRight className="h-6 w-6 text-primary" />
+                      </div>
+                    )}
                   </div>
-                  <h3 className="font-semibold mb-2">{item.title}</h3>
-                  <p className="text-sm text-muted-foreground">{item.description}</p>
-                </div>
-              </div>
-            ))}
+                );
+              })}
+            </div>
           </div>
         </div>
       </section>

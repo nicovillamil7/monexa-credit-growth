@@ -15,9 +15,6 @@ const Repair = () => {
       <section className="bg-gradient-hero py-20 md:py-32">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
-            <div className="mb-6 animate-scale-in">
-              <img src={creditRepairIcon} alt="Credit Repair" className="w-32 h-32 mx-auto animate-float" />
-            </div>
             <h1 className="text-4xl md:text-6xl font-bold text-primary-foreground mb-6">
               Clean up your credit. Grow your score.
             </h1>

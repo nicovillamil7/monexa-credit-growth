@@ -27,32 +27,21 @@ const Home = () => {
       <section className="relative bg-background py-20 md:py-32 overflow-hidden">
         <div className="container">
           <div className="max-w-7xl mx-auto">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div className="text-center md:text-left">
-                <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-6 animate-fade-in">
-                  Your path to better credit and faster funding.
-                </h1>
-                <p className="text-xl md:text-2xl text-muted-foreground mb-8">
-                  Monexa helps you repair credit, boost scores, and unlock approvals for loans, credit cards, and trade lines.
-                </p>
-                
-                <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                  <Button size="lg" variant="accent" asChild className="hover-scale">
-                    <Link to="/apply">Apply Now</Link>
-                  </Button>
-                  <Button size="lg" variant="outline" asChild>
-                    <Link to="/apply">Free Credit Review</Link>
-                  </Button>
-                </div>
-              </div>
-
-              {/* Phone Mockup */}
-              <div className="relative flex items-center justify-center animate-scale-in">
-                <img
-                  src={new URL('@/assets/credit-score-phone.png', import.meta.url).href}
-                  alt="Credit score tracking app showing score improvement from 300 to 810"
-                  className="w-full max-w-md mx-auto animate-float"
-                />
+            <div className="max-w-4xl mx-auto text-center">
+              <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-6 animate-fade-in">
+                Your path to better credit and faster funding.
+              </h1>
+              <p className="text-xl md:text-2xl text-muted-foreground mb-8">
+                Monexa helps you repair credit, boost scores, and unlock approvals for loans, credit cards, and trade lines.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button size="lg" variant="accent" asChild className="hover-scale">
+                  <Link to="/apply">Apply Now</Link>
+                </Button>
+                <Button size="lg" variant="outline" asChild>
+                  <Link to="/apply">Free Credit Review</Link>
+                </Button>
               </div>
             </div>
           </div>

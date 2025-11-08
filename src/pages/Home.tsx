@@ -14,11 +14,9 @@ import {
   Wrench, 
   CreditCard,
   Star,
-  Users,
-  ArrowRight
+  Users
 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
-import creditDashboardPhone from "@/assets/credit-dashboard-phone.png";
 
 const Home = () => {
   return (
@@ -26,76 +24,58 @@ const Home = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="relative bg-gradient-hero py-16 md:py-24 overflow-hidden">
+      <section className="relative bg-gradient-hero py-20 md:py-32 overflow-hidden">
         <div className="container">
-          <div className="grid lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
-            {/* Left Content */}
-            <div className="text-center lg:text-left animate-fade-in">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6 leading-tight">
-                Your Credit.<br />Your Identity.
-              </h1>
-              <p className="text-lg md:text-xl text-primary-foreground/90 mb-6 max-w-xl">
-                We monitor your credit report, provide you with alerts, and help you build the credit score you deserve so you can focus on living your financial best.
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
-                <Button size="lg" variant="accent" asChild className="hover-scale group">
-                  <Link to="/apply">
-                    Get Started Now
-                    <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                  </Link>
-                </Button>
-                <Button size="lg" variant="outline" className="bg-background/10 border-primary-foreground/20 text-primary-foreground hover:bg-background/20" asChild>
-                  <Link to="/repair">Learn More</Link>
-                </Button>
-              </div>
-
-              {/* Trust Message */}
-              <div className="flex items-center justify-center lg:justify-start gap-3 p-4 bg-background/10 backdrop-blur-sm rounded-lg border border-primary-foreground/20 max-w-md mx-auto lg:mx-0">
-                <CheckCircle className="h-6 w-6 text-success flex-shrink-0" />
-                <p className="text-sm text-primary-foreground/90 font-medium">
-                  Checking your own credit will NOT harm it.
+          <div className="max-w-4xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <div className="text-center md:text-left">
+                <h1 className="text-4xl md:text-6xl font-bold text-primary-foreground mb-6 animate-fade-in">
+                  Your path to better credit and faster funding.
+                </h1>
+                <p className="text-lg md:text-xl text-primary-foreground/90 mb-8">
+                  Monexa helps you repair credit, boost scores, and unlock approvals for loans, credit cards, and trade lines.
                 </p>
-              </div>
-            </div>
-
-            {/* Right Content - Phone Mockup */}
-            <div className="relative flex items-center justify-center lg:justify-end animate-fade-in" style={{ animationDelay: "0.2s" }}>
-              <div className="relative">
-                {/* Background glow effect */}
-                <div className="absolute inset-0 bg-gradient-primary rounded-[3rem] blur-3xl opacity-20 animate-pulse" />
                 
-                {/* Phone mockup */}
-                <div className="relative">
-                  <img
-                    src={creditDashboardPhone}
-                    alt="Credit score monitoring dashboard showing journey from 650 to 750"
-                    className="relative z-10 w-full max-w-sm mx-auto drop-shadow-2xl"
-                  />
+                <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start mb-8">
+                  <Button size="lg" variant="accent" asChild className="hover-scale">
+                    <Link to="/apply">Apply Now</Link>
+                  </Button>
+                  <Button size="lg" variant="outline" className="bg-background/10 border-primary-foreground/20 text-primary-foreground hover:bg-background/20" asChild>
+                    <Link to="/apply">Free Credit Review</Link>
+                  </Button>
                 </div>
 
-                {/* Floating stats */}
-                <div className="absolute -left-4 top-1/4 bg-background rounded-xl p-4 shadow-large animate-fade-in hidden md:block" style={{ animationDelay: "0.4s" }}>
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-success/10 flex items-center justify-center">
-                      <TrendingUp className="h-5 w-5 text-success" />
-                    </div>
-                    <div>
-                      <div className="text-2xl font-bold text-foreground">+150</div>
-                      <div className="text-xs text-muted-foreground">Points Increased</div>
+                {/* Trust Badges */}
+                <div className="flex flex-wrap gap-3 justify-center md:justify-start">
+                  <TrustBadge icon={CheckCircle} title="High Approval Rate" />
+                  <TrustBadge icon={Shield} title="Bank-level Security" />
+                  <TrustBadge icon={Zap} title="Fast Funding" />
+                </div>
+              </div>
+
+              {/* Credit Repair Icon/Visual */}
+              <div className="relative hidden md:flex items-center justify-center">
+                <div className="relative w-64 h-64 animate-scale-in">
+                  {/* Background glow */}
+                  <div className="absolute inset-0 bg-gradient-primary rounded-full blur-3xl opacity-30 animate-pulse" />
+                  
+                  {/* Main circle */}
+                  <div className="relative w-full h-full rounded-full bg-background/20 backdrop-blur-sm border-2 border-primary-foreground/30 flex items-center justify-center">
+                    <div className="text-center">
+                      <Wrench className="h-24 w-24 text-primary-foreground mx-auto mb-4 animate-fade-in" />
+                      <div className="text-primary-foreground">
+                        <div className="text-4xl font-bold mb-1">750+</div>
+                        <div className="text-sm opacity-90">Target Score</div>
+                      </div>
                     </div>
                   </div>
-                </div>
 
-                <div className="absolute -right-4 bottom-1/4 bg-background rounded-xl p-4 shadow-large animate-fade-in hidden md:block" style={{ animationDelay: "0.6s" }}>
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-                      <Shield className="h-5 w-5 text-primary" />
-                    </div>
-                    <div>
-                      <div className="text-2xl font-bold text-foreground">100%</div>
-                      <div className="text-xs text-muted-foreground">Secure & Safe</div>
-                    </div>
+                  {/* Floating badges */}
+                  <div className="absolute -top-4 -right-4 bg-background rounded-full p-3 shadow-large animate-fade-in" style={{ animationDelay: "0.2s" }}>
+                    <TrendingUp className="h-6 w-6 text-success" />
+                  </div>
+                  <div className="absolute -bottom-4 -left-4 bg-background rounded-full p-3 shadow-large animate-fade-in" style={{ animationDelay: "0.4s" }}>
+                    <Shield className="h-6 w-6 text-primary" />
                   </div>
                 </div>
               </div>

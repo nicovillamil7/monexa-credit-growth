@@ -11,14 +11,14 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
+import monexaLogo from "@/assets/monexa-logo.png";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const simpleNavLinks = [
-    { label: "Home", href: "/" },
-    { label: "About", href: "/about" },
     { label: "Pricing", href: "/pricing" },
+    { label: "About", href: "/about" },
   ];
 
   const fundingLinks = [
@@ -31,23 +31,19 @@ const Header = () => {
     <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <nav className="container flex h-16 items-center justify-between">
         <Link to="/" className="flex items-center space-x-2">
-          <div className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent">
-            Monexa
-          </div>
+          <img src={monexaLogo} alt="Monexa" className="h-10 w-auto" />
         </Link>
 
         {/* Desktop Navigation */}
         <NavigationMenu className="hidden md:flex">
           <NavigationMenuList>
-            {simpleNavLinks.map((link) => (
-              <NavigationMenuItem key={link.href}>
-                <Link to={link.href}>
-                  <NavigationMenuLink className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50">
-                    {link.label}
-                  </NavigationMenuLink>
-                </Link>
-              </NavigationMenuItem>
-            ))}
+            <NavigationMenuItem>
+              <Link to="/">
+                <NavigationMenuLink className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50">
+                  Home
+                </NavigationMenuLink>
+              </Link>
+            </NavigationMenuItem>
             
             <NavigationMenuItem>
               <Link to="/repair">
@@ -60,7 +56,7 @@ const Header = () => {
             <NavigationMenuItem>
               <NavigationMenuTrigger>Funding</NavigationMenuTrigger>
               <NavigationMenuContent>
-                <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-1">
+                <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-1 bg-popover">
                   {fundingLinks.map((link) => (
                     <li key={link.href}>
                       <Link to={link.href}>
@@ -76,6 +72,16 @@ const Header = () => {
                 </ul>
               </NavigationMenuContent>
             </NavigationMenuItem>
+
+            {simpleNavLinks.map((link) => (
+              <NavigationMenuItem key={link.href}>
+                <Link to={link.href}>
+                  <NavigationMenuLink className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50">
+                    {link.label}
+                  </NavigationMenuLink>
+                </Link>
+              </NavigationMenuItem>
+            ))}
           </NavigationMenuList>
         </NavigationMenu>
 
@@ -98,16 +104,13 @@ const Header = () => {
           </SheetTrigger>
           <SheetContent side="right" className="w-[300px]">
             <div className="flex flex-col gap-4 mt-8">
-              {simpleNavLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  to={link.href}
-                  onClick={() => setIsOpen(false)}
-                  className="text-lg font-medium text-foreground hover:text-primary transition-colors"
-                >
-                  {link.label}
-                </Link>
-              ))}
+              <Link
+                to="/"
+                onClick={() => setIsOpen(false)}
+                className="text-lg font-medium text-foreground hover:text-primary transition-colors"
+              >
+                Home
+              </Link>
               
               <Link
                 to="/repair"
@@ -138,6 +141,17 @@ const Header = () => {
                   ))}
                 </div>
               </div>
+
+              {simpleNavLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  to={link.href}
+                  onClick={() => setIsOpen(false)}
+                  className="text-lg font-medium text-foreground hover:text-primary transition-colors"
+                >
+                  {link.label}
+                </Link>
+              ))}
 
               <div className="flex flex-col gap-2 mt-4">
                 <Button variant="outline" asChild onClick={() => setIsOpen(false)}>

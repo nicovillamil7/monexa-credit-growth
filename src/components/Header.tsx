@@ -17,6 +17,7 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const simpleNavLinks = [
+    { label: "Submit Info", href: "/submit-info" },
     { label: "Pricing", href: "/pricing" },
     { label: "About", href: "/about" },
   ];

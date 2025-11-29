@@ -158,8 +158,23 @@ const PersonalLoans = () => {
         </div>
       </section>
 
-      {/* Flexible Funding Strategies */}
-      <section className="py-20 bg-muted/30">
+      {/* Partner Logos Strip - Social Proof */}
+      <section className="py-8 bg-muted border-y border-border">
+        <div className="container">
+          <div className="overflow-hidden">
+            <div className="flex animate-scroll gap-12 whitespace-nowrap">
+              {[...partnerLogos, ...partnerLogos].map((logo, index) => (
+                <span key={index} className="text-lg font-medium text-muted-foreground/60">
+                  {logo}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Flexible Funding Strategies - White background for contrast */}
+      <section className="py-20 bg-background">
         <div className="container">
           <div className="text-center mb-12">
             <span className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground mb-4">
@@ -174,7 +189,7 @@ const PersonalLoans = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6 mb-12">
+          <div className="grid md:grid-cols-3 gap-6">
             <Card className="bg-card border-border hover:shadow-medium transition-shadow">
               <CardContent className="pt-6">
                 <div className="w-12 h-12 rounded-xl bg-muted flex items-center justify-center mb-4">
@@ -220,23 +235,12 @@ const PersonalLoans = () => {
               </CardContent>
             </Card>
           </div>
-
-          {/* Partner Logos Marquee */}
-          <div className="overflow-hidden py-8 border-t border-b border-border">
-            <div className="flex animate-scroll gap-12 whitespace-nowrap">
-              {[...partnerLogos, ...partnerLogos].map((logo, index) => (
-                <span key={index} className="text-lg font-medium text-muted-foreground/60">
-                  {logo}
-                </span>
-              ))}
-            </div>
-          </div>
         </div>
       </section>
 
-      {/* Seamless Funding Section */}
-      <section className="py-20 bg-background">
-        <div className="container">
+      {/* Seamless Funding Section - With dot pattern */}
+      <section className="py-20 bg-muted/50 bg-dot-pattern relative">
+        <div className="container relative">
           <div className="mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Seamless personal funding<br />made easy.
@@ -301,7 +305,7 @@ const PersonalLoans = () => {
                     { icon: Zap, text: "Smart-Lending Technology" }
                   ].map((item, index) => (
                     <div key={index} className="flex items-center gap-3">
-                      <div className="w-8 h-8 rounded-lg bg-muted flex items-center justify-center">
+                      <div className="w-8 h-8 rounded-lg bg-background flex items-center justify-center">
                         <item.icon className="h-4 w-4 text-foreground" />
                       </div>
                       <span className="font-medium">{item.text}</span>
@@ -449,9 +453,39 @@ const PersonalLoans = () => {
         </div>
       </section>
 
-      {/* CTA Section with Embedded Form */}
-      <section className="py-20 bg-gradient-primary text-primary-foreground">
-        <div className="container">
+      {/* CTA Section with Embedded Form - Asymmetric design */}
+      <section className="py-20 bg-gradient-primary text-primary-foreground relative overflow-hidden">
+        {/* Asymmetric decorative shapes */}
+        <svg 
+          className="absolute top-0 left-0 w-full h-32 -translate-y-full" 
+          viewBox="0 0 1440 128" 
+          fill="none" 
+          preserveAspectRatio="none"
+        >
+          <path 
+            d="M0 128L60 117.3C120 107 240 85 360 80C480 75 600 85 720 90.7C840 96 960 96 1080 90.7C1200 85 1320 75 1380 69.3L1440 64V128H1380C1320 128 1200 128 1080 128C960 128 840 128 720 128C600 128 480 128 360 128C240 128 120 128 60 128H0Z" 
+            className="fill-primary"
+          />
+        </svg>
+        
+        {/* Floating decorative curves */}
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] opacity-10 pointer-events-none">
+          <svg viewBox="0 0 600 600" fill="none" className="w-full h-full">
+            <circle cx="500" cy="100" r="300" stroke="currentColor" strokeWidth="1" fill="none" />
+            <circle cx="500" cy="100" r="250" stroke="currentColor" strokeWidth="1" fill="none" />
+            <circle cx="500" cy="100" r="200" stroke="currentColor" strokeWidth="1" fill="none" />
+          </svg>
+        </div>
+        
+        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] opacity-10 pointer-events-none">
+          <svg viewBox="0 0 400 400" fill="none" className="w-full h-full">
+            <path d="M0 400 Q 200 200 400 300" stroke="currentColor" strokeWidth="2" fill="none" />
+            <path d="M0 350 Q 200 150 400 250" stroke="currentColor" strokeWidth="1.5" fill="none" />
+            <path d="M0 300 Q 200 100 400 200" stroke="currentColor" strokeWidth="1" fill="none" />
+          </svg>
+        </div>
+
+        <div className="container relative">
           <div className="grid lg:grid-cols-2 gap-12 items-start max-w-6xl mx-auto">
             {/* Left side - Text */}
             <div className="text-center lg:text-left">
@@ -485,7 +519,7 @@ const PersonalLoans = () => {
             </div>
             
             {/* Right side - Form */}
-            <div>
+            <div className="relative">
               <LeadSubmissionForm defaultServiceType="personal-loan" variant="embedded" />
             </div>
           </div>

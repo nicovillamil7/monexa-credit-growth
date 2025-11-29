@@ -37,12 +37,12 @@ const PersonalLoans = () => {
   ];
 
   const useCases = [
-    { icon: CreditCard, title: "Debt Consolidation", description: "Combine multiple debts into a single, manageable loan." },
-    { icon: Home, title: "Major Purchases", description: "Finance large expenses such as home improvements or vehicle purchases." },
-    { icon: TrendingUp, title: "Credit Improvement", description: "Improve your credit score by managing high-interest debt." },
-    { icon: Heart, title: "Medical Expenses", description: "Cover unexpected medical costs with ease." },
-    { icon: Plane, title: "Life Events", description: "Fund significant life events like weddings or travel." },
-    { icon: Briefcase, title: "Business Ventures", description: "Start or grow your small business with flexible funding." }
+    { icon: Home, title: "Buy Your Dream Home", description: "Get the funds you need for a down payment or home purchase." },
+    { icon: Briefcase, title: "Get a New Car", description: "Finance your next vehicle with competitive rates and flexible terms." },
+    { icon: TrendingUp, title: "Pay for College", description: "Invest in your education without the stress of high-interest debt." },
+    { icon: Plane, title: "Take That Vacation", description: "Fund your dream getaway and create memories that last a lifetime." },
+    { icon: CreditCard, title: "Consolidate Debt", description: "Simplify your finances by combining multiple payments into one." },
+    { icon: Heart, title: "Cover Life's Surprises", description: "Handle unexpected expenses like medical bills or emergencies." }
   ];
 
   const testimonials = [
@@ -76,12 +76,12 @@ const PersonalLoans = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
-                We help everyone reach their financial goals with personalized loan solutions.
+                Your goals deserve the right funding.
               </h1>
               <p className="text-lg text-muted-foreground max-w-lg">
-                We work with you to secure the funding you need because we care about your financial well-being.
+                Whether it's a new home, a car, college tuition, or that dream vacation—we help you get there with personalized loan solutions.
               </p>
-              <Button size="lg" className="bg-foreground text-background hover:bg-foreground/90 rounded-full px-8" asChild>
+              <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full px-8" asChild>
                 <Link to="/apply">Apply Now</Link>
               </Button>
             </div>
@@ -227,10 +227,10 @@ const PersonalLoans = () => {
                 </p>
                 <div className="grid sm:grid-cols-2 gap-4">
                   {[
-                    { title: "Young Professionals", desc: "Consolidate debt or finance major purchases" },
-                    { title: "Newlyweds", desc: "Fund your wedding or buy your first home" },
-                    { title: "Retirees", desc: "Cover expenses with financial peace of mind" },
-                    { title: "Families", desc: "Invest in education or home improvements" }
+                    { title: "First-Time Home Buyers", desc: "Get the funding for your dream home purchase" },
+                    { title: "Students & Parents", desc: "Finance college tuition and education costs" },
+                    { title: "Car Buyers", desc: "Drive away in your new vehicle with great rates" },
+                    { title: "Vacation Planners", desc: "Fund your next adventure without breaking the bank" }
                   ].map((item, index) => (
                     <div key={index} className="flex items-start gap-3">
                       <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
@@ -241,7 +241,7 @@ const PersonalLoans = () => {
                     </div>
                   ))}
                 </div>
-                <Button className="bg-foreground text-background hover:bg-foreground/90 rounded-full" asChild>
+                <Button className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full" asChild>
                   <Link to="/apply">Apply Today</Link>
                 </Button>
               </div>
@@ -271,7 +271,7 @@ const PersonalLoans = () => {
                     </div>
                   ))}
                 </div>
-                <Button variant="outline" className="rounded-full border-foreground text-foreground hover:bg-foreground hover:text-background" asChild>
+                <Button variant="outline" className="rounded-full border-primary text-primary hover:bg-primary hover:text-primary-foreground" asChild>
                   <Link to="/submit-info">Meet Your Advisor</Link>
                 </Button>
               </div>
@@ -346,23 +346,23 @@ const PersonalLoans = () => {
       </section>
 
       {/* CTA Section with Form */}
-      <section className="py-20 bg-foreground text-background">
+      <section className="py-20 bg-gradient-primary text-primary-foreground">
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="w-16 h-16 rounded-full bg-background/10 flex items-center justify-center mx-auto mb-6">
-              <Zap className="h-8 w-8 text-background" />
+            <div className="w-16 h-16 rounded-full bg-primary-foreground/10 flex items-center justify-center mx-auto mb-6">
+              <Zap className="h-8 w-8 text-primary-foreground" />
             </div>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Start your financial journey.
+              Ready to make it happen?
             </h2>
-            <p className="text-background/80 mb-8 max-w-2xl mx-auto">
-              Ready to take control of your finances? Apply now and get matched with personalized loan solutions that fit your unique needs and goals.
+            <p className="text-primary-foreground/80 mb-8 max-w-2xl mx-auto">
+              Whether it's a home, car, education, or vacation—your goals are within reach. Apply now and get matched with the right loan for you.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-background text-foreground hover:bg-background/90 rounded-full px-8" asChild>
+              <Button size="lg" className="bg-primary-foreground text-foreground hover:bg-primary-foreground/90 rounded-full px-8" asChild>
                 <Link to="/apply">Apply Now</Link>
               </Button>
-              <Button size="lg" variant="outline" className="border-background/30 text-background hover:bg-background/10 rounded-full px-8" asChild>
+              <Button size="lg" variant="outline" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 rounded-full px-8" asChild>
                 <Link to="/submit-info">Submit Your Info</Link>
               </Button>
             </div>

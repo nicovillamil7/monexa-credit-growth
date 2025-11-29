@@ -1,273 +1,371 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import ValueProp from "@/components/ValueProp";
-import SplitHero from "@/components/SplitHero";
-import ImageSection from "@/components/ImageSection";
-import Timeline from "@/components/Timeline";
-import { DollarSign, Clock, Shield, TrendingUp, CheckCircle } from "lucide-react";
+import { 
+  Clock, 
+  RefreshCw, 
+  Briefcase, 
+  CheckCircle, 
+  TrendingUp, 
+  Shield, 
+  Zap, 
+  Users,
+  Home,
+  CreditCard,
+  Heart,
+  Plane,
+  Star,
+  ArrowRight
+} from "lucide-react";
 import personalLoansHero from "@/assets/personal-loans-hero.jpg";
 import homeImprovement from "@/assets/home-improvement.jpg";
 import businessGrowth from "@/assets/business-growth.jpg";
+import cardUsage from "@/assets/card-usage.jpg";
 
 const PersonalLoans = () => {
+  const partnerLogos = [
+    "OneMain Financial",
+    "LendUp",
+    "Avant",
+    "Best Egg",
+    "LendingPoint",
+    "Discover",
+    "Prosper",
+    "LendingClub"
+  ];
+
+  const useCases = [
+    { icon: CreditCard, title: "Debt Consolidation", description: "Combine multiple debts into a single, manageable loan." },
+    { icon: Home, title: "Major Purchases", description: "Finance large expenses such as home improvements or vehicle purchases." },
+    { icon: TrendingUp, title: "Credit Improvement", description: "Improve your credit score by managing high-interest debt." },
+    { icon: Heart, title: "Medical Expenses", description: "Cover unexpected medical costs with ease." },
+    { icon: Plane, title: "Life Events", description: "Fund significant life events like weddings or travel." },
+    { icon: Briefcase, title: "Business Ventures", description: "Start or grow your small business with flexible funding." }
+  ];
+
+  const testimonials = [
+    {
+      name: "Sarah M.",
+      role: "Small Business Owner",
+      content: "Monexa helped me consolidate my debt and improve my credit score. The process was seamless!",
+      rating: 5
+    },
+    {
+      name: "James T.",
+      role: "Healthcare Professional",
+      content: "Fast approval and great rates. I was able to cover unexpected medical expenses without stress.",
+      rating: 5
+    },
+    {
+      name: "Maria L.",
+      role: "New Homeowner",
+      content: "Thanks to Monexa, I was able to fund my home renovation project. Highly recommend!",
+      rating: 5
+    }
+  ];
+
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-background">
       <Header />
       
-      {/* Split Hero Section */}
-      <SplitHero
-        title="Personal Loans for Every Need"
-        description="Get $1,000 to $100,000 with flexible terms and competitive rates. Fast approvals, secure process, and funding in days."
-        ctaText="Pre-Qualify Now"
-        ctaLink="/apply"
-        imageSrc={personalLoansHero}
-        imageAlt="Person celebrating financial approval"
-      />
-
-      {/* Key Features */}
-      <section className="py-20 bg-background">
+      {/* Hero Section - Clean Design */}
+      <section className="py-16 md:py-24 bg-background">
         <div className="container">
-          <div className="grid md:grid-cols-4 gap-8">
-            <ValueProp
-              icon={DollarSign}
-              title="$1K - $100K"
-              description="Flexible loan amounts to match your needs"
-            />
-            <ValueProp
-              icon={Clock}
-              title="12-84 Months"
-              description="Choose terms that fit your budget"
-            />
-            <ValueProp
-              icon={Shield}
-              title="Secure Process"
-              description="Bank-level encryption and privacy"
-            />
-            <ValueProp
-              icon={TrendingUp}
-              title="Build Credit"
-              description="On-time payments boost your score"
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* How It Works - Timeline */}
-      <section className="py-20 bg-muted/30">
-        <div className="container">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">How It Works</h2>
-            <p className="text-lg text-muted-foreground">Get funded in four simple steps</p>
-          </div>
-
-          <Timeline
-            steps={[
-              { step: "1", title: "Apply Online", description: "Complete our secure application in minutes" },
-              { step: "2", title: "Get Matched", description: "We find the best loan options for your profile" },
-              { step: "3", title: "Review Offers", description: "Compare rates and terms with no obligation" },
-              { step: "4", title: "Get Funded", description: "Receive funds in your account within days" }
-            ]}
-          />
-        </div>
-      </section>
-
-      {/* Use Cases with Images */}
-      <section className="py-20 bg-background">
-        <div className="container">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Use Your Loan For</h2>
-            <p className="text-lg text-muted-foreground">Flexible funding for life's important moments</p>
-          </div>
-
-          <div className="space-y-20 max-w-6xl mx-auto">
-            <ImageSection
-              title="Home Improvements"
-              description="Transform your living space with renovations, repairs, or upgrades. Whether it's a new kitchen, bathroom remodel, or roof replacement, we've got you covered."
-              imageSrc={homeImprovement}
-              imageAlt="Family planning home improvements"
-              imageOnLeft={false}
-            >
-              <ul className="space-y-2">
-                <li className="flex items-center gap-2 text-sm">
-                  <CheckCircle className="h-4 w-4 text-success" />
-                  <span>Kitchen & bathroom remodels</span>
-                </li>
-                <li className="flex items-center gap-2 text-sm">
-                  <CheckCircle className="h-4 w-4 text-success" />
-                  <span>Roof repairs & replacements</span>
-                </li>
-                <li className="flex items-center gap-2 text-sm">
-                  <CheckCircle className="h-4 w-4 text-success" />
-                  <span>HVAC & energy efficiency upgrades</span>
-                </li>
-              </ul>
-            </ImageSection>
-
-            <ImageSection
-              title="Business Growth"
-              description="Invest in your business with funding for equipment, inventory, marketing, or expansion. Fuel your entrepreneurial dreams with competitive rates."
-              imageSrc={businessGrowth}
-              imageAlt="Business owner in their shop"
-              imageOnLeft={true}
-            >
-              <ul className="space-y-2">
-                <li className="flex items-center gap-2 text-sm">
-                  <CheckCircle className="h-4 w-4 text-success" />
-                  <span>Equipment & inventory purchases</span>
-                </li>
-                <li className="flex items-center gap-2 text-sm">
-                  <CheckCircle className="h-4 w-4 text-success" />
-                  <span>Marketing & advertising campaigns</span>
-                </li>
-                <li className="flex items-center gap-2 text-sm">
-                  <CheckCircle className="h-4 w-4 text-success" />
-                  <span>Business expansion & franchising</span>
-                </li>
-              </ul>
-            </ImageSection>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto mt-12">
-            <Card className="bg-gradient-to-br from-primary/5 to-primary/10 border-primary/20">
-              <CardContent className="pt-6">
-                <h3 className="font-semibold text-lg mb-3">Debt Consolidation</h3>
-                <p className="text-sm text-muted-foreground mb-4">
-                  Combine multiple high-interest debts into one manageable payment with a lower rate.
-                </p>
-                <ul className="space-y-2">
-                  <li className="flex items-center gap-2 text-sm">
-                    <CheckCircle className="h-4 w-4 text-success" />
-                    <span>Simplify multiple payments</span>
-                  </li>
-                  <li className="flex items-center gap-2 text-sm">
-                    <CheckCircle className="h-4 w-4 text-success" />
-                    <span>Lower interest rates</span>
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-gradient-to-br from-primary/5 to-primary/10 border-primary/20">
-              <CardContent className="pt-6">
-                <h3 className="font-semibold text-lg mb-3">Emergency Expenses</h3>
-                <p className="text-sm text-muted-foreground mb-4">
-                  Cover unexpected medical bills, car repairs, or urgent family needs quickly and securely.
-                </p>
-                <ul className="space-y-2">
-                  <li className="flex items-center gap-2 text-sm">
-                    <CheckCircle className="h-4 w-4 text-success" />
-                    <span>Fast approval process</span>
-                  </li>
-                  <li className="flex items-center gap-2 text-sm">
-                    <CheckCircle className="h-4 w-4 text-success" />
-                    <span>Funding within days</span>
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Eligibility - Sidebar Layout */}
-      <section className="py-20 bg-muted/30">
-        <div className="container">
-          <div className="max-w-5xl mx-auto">
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="md:col-span-1">
-                <h2 className="text-3xl md:text-4xl font-bold mb-4">Eligibility Requirements</h2>
-                <p className="text-muted-foreground">
-                  Here's what you need to apply for a personal loan through our platform.
-                </p>
-              </div>
-              
-              <div className="md:col-span-2">
-                <Card>
-                  <CardContent className="pt-6">
-                    <div className="grid md:grid-cols-2 gap-x-8 gap-y-4">
-                      {[
-                        "Be at least 18 years old (19 in some states)",
-                        "Valid government-issued ID",
-                        "Proof of income (paystubs, tax returns, or bank statements)",
-                        "Active checking or savings account",
-                        "Valid phone number and email address",
-                        "U.S. citizenship or permanent residency"
-                      ].map((req, index) => (
-                        <div key={index} className="flex items-start gap-3">
-                          <CheckCircle className="h-5 w-5 text-secondary mt-0.5 flex-shrink-0" />
-                          <p className="text-sm">{req}</p>
-                        </div>
-                      ))}
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="space-y-6">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
+                We help everyone reach their financial goals with personalized loan solutions.
+              </h1>
+              <p className="text-lg text-muted-foreground max-w-lg">
+                We work with you to secure the funding you need because we care about your financial well-being.
+              </p>
+              <Button size="lg" className="bg-foreground text-background hover:bg-foreground/90 rounded-full px-8" asChild>
+                <Link to="/apply">Apply Now</Link>
+              </Button>
+            </div>
+            
+            {/* Image Grid */}
+            <div className="relative">
+              <div className="bg-muted rounded-3xl p-6 md:p-8">
+                <div className="grid grid-cols-3 gap-3">
+                  <div className="space-y-3">
+                    <div className="rounded-2xl overflow-hidden aspect-square">
+                      <img src={personalLoansHero} alt="Professional consultation" className="w-full h-full object-cover" />
                     </div>
-                  </CardContent>
-                </Card>
+                    <div className="rounded-2xl overflow-hidden aspect-[3/4]">
+                      <img src={homeImprovement} alt="Happy customer" className="w-full h-full object-cover" />
+                    </div>
+                  </div>
+                  <div className="space-y-3 pt-6">
+                    <div className="rounded-2xl overflow-hidden aspect-[3/4]">
+                      <img src={businessGrowth} alt="Business meeting" className="w-full h-full object-cover" />
+                    </div>
+                    <div className="rounded-2xl overflow-hidden aspect-square">
+                      <img src={cardUsage} alt="Working professional" className="w-full h-full object-cover" />
+                    </div>
+                  </div>
+                  <div className="space-y-3 pt-3">
+                    <div className="rounded-2xl overflow-hidden aspect-[4/5]">
+                      <img src={personalLoansHero} alt="Team collaboration" className="w-full h-full object-cover" />
+                    </div>
+                    <div className="rounded-2xl overflow-hidden aspect-square">
+                      <img src={businessGrowth} alt="Office work" className="w-full h-full object-cover" />
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* FAQ */}
-      <section className="py-20 bg-background">
+      {/* Flexible Funding Strategies */}
+      <section className="py-20 bg-muted/30">
         <div className="container">
-          <div className="max-w-3xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Frequently Asked Questions</h2>
-            </div>
+          <div className="text-center mb-12">
+            <span className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground mb-4">
+              <span className="w-2 h-2 rounded-full bg-primary"></span>
+              PERSONAL FUNDING
+            </span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+              Flexible personal funding strategies.
+            </h2>
+            <p className="text-muted-foreground max-w-3xl mx-auto">
+              Dedicated to more than just providing loans; we're here to empower you to achieve your financial goals. Whether you're looking to consolidate debt, finance a major purchase, or improve your credit score, our dedicated team will work closely with you.
+            </p>
+          </div>
 
-            <Accordion type="single" collapsible className="space-y-4">
-              <AccordionItem value="item-1" className="bg-muted/30 rounded-lg px-6">
-                <AccordionTrigger>How long does approval take?</AccordionTrigger>
-                <AccordionContent>
-                  Most applications receive a decision within 24-48 hours. Once approved, funds are typically disbursed within 3-5 business days.
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-2" className="bg-muted/30 rounded-lg px-6">
-                <AccordionTrigger>Will checking rates affect my credit score?</AccordionTrigger>
-                <AccordionContent>
-                  No. Our pre-qualification process uses a soft credit pull, which does not impact your credit score. Only when you accept a loan offer will a hard inquiry be made.
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-3" className="bg-muted/30 rounded-lg px-6">
-                <AccordionTrigger>What credit score do I need?</AccordionTrigger>
-                <AccordionContent>
-                  We work with a range of credit profiles. While requirements vary by lender, many of our partners accept scores as low as 580. Better credit typically means better rates.
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-4" className="bg-muted/30 rounded-lg px-6">
-                <AccordionTrigger>Are there any fees?</AccordionTrigger>
-                <AccordionContent>
-                  Our loan matching service is free. Individual loan offers may include origination fees (typically 1-8% of the loan amount) which will be clearly disclosed before you accept.
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-5" className="bg-muted/30 rounded-lg px-6">
-                <AccordionTrigger>Can I pay off my loan early?</AccordionTrigger>
-                <AccordionContent>
-                  Many of our lending partners allow early payoff with no prepayment penalties. This information will be clearly stated in your loan agreement.
-                </AccordionContent>
-              </AccordionItem>
-            </Accordion>
+          <div className="grid md:grid-cols-3 gap-6 mb-12">
+            <Card className="bg-card border-border hover:shadow-medium transition-shadow">
+              <CardContent className="pt-6">
+                <div className="w-12 h-12 rounded-xl bg-muted flex items-center justify-center mb-4">
+                  <Clock className="h-6 w-6 text-foreground" />
+                </div>
+                <h3 className="text-xl font-semibold mb-2">Quick Approvals</h3>
+                <p className="text-muted-foreground text-sm mb-4">
+                  Our advanced application process ensures fast decisions, so you get the funding you need without unnecessary waiting times.
+                </p>
+                <Link to="/apply" className="inline-flex items-center text-sm font-medium text-foreground hover:underline">
+                  Get Started <ArrowRight className="ml-1 h-4 w-4" />
+                </Link>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-card border-border hover:shadow-medium transition-shadow">
+              <CardContent className="pt-6">
+                <div className="w-12 h-12 rounded-xl bg-muted flex items-center justify-center mb-4">
+                  <RefreshCw className="h-6 w-6 text-foreground" />
+                </div>
+                <h3 className="text-xl font-semibold mb-2">Flexible Terms</h3>
+                <p className="text-muted-foreground text-sm mb-4">
+                  Choose repayment options that align with your cash flow and growth plans. Terms from 12 to 84 months available.
+                </p>
+                <Link to="/apply" className="inline-flex items-center text-sm font-medium text-foreground hover:underline">
+                  Get Started <ArrowRight className="ml-1 h-4 w-4" />
+                </Link>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-card border-border hover:shadow-medium transition-shadow">
+              <CardContent className="pt-6">
+                <div className="w-12 h-12 rounded-xl bg-muted flex items-center justify-center mb-4">
+                  <Briefcase className="h-6 w-6 text-foreground" />
+                </div>
+                <h3 className="text-xl font-semibold mb-2">Comprehensive Solutions</h3>
+                <p className="text-muted-foreground text-sm mb-4">
+                  Access a wide range of funding products, from personal loans to credit building solutions.
+                </p>
+                <Link to="/apply" className="inline-flex items-center text-sm font-medium text-foreground hover:underline">
+                  Get Started <ArrowRight className="ml-1 h-4 w-4" />
+                </Link>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Partner Logos Marquee */}
+          <div className="overflow-hidden py-8 border-t border-b border-border">
+            <div className="flex animate-scroll gap-12 whitespace-nowrap">
+              {[...partnerLogos, ...partnerLogos].map((logo, index) => (
+                <span key={index} className="text-lg font-medium text-muted-foreground/60">
+                  {logo}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-20 bg-gradient-primary">
+      {/* Seamless Funding Section */}
+      <section className="py-20 bg-background">
         <div className="container">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground mb-4">
-              Ready to Get Started?
+          <div className="mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Seamless personal funding<br />made easy.
             </h2>
-            <p className="text-lg text-primary-foreground/90 mb-8">
-              Pre-qualify in minutes with no impact to your credit score.
+            <p className="text-muted-foreground max-w-2xl">
+              With Monexa, secure funding with confidence and simplicity. Our solutions offer flexible terms, competitive rates, and a streamlined application process to get you funded faster.
             </p>
-            <Button size="lg" variant="accent" asChild>
-              <Link to="/apply">Apply Now</Link>
-            </Button>
+          </div>
+
+          {/* Alternating Content Sections */}
+          <div className="space-y-24">
+            {/* Section 1 */}
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div className="relative">
+                <div className="rounded-3xl overflow-hidden shadow-large">
+                  <img src={homeImprovement} alt="Tailored funding" className="w-full h-80 object-cover" />
+                </div>
+              </div>
+              <div className="space-y-6">
+                <h3 className="text-2xl md:text-3xl font-bold">
+                  Tailored funding for every stage of your life.
+                </h3>
+                <p className="text-muted-foreground">
+                  Monexa provides versatile funding options for individuals with diverse financial needs. Whether you're consolidating debt, planning for life's milestones, or managing unexpected expenses, our team ensures you're supported every step of the way.
+                </p>
+                <div className="grid sm:grid-cols-2 gap-4">
+                  {[
+                    { title: "Young Professionals", desc: "Consolidate debt or finance major purchases" },
+                    { title: "Newlyweds", desc: "Fund your wedding or buy your first home" },
+                    { title: "Retirees", desc: "Cover expenses with financial peace of mind" },
+                    { title: "Families", desc: "Invest in education or home improvements" }
+                  ].map((item, index) => (
+                    <div key={index} className="flex items-start gap-3">
+                      <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                      <div>
+                        <p className="font-medium text-sm">{item.title}</p>
+                        <p className="text-xs text-muted-foreground">{item.desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                <Button className="bg-foreground text-background hover:bg-foreground/90 rounded-full" asChild>
+                  <Link to="/apply">Apply Today</Link>
+                </Button>
+              </div>
+            </div>
+
+            {/* Section 2 */}
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div className="order-2 lg:order-1 space-y-6">
+                <h3 className="text-2xl md:text-3xl font-bold">
+                  Why choose Monexa?
+                </h3>
+                <p className="text-muted-foreground">
+                  At Monexa, we're committed to helping you achieve your financial goals quickly and efficiently. Whether you need to consolidate debt, cover medical expenses, or plan for a major life event, our personalized loan options and dedicated team ensure a smooth experience.
+                </p>
+                <div className="space-y-3">
+                  {[
+                    { icon: TrendingUp, text: "High Approval Rates" },
+                    { icon: Users, text: "Personalized Solutions" },
+                    { icon: RefreshCw, text: "Flexible Repayment Terms" },
+                    { icon: Zap, text: "Smart-Lending Technology" }
+                  ].map((item, index) => (
+                    <div key={index} className="flex items-center gap-3">
+                      <div className="w-8 h-8 rounded-lg bg-muted flex items-center justify-center">
+                        <item.icon className="h-4 w-4 text-foreground" />
+                      </div>
+                      <span className="font-medium">{item.text}</span>
+                    </div>
+                  ))}
+                </div>
+                <Button variant="outline" className="rounded-full border-foreground text-foreground hover:bg-foreground hover:text-background" asChild>
+                  <Link to="/submit-info">Meet Your Advisor</Link>
+                </Button>
+              </div>
+              <div className="order-1 lg:order-2 relative">
+                <div className="rounded-3xl overflow-hidden shadow-large">
+                  <img src={businessGrowth} alt="Why choose Monexa" className="w-full h-80 object-cover" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* What Can You Do Section */}
+      <section className="py-20 bg-muted/30">
+        <div className="container">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              What can you do with funding from Monexa?
+            </h2>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {useCases.map((useCase, index) => (
+              <Card key={index} className="bg-card border-border hover:shadow-medium transition-all hover:-translate-y-1">
+                <CardContent className="pt-6">
+                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                    <useCase.icon className="h-5 w-5 text-primary" />
+                  </div>
+                  <h3 className="font-semibold mb-2">{useCase.title}</h3>
+                  <p className="text-sm text-muted-foreground">{useCase.description}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-20 bg-background">
+        <div className="container">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Hear from our clients.
+            </h2>
+            <div className="flex justify-center gap-1 mb-2">
+              {[1, 2, 3, 4, 5].map((star) => (
+                <Star key={star} className="h-5 w-5 fill-primary text-primary" />
+              ))}
+            </div>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            {testimonials.map((testimonial, index) => (
+              <Card key={index} className="bg-card border-border">
+                <CardContent className="pt-6">
+                  <div className="flex gap-1 mb-4">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star key={i} className="h-4 w-4 fill-primary text-primary" />
+                    ))}
+                  </div>
+                  <p className="text-sm text-muted-foreground mb-4">"{testimonial.content}"</p>
+                  <div>
+                    <p className="font-semibold text-sm">{testimonial.name}</p>
+                    <p className="text-xs text-muted-foreground">{testimonial.role}</p>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section with Form */}
+      <section className="py-20 bg-foreground text-background">
+        <div className="container">
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="w-16 h-16 rounded-full bg-background/10 flex items-center justify-center mx-auto mb-6">
+              <Zap className="h-8 w-8 text-background" />
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Start your financial journey.
+            </h2>
+            <p className="text-background/80 mb-8 max-w-2xl mx-auto">
+              Ready to take control of your finances? Apply now and get matched with personalized loan solutions that fit your unique needs and goals.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button size="lg" className="bg-background text-foreground hover:bg-background/90 rounded-full px-8" asChild>
+                <Link to="/apply">Apply Now</Link>
+              </Button>
+              <Button size="lg" variant="outline" className="border-background/30 text-background hover:bg-background/10 rounded-full px-8" asChild>
+                <Link to="/submit-info">Submit Your Info</Link>
+              </Button>
+            </div>
           </div>
         </div>
       </section>

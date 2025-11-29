@@ -106,11 +106,20 @@ export default {
             transform: "translateY(-20px)",
           },
         },
+        "scroll": {
+          "0%": {
+            transform: "translateX(0)",
+          },
+          "100%": {
+            transform: "translateX(-50%)",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "float": "float 3s ease-in-out infinite",
+        "scroll": "scroll 20s linear infinite",
       },
     },
   },

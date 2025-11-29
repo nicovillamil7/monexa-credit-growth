@@ -276,37 +276,101 @@ const PersonalLoans = () => {
       {/* Interactive Use Cases Section */}
       <InteractiveUseCases />
 
-      {/* Testimonials Section */}
-      <section className="py-20 bg-background">
-        <div className="container">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Hear from our clients.
-            </h2>
-            <div className="flex justify-center gap-1 mb-2">
-              {[1, 2, 3, 4, 5].map((star) => (
-                <Star key={star} className="h-5 w-5 fill-primary text-primary" />
-              ))}
-            </div>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            {testimonials.map((testimonial, index) => (
-              <Card key={index} className="bg-card border-border">
-                <CardContent className="pt-6">
-                  <div className="flex gap-1 mb-4">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="h-4 w-4 fill-primary text-primary" />
+      {/* Testimonials Section - Modern Design */}
+      <section className="py-24 bg-muted/30 relative overflow-hidden">
+        {/* Background decoration */}
+        <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+        <div className="absolute bottom-0 left-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
+        
+        <div className="container relative">
+          <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start">
+            {/* Left side - Header */}
+            <div className="lg:w-1/3 lg:sticky lg:top-24">
+              <span className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground mb-4">
+                <span className="w-2 h-2 rounded-full bg-primary"></span>
+                CLIENT STORIES
+              </span>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                Hear from our clients.
+              </h2>
+              <p className="text-muted-foreground mb-6">
+                Real stories from real people who achieved their financial goals with Monexa.
+              </p>
+              <div className="flex items-center gap-3">
+                <div className="flex -space-x-2">
+                  {[1, 2, 3, 4].map((i) => (
+                    <div key={i} className="w-10 h-10 rounded-full bg-gradient-to-br from-primary/80 to-primary flex items-center justify-center text-primary-foreground text-xs font-medium ring-2 ring-background">
+                      {['SM', 'JT', 'ML', '+'][i-1]}
+                    </div>
+                  ))}
+                </div>
+                <div>
+                  <div className="flex gap-0.5">
+                    {[1, 2, 3, 4, 5].map((star) => (
+                      <Star key={star} className="h-4 w-4 fill-primary text-primary" />
                     ))}
                   </div>
-                  <p className="text-sm text-muted-foreground mb-4">"{testimonial.content}"</p>
-                  <div>
-                    <p className="font-semibold text-sm">{testimonial.name}</p>
-                    <p className="text-xs text-muted-foreground">{testimonial.role}</p>
+                  <p className="text-xs text-muted-foreground">500+ happy clients</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Right side - Testimonials */}
+            <div className="lg:w-2/3 space-y-6">
+              {testimonials.map((testimonial, index) => (
+                <div 
+                  key={index} 
+                  className={`group relative p-8 rounded-2xl transition-all duration-300 hover:shadow-medium ${
+                    index === 0 
+                      ? 'bg-gradient-to-br from-primary to-primary/80 text-primary-foreground' 
+                      : 'bg-card border border-border hover:border-primary/20'
+                  }`}
+                >
+                  {/* Quote mark */}
+                  <div className={`absolute top-6 right-8 text-6xl font-serif leading-none ${
+                    index === 0 ? 'text-primary-foreground/20' : 'text-primary/10'
+                  }`}>
+                    "
                   </div>
-                </CardContent>
-              </Card>
-            ))}
+                  
+                  <div className="relative">
+                    <div className="flex gap-1 mb-4">
+                      {[...Array(testimonial.rating)].map((_, i) => (
+                        <Star key={i} className={`h-4 w-4 ${
+                          index === 0 
+                            ? 'fill-primary-foreground text-primary-foreground' 
+                            : 'fill-primary text-primary'
+                        }`} />
+                      ))}
+                    </div>
+                    
+                    <p className={`text-lg md:text-xl leading-relaxed mb-6 ${
+                      index === 0 ? 'text-primary-foreground' : 'text-foreground'
+                    }`}>
+                      {testimonial.content}
+                    </p>
+                    
+                    <div className="flex items-center gap-4">
+                      <div className={`w-12 h-12 rounded-full flex items-center justify-center text-sm font-semibold ${
+                        index === 0 
+                          ? 'bg-primary-foreground/20 text-primary-foreground' 
+                          : 'bg-primary/10 text-primary'
+                      }`}>
+                        {testimonial.name.split(' ').map(n => n[0]).join('')}
+                      </div>
+                      <div>
+                        <p className={`font-semibold ${index === 0 ? 'text-primary-foreground' : 'text-foreground'}`}>
+                          {testimonial.name}
+                        </p>
+                        <p className={`text-sm ${index === 0 ? 'text-primary-foreground/70' : 'text-muted-foreground'}`}>
+                          {testimonial.role}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

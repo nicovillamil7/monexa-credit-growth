@@ -58,7 +58,7 @@ const PersonalLoans = () => {
     <div className="min-h-screen flex flex-col bg-background">
       <Header />
       
-      {/* Hero Section */}
+      {/* Hero Section - Clean Design */}
       <section className="py-16 md:py-24 bg-background">
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -109,22 +109,6 @@ const PersonalLoans = () => {
         </div>
       </section>
 
-      {/* Partner Logos - Social Proof */}
-      <section className="py-8 bg-background border-y border-border">
-        <div className="container">
-          <p className="text-center text-sm text-muted-foreground mb-6">Trusted by industry leaders</p>
-          <div className="overflow-hidden">
-            <div className="flex animate-scroll gap-12 whitespace-nowrap">
-              {[...partnerLogos, ...partnerLogos].map((logo, index) => (
-                <span key={index} className="text-lg font-medium text-muted-foreground/60">
-                  {logo}
-                </span>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Flexible Funding Strategies */}
       <section className="py-20 bg-muted/30">
         <div className="container">
@@ -141,7 +125,7 @@ const PersonalLoans = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-3 gap-6 mb-12">
             <Card className="bg-card border-border hover:shadow-medium transition-shadow">
               <CardContent className="pt-6">
                 <div className="w-12 h-12 rounded-xl bg-muted flex items-center justify-center mb-4">
@@ -187,54 +171,110 @@ const PersonalLoans = () => {
               </CardContent>
             </Card>
           </div>
+
+          {/* Partner Logos Marquee */}
+          <div className="overflow-hidden py-8 border-t border-b border-border">
+            <div className="flex animate-scroll gap-12 whitespace-nowrap">
+              {[...partnerLogos, ...partnerLogos].map((logo, index) => (
+                <span key={index} className="text-lg font-medium text-muted-foreground/60">
+                  {logo}
+                </span>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* Interactive Use Cases Section */}
-      <InteractiveUseCases />
-
-      {/* Why Choose Monexa Section */}
-      <section className="py-20 bg-muted/30">
+      {/* Seamless Funding Section */}
+      <section className="py-20 bg-background">
         <div className="container">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-              <span className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground">
-                <span className="w-2 h-2 rounded-full bg-primary"></span>
-                WHY MONEXA
-              </span>
-              <h2 className="text-3xl md:text-4xl font-bold">
-                Why choose Monexa?
-              </h2>
-              <p className="text-muted-foreground">
-                At Monexa, we're committed to helping you achieve your financial goals quickly and efficiently. Whether you need to consolidate debt, cover medical expenses, or plan for a major life event, our personalized loan options and dedicated team ensure a smooth experience.
-              </p>
-              <div className="space-y-3">
-                {[
-                  { icon: TrendingUp, text: "High Approval Rates" },
-                  { icon: Users, text: "Personalized Solutions" },
-                  { icon: RefreshCw, text: "Flexible Repayment Terms" },
-                  { icon: Zap, text: "Smart-Lending Technology" }
-                ].map((item, index) => (
-                  <div key={index} className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-lg bg-muted flex items-center justify-center">
-                      <item.icon className="h-4 w-4 text-foreground" />
-                    </div>
-                    <span className="font-medium">{item.text}</span>
-                  </div>
-                ))}
+          <div className="mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Seamless personal funding<br />made easy.
+            </h2>
+            <p className="text-muted-foreground max-w-2xl">
+              With Monexa, secure funding with confidence and simplicity. Our solutions offer flexible terms, competitive rates, and a streamlined application process to get you funded faster.
+            </p>
+          </div>
+
+          {/* Alternating Content Sections */}
+          <div className="space-y-24">
+            {/* Section 1 */}
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div className="relative">
+                <div className="rounded-3xl overflow-hidden shadow-large">
+                  <img src={homeImprovement} alt="Tailored funding" className="w-full h-80 object-cover" />
+                </div>
               </div>
-              <Button className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full" asChild>
-                <Link to="/apply">Get Started Today</Link>
-              </Button>
+              <div className="space-y-6">
+                <h3 className="text-2xl md:text-3xl font-bold">
+                  Tailored funding for every stage of your life.
+                </h3>
+                <p className="text-muted-foreground">
+                  Monexa provides versatile funding options for individuals with diverse financial needs. Whether you're consolidating debt, planning for life's milestones, or managing unexpected expenses, our team ensures you're supported every step of the way.
+                </p>
+                <div className="grid sm:grid-cols-2 gap-4">
+                  {[
+                    { title: "First-Time Home Buyers", desc: "Get the funding for your dream home purchase" },
+                    { title: "Students & Parents", desc: "Finance college tuition and education costs" },
+                    { title: "Car Buyers", desc: "Drive away in your new vehicle with great rates" },
+                    { title: "Vacation Planners", desc: "Fund your next adventure without breaking the bank" }
+                  ].map((item, index) => (
+                    <div key={index} className="flex items-start gap-3">
+                      <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                      <div>
+                        <p className="font-medium text-sm">{item.title}</p>
+                        <p className="text-xs text-muted-foreground">{item.desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                <Button className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full" asChild>
+                  <Link to="/apply">Apply Today</Link>
+                </Button>
+              </div>
             </div>
-            <div className="relative">
-              <div className="rounded-3xl overflow-hidden shadow-large">
-                <img src={businessGrowth} alt="Why choose Monexa" className="w-full h-80 object-cover" />
+
+            {/* Section 2 */}
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div className="order-2 lg:order-1 space-y-6">
+                <h3 className="text-2xl md:text-3xl font-bold">
+                  Why choose Monexa?
+                </h3>
+                <p className="text-muted-foreground">
+                  At Monexa, we're committed to helping you achieve your financial goals quickly and efficiently. Whether you need to consolidate debt, cover medical expenses, or plan for a major life event, our personalized loan options and dedicated team ensure a smooth experience.
+                </p>
+                <div className="space-y-3">
+                  {[
+                    { icon: TrendingUp, text: "High Approval Rates" },
+                    { icon: Users, text: "Personalized Solutions" },
+                    { icon: RefreshCw, text: "Flexible Repayment Terms" },
+                    { icon: Zap, text: "Smart-Lending Technology" }
+                  ].map((item, index) => (
+                    <div key={index} className="flex items-center gap-3">
+                      <div className="w-8 h-8 rounded-lg bg-muted flex items-center justify-center">
+                        <item.icon className="h-4 w-4 text-foreground" />
+                      </div>
+                      <span className="font-medium">{item.text}</span>
+                    </div>
+                  ))}
+                </div>
+                <Button variant="outline" className="rounded-full border-primary text-primary hover:bg-primary hover:text-primary-foreground" asChild>
+                  <Link to="/submit-info">Meet Your Advisor</Link>
+                </Button>
+              </div>
+              <div className="order-1 lg:order-2 relative">
+                <div className="rounded-3xl overflow-hidden shadow-large">
+                  <img src={businessGrowth} alt="Why choose Monexa" className="w-full h-80 object-cover" />
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
+
+      {/* Interactive Use Cases Section */}
+      <InteractiveUseCases />
 
       {/* Testimonials Section */}
       <section className="py-20 bg-background">

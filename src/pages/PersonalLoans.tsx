@@ -4,6 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import LeadSubmissionForm from "@/components/LeadSubmissionForm";
+import InteractiveUseCases from "@/components/InteractiveUseCases";
 import { 
   Clock, 
   RefreshCw, 
@@ -12,10 +13,6 @@ import {
   TrendingUp, 
   Zap, 
   Users,
-  Home,
-  CreditCard,
-  Heart,
-  Plane,
   Star,
   ArrowRight
 } from "lucide-react";
@@ -34,15 +31,6 @@ const PersonalLoans = () => {
     "Discover",
     "Prosper",
     "LendingClub"
-  ];
-
-  const useCases = [
-    { icon: Home, title: "Buy Your Dream Home", description: "Get the funds you need for a down payment or home purchase." },
-    { icon: Briefcase, title: "Get a New Car", description: "Finance your next vehicle with competitive rates and flexible terms." },
-    { icon: TrendingUp, title: "Pay for College", description: "Invest in your education without the stress of high-interest debt." },
-    { icon: Plane, title: "Take That Vacation", description: "Fund your dream getaway and create memories that last a lifetime." },
-    { icon: CreditCard, title: "Consolidate Debt", description: "Simplify your finances by combining multiple payments into one." },
-    { icon: Heart, title: "Cover Life's Surprises", description: "Handle unexpected expenses like medical bills or emergencies." }
   ];
 
   const testimonials = [
@@ -285,30 +273,8 @@ const PersonalLoans = () => {
         </div>
       </section>
 
-      {/* What Can You Do Section */}
-      <section className="py-20 bg-muted/30">
-        <div className="container">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              What can you do with funding from Monexa?
-            </h2>
-          </div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {useCases.map((useCase, index) => (
-              <Card key={index} className="bg-card border-border hover:shadow-medium transition-all hover:-translate-y-1">
-                <CardContent className="pt-6">
-                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                    <useCase.icon className="h-5 w-5 text-primary" />
-                  </div>
-                  <h3 className="font-semibold mb-2">{useCase.title}</h3>
-                  <p className="text-sm text-muted-foreground">{useCase.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Interactive Use Cases Section */}
+      <InteractiveUseCases />
 
       {/* Testimonials Section */}
       <section className="py-20 bg-background">

@@ -3,13 +3,13 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import LeadSubmissionForm from "@/components/LeadSubmissionForm";
 import { 
   Clock, 
   RefreshCw, 
   Briefcase, 
   CheckCircle, 
   TrendingUp, 
-  Shield, 
   Zap, 
   Users,
   Home,
@@ -345,26 +345,44 @@ const PersonalLoans = () => {
         </div>
       </section>
 
-      {/* CTA Section with Form */}
+      {/* CTA Section with Embedded Form */}
       <section className="py-20 bg-gradient-primary text-primary-foreground">
         <div className="container">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="w-16 h-16 rounded-full bg-primary-foreground/10 flex items-center justify-center mx-auto mb-6">
-              <Zap className="h-8 w-8 text-primary-foreground" />
+          <div className="grid lg:grid-cols-2 gap-12 items-start max-w-6xl mx-auto">
+            {/* Left side - Text */}
+            <div className="text-center lg:text-left">
+              <div className="w-16 h-16 rounded-full bg-primary-foreground/10 flex items-center justify-center mx-auto lg:mx-0 mb-6">
+                <Zap className="h-8 w-8 text-primary-foreground" />
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                Ready to make it happen?
+              </h2>
+              <p className="text-primary-foreground/80 mb-6 max-w-lg">
+                Whether it's a home, car, education, or vacation—your goals are within reach. Fill out the form and get matched with the right loan for you.
+              </p>
+              <ul className="space-y-3 text-primary-foreground/90">
+                <li className="flex items-center gap-3">
+                  <CheckCircle className="h-5 w-5 text-primary-foreground" />
+                  <span>Quick approvals in as fast as 24 hours</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <CheckCircle className="h-5 w-5 text-primary-foreground" />
+                  <span>Competitive rates tailored to you</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <CheckCircle className="h-5 w-5 text-primary-foreground" />
+                  <span>Flexible terms from 12 to 84 months</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <CheckCircle className="h-5 w-5 text-primary-foreground" />
+                  <span>No hidden fees or surprises</span>
+                </li>
+              </ul>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Ready to make it happen?
-            </h2>
-            <p className="text-primary-foreground/80 mb-8 max-w-2xl mx-auto">
-              Whether it's a home, car, education, or vacation—your goals are within reach. Apply now and get matched with the right loan for you.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-primary-foreground text-foreground hover:bg-primary-foreground/90 rounded-full px-8" asChild>
-                <Link to="/apply">Apply Now</Link>
-              </Button>
-              <Button size="lg" variant="outline" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 rounded-full px-8" asChild>
-                <Link to="/submit-info">Submit Your Info</Link>
-              </Button>
+            
+            {/* Right side - Form */}
+            <div>
+              <LeadSubmissionForm defaultServiceType="personal-loan" variant="embedded" />
             </div>
           </div>
         </div>

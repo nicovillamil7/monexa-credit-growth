@@ -14,7 +14,54 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      funding_leads: {
+        Row: {
+          applicant_type: string
+          created_at: string
+          credit_profile: string[] | null
+          credit_score: string
+          email: string
+          first_name: string
+          funding_goal: number
+          id: string
+          last_name: string
+          phone: string
+          service_type: string | null
+          terms_accepted: boolean
+          yearly_revenue: string
+        }
+        Insert: {
+          applicant_type: string
+          created_at?: string
+          credit_profile?: string[] | null
+          credit_score: string
+          email: string
+          first_name: string
+          funding_goal: number
+          id?: string
+          last_name: string
+          phone: string
+          service_type?: string | null
+          terms_accepted?: boolean
+          yearly_revenue: string
+        }
+        Update: {
+          applicant_type?: string
+          created_at?: string
+          credit_profile?: string[] | null
+          credit_score?: string
+          email?: string
+          first_name?: string
+          funding_goal?: number
+          id?: string
+          last_name?: string
+          phone?: string
+          service_type?: string | null
+          terms_accepted?: boolean
+          yearly_revenue?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never

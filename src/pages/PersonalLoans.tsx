@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Header from "@/components/Header";
@@ -26,6 +25,10 @@ import businessGrowth from "@/assets/business-growth.jpg";
 import cardUsage from "@/assets/card-usage.jpg";
 
 const PersonalLoans = () => {
+  const scrollToForm = () => {
+    document.getElementById('apply-form')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   const partnerLogos = [
     "OneMain Financial",
     "LendUp",
@@ -118,8 +121,12 @@ const PersonalLoans = () => {
               <p className="text-lg text-muted-foreground max-w-lg">
                 Whether it's a new home, a car, college tuition, or that dream vacation—we help you get there with personalized loan solutions.
               </p>
-              <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full px-8" asChild>
-                <Link to="/apply">Apply Now</Link>
+              <Button 
+                size="lg" 
+                className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full px-8"
+                onClick={scrollToForm}
+              >
+                Apply Now
               </Button>
             </div>
             
@@ -191,47 +198,38 @@ const PersonalLoans = () => {
 
           <div className="grid md:grid-cols-3 gap-6">
             <Card className="bg-card border-border hover:shadow-medium transition-shadow">
-              <CardContent className="pt-6">
+              <CardContent className="pt-6 pb-6">
                 <div className="w-12 h-12 rounded-xl bg-muted flex items-center justify-center mb-4">
                   <Clock className="h-6 w-6 text-foreground" />
                 </div>
                 <h3 className="text-xl font-semibold mb-2">Quick Approvals</h3>
-                <p className="text-muted-foreground text-sm mb-4">
+                <p className="text-muted-foreground text-sm">
                   Our advanced application process ensures fast decisions, so you get the funding you need without unnecessary waiting times.
                 </p>
-                <Link to="/apply" className="inline-flex items-center text-sm font-medium text-foreground hover:underline">
-                  Get Started <ArrowRight className="ml-1 h-4 w-4" />
-                </Link>
               </CardContent>
             </Card>
 
             <Card className="bg-card border-border hover:shadow-medium transition-shadow">
-              <CardContent className="pt-6">
+              <CardContent className="pt-6 pb-6">
                 <div className="w-12 h-12 rounded-xl bg-muted flex items-center justify-center mb-4">
                   <RefreshCw className="h-6 w-6 text-foreground" />
                 </div>
                 <h3 className="text-xl font-semibold mb-2">Flexible Terms</h3>
-                <p className="text-muted-foreground text-sm mb-4">
+                <p className="text-muted-foreground text-sm">
                   Choose repayment options that align with your cash flow and growth plans. Terms from 12 to 84 months available.
                 </p>
-                <Link to="/apply" className="inline-flex items-center text-sm font-medium text-foreground hover:underline">
-                  Get Started <ArrowRight className="ml-1 h-4 w-4" />
-                </Link>
               </CardContent>
             </Card>
 
             <Card className="bg-card border-border hover:shadow-medium transition-shadow">
-              <CardContent className="pt-6">
+              <CardContent className="pt-6 pb-6">
                 <div className="w-12 h-12 rounded-xl bg-muted flex items-center justify-center mb-4">
                   <Briefcase className="h-6 w-6 text-foreground" />
                 </div>
                 <h3 className="text-xl font-semibold mb-2">Comprehensive Solutions</h3>
-                <p className="text-muted-foreground text-sm mb-4">
+                <p className="text-muted-foreground text-sm">
                   Access a wide range of funding products, from personal loans to credit building solutions.
                 </p>
-                <Link to="/apply" className="inline-flex items-center text-sm font-medium text-foreground hover:underline">
-                  Get Started <ArrowRight className="ml-1 h-4 w-4" />
-                </Link>
               </CardContent>
             </Card>
           </div>
@@ -282,8 +280,11 @@ const PersonalLoans = () => {
                     </div>
                   ))}
                 </div>
-                <Button className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full" asChild>
-                  <Link to="/apply">Apply Today</Link>
+                <Button 
+                  className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full"
+                  onClick={scrollToForm}
+                >
+                  Apply Today
                 </Button>
               </div>
             </div>
@@ -312,8 +313,12 @@ const PersonalLoans = () => {
                     </div>
                   ))}
                 </div>
-                <Button variant="outline" className="rounded-full border-primary text-primary hover:bg-primary hover:text-primary-foreground" asChild>
-                  <Link to="/submit-info">Meet Your Advisor</Link>
+                <Button 
+                  variant="outline" 
+                  className="rounded-full border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+                  onClick={scrollToForm}
+                >
+                  Meet Your Advisor
                 </Button>
               </div>
               <div className="order-1 lg:order-2 relative">
@@ -327,7 +332,7 @@ const PersonalLoans = () => {
       </section>
 
       {/* Interactive Use Cases Section */}
-      <InteractiveUseCases />
+      <InteractiveUseCases scrollTargetId="apply-form" />
 
       {/* Testimonials Section - Carousel Grid */}
       <section className="py-24 bg-muted/30 relative overflow-hidden">
@@ -454,7 +459,7 @@ const PersonalLoans = () => {
       </section>
 
       {/* CTA Section with Embedded Form - Asymmetric design */}
-      <section className="py-20 bg-gradient-primary text-primary-foreground relative overflow-hidden">
+      <section id="apply-form" className="py-20 bg-gradient-primary text-primary-foreground relative overflow-hidden">
         {/* Asymmetric decorative shapes */}
         <svg 
           className="absolute top-0 left-0 w-full h-32 -translate-y-full" 

@@ -11,7 +11,6 @@ import {
   type LucideIcon
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
 import { cn } from "@/lib/utils";
 
 // Import existing assets
@@ -117,9 +116,17 @@ const useCasesData: UseCase[] = [
   }
 ];
 
-const InteractiveUseCases = () => {
+interface InteractiveUseCasesProps {
+  scrollTargetId?: string;
+}
+
+const InteractiveUseCases = ({ scrollTargetId = "apply-form" }: InteractiveUseCasesProps) => {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const selectedUseCase = useCasesData[selectedIndex];
+
+  const handleCTAClick = () => {
+    document.getElementById(scrollTargetId)?.scrollIntoView({ behavior: 'smooth' });
+  };
 
   return (
     <section className="py-20 bg-muted/30">
@@ -231,12 +238,10 @@ const InteractiveUseCases = () => {
 
                 <Button 
                   className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full w-fit"
-                  asChild
+                  onClick={handleCTAClick}
                 >
-                  <Link to="/apply">
-                    {selectedUseCase.ctaText}
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
+                  {selectedUseCase.ctaText}
+                  <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </div>
             </div>
@@ -310,12 +315,10 @@ const InteractiveUseCases = () => {
                       
                       <Button 
                         className="w-full bg-primary text-primary-foreground hover:bg-primary/90 rounded-full"
-                        asChild
+                        onClick={handleCTAClick}
                       >
-                        <Link to="/apply">
-                          {useCase.ctaText}
-                          <ArrowRight className="ml-2 h-4 w-4" />
-                        </Link>
+                        {useCase.ctaText}
+                        <ArrowRight className="ml-2 h-4 w-4" />
                       </Button>
                     </div>
                   </div>

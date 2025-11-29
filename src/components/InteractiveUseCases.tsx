@@ -14,6 +14,12 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { cn } from "@/lib/utils";
 
+// Import existing assets
+import homeImprovement from "@/assets/home-improvement.jpg";
+import travelRewards from "@/assets/travel-rewards.jpg";
+import cardUsage from "@/assets/card-usage.jpg";
+import personalLoansHero from "@/assets/personal-loans-hero.jpg";
+
 interface UseCase {
   icon: LucideIcon;
   title: string;
@@ -21,6 +27,7 @@ interface UseCase {
   fullDescription: string;
   benefits: string[];
   ctaText: string;
+  image: string;
 }
 
 const useCasesData: UseCase[] = [
@@ -35,7 +42,8 @@ const useCasesData: UseCase[] = [
       "Terms from 24 to 84 months",
       "No prepayment penalties"
     ],
-    ctaText: "Explore Home Loans"
+    ctaText: "Explore Home Loans",
+    image: homeImprovement
   },
   {
     icon: Briefcase,
@@ -48,7 +56,8 @@ const useCasesData: UseCase[] = [
       "Competitive interest rates",
       "Terms up to 72 months"
     ],
-    ctaText: "Finance Your Car"
+    ctaText: "Finance Your Car",
+    image: "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=800&q=80"
   },
   {
     icon: TrendingUp,
@@ -61,7 +70,8 @@ const useCasesData: UseCase[] = [
       "Competitive student rates",
       "Fund any accredited institution"
     ],
-    ctaText: "Fund Your Education"
+    ctaText: "Fund Your Education",
+    image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&q=80"
   },
   {
     icon: Plane,
@@ -74,7 +84,8 @@ const useCasesData: UseCase[] = [
       "No collateral required",
       "Use for any destination"
     ],
-    ctaText: "Plan Your Trip"
+    ctaText: "Plan Your Trip",
+    image: travelRewards
   },
   {
     icon: CreditCard,
@@ -87,7 +98,8 @@ const useCasesData: UseCase[] = [
       "Improve credit utilization",
       "Clear debt faster"
     ],
-    ctaText: "Start Consolidating"
+    ctaText: "Start Consolidating",
+    image: cardUsage
   },
   {
     icon: Heart,
@@ -100,7 +112,8 @@ const useCasesData: UseCase[] = [
       "Flexible use of funds",
       "Manageable monthly payments"
     ],
-    ctaText: "Get Emergency Funds"
+    ctaText: "Get Emergency Funds",
+    image: personalLoansHero
   }
 ];
 
@@ -121,7 +134,7 @@ const InteractiveUseCases = () => {
         </div>
 
         {/* Desktop: Side-by-side layout */}
-        <div className="hidden lg:grid lg:grid-cols-[320px_1fr] gap-8 max-w-6xl mx-auto">
+        <div className="hidden lg:grid lg:grid-cols-[280px_1fr] gap-6 max-w-7xl mx-auto">
           {/* Left: Vertical Tabs */}
           <div className="space-y-2">
             {useCasesData.map((useCase, index) => {
@@ -133,30 +146,30 @@ const InteractiveUseCases = () => {
                   key={index}
                   onClick={() => setSelectedIndex(index)}
                   className={cn(
-                    "w-full flex items-center gap-4 p-4 rounded-xl text-left transition-all duration-300",
+                    "w-full flex items-center gap-3 p-3 rounded-xl text-left transition-all duration-300",
                     isActive 
                       ? "bg-primary text-primary-foreground shadow-medium" 
                       : "bg-card hover:bg-muted border border-border hover:border-primary/30"
                   )}
                 >
                   <div className={cn(
-                    "w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 transition-colors",
+                    "w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 transition-colors",
                     isActive ? "bg-primary-foreground/20" : "bg-primary/10"
                   )}>
                     <Icon className={cn(
-                      "h-6 w-6",
+                      "h-5 w-5",
                       isActive ? "text-primary-foreground" : "text-primary"
                     )} />
                   </div>
                   <div className="min-w-0">
                     <p className={cn(
-                      "font-semibold truncate",
+                      "font-semibold text-sm truncate",
                       isActive ? "text-primary-foreground" : "text-foreground"
                     )}>
                       {useCase.title}
                     </p>
                     <p className={cn(
-                      "text-sm truncate",
+                      "text-xs truncate",
                       isActive ? "text-primary-foreground/80" : "text-muted-foreground"
                     )}>
                       {useCase.shortDescription}
@@ -167,56 +180,70 @@ const InteractiveUseCases = () => {
             })}
           </div>
 
-          {/* Right: Content Panel */}
-          <div className="bg-card border border-border rounded-2xl p-8 shadow-soft">
+          {/* Right: Split Image-Content Panel */}
+          <div className="bg-card border border-border rounded-2xl shadow-soft overflow-hidden min-h-[480px]">
             <div 
               key={selectedIndex}
-              className="animate-fade-in"
+              className="grid grid-cols-2 h-full animate-fade-in"
             >
-              <div className="flex items-start gap-6 mb-6">
-                <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                  <selectedUseCase.icon className="h-8 w-8 text-primary" />
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold text-foreground mb-2">
+              {/* Left: Image */}
+              <div className="relative h-full min-h-[480px]">
+                <img 
+                  src={selectedUseCase.image} 
+                  alt={selectedUseCase.title}
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+                {/* Subtle gradient overlay for polish */}
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent to-background/10" />
+              </div>
+
+              {/* Right: Content */}
+              <div className="p-8 flex flex-col justify-center">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+                    <selectedUseCase.icon className="h-6 w-6 text-primary" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-foreground">
                     {selectedUseCase.title}
                   </h3>
-                  <p className="text-muted-foreground">
-                    {selectedUseCase.fullDescription}
-                  </p>
                 </div>
-              </div>
 
-              <div className="mb-8">
-                <h4 className="font-semibold text-foreground mb-4">Key Benefits</h4>
-                <div className="grid sm:grid-cols-2 gap-3">
-                  {selectedUseCase.benefits.map((benefit, index) => (
-                    <div 
-                      key={index} 
-                      className="flex items-center gap-3"
-                      style={{ animationDelay: `${index * 100}ms` }}
-                    >
-                      <CheckCircle className="h-5 w-5 text-success flex-shrink-0" />
-                      <span className="text-sm text-foreground">{benefit}</span>
-                    </div>
-                  ))}
+                <p className="text-muted-foreground mb-6 leading-relaxed">
+                  {selectedUseCase.fullDescription}
+                </p>
+
+                <div className="mb-6">
+                  <h4 className="font-semibold text-foreground mb-3 text-sm uppercase tracking-wide">
+                    Key Benefits
+                  </h4>
+                  <div className="space-y-2">
+                    {selectedUseCase.benefits.map((benefit, index) => (
+                      <div 
+                        key={index} 
+                        className="flex items-center gap-3"
+                      >
+                        <CheckCircle className="h-4 w-4 text-success flex-shrink-0" />
+                        <span className="text-sm text-foreground">{benefit}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-              </div>
 
-              <Button 
-                className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full"
-                asChild
-              >
-                <Link to="/apply">
-                  {selectedUseCase.ctaText}
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
+                <Button 
+                  className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full w-fit"
+                  asChild
+                >
+                  <Link to="/apply">
+                    {selectedUseCase.ctaText}
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Mobile/Tablet: Accordion Style */}
+        {/* Mobile/Tablet: Accordion Style with Images */}
         <div className="lg:hidden space-y-3 max-w-2xl mx-auto">
           {useCasesData.map((useCase, index) => {
             const Icon = useCase.icon;
@@ -256,8 +283,18 @@ const InteractiveUseCases = () => {
                 </button>
                 
                 {isActive && (
-                  <div className="px-4 pb-4 animate-fade-in">
-                    <div className="pt-4 border-t border-border">
+                  <div className="animate-fade-in">
+                    {/* Mobile Image */}
+                    <div className="relative h-48 w-full">
+                      <img 
+                        src={useCase.image} 
+                        alt={useCase.title}
+                        className="absolute inset-0 w-full h-full object-cover"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent" />
+                    </div>
+
+                    <div className="px-4 pb-4">
                       <p className="text-muted-foreground mb-4">
                         {useCase.fullDescription}
                       </p>

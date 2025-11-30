@@ -11,14 +11,12 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
-import monexaLogo from "@/assets/monexa-logo.png";
+import monexaLogo from "@/assets/logo.png";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const simpleNavLinks = [
-    { label: "Submit Info", href: "/submit-info" },
-    { label: "Pricing", href: "/pricing" },
     { label: "About", href: "/about" },
   ];
 
@@ -32,7 +30,7 @@ const Header = () => {
     <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <nav className="container flex h-16 items-center justify-between">
         <Link to="/" className="flex items-center space-x-2">
-          <img src={monexaLogo} alt="Monexa" className="h-10 w-auto" />
+          <img src={monexaLogo} alt="Monexa Credit & Capital - Credit Repair and Funding Services" className="h-16 md:h-20 w-auto" />
         </Link>
 
         {/* Desktop Navigation */}
@@ -88,9 +86,6 @@ const Header = () => {
 
         {/* Desktop CTAs */}
         <div className="hidden md:flex md:items-center md:gap-3">
-          <Button variant="outline" asChild>
-            <Link to="/apply">Free Credit Review</Link>
-          </Button>
           <Button variant="hero" asChild>
             <Link to="/apply">Apply Now</Link>
           </Button>
@@ -155,9 +150,6 @@ const Header = () => {
               ))}
 
               <div className="flex flex-col gap-2 mt-4">
-                <Button variant="outline" asChild onClick={() => setIsOpen(false)}>
-                  <Link to="/apply">Free Credit Review</Link>
-                </Button>
                 <Button variant="hero" asChild onClick={() => setIsOpen(false)}>
                   <Link to="/apply">Apply Now</Link>
                 </Button>

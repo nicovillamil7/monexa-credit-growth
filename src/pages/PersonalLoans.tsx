@@ -4,6 +4,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import LeadSubmissionForm from "@/components/LeadSubmissionForm";
 import InteractiveUseCases from "@/components/InteractiveUseCases";
+import SEO from "@/components/SEO";
+import { personalLoanServiceSchema } from "@/lib/seo-schemas";
 import { 
   Clock, 
   RefreshCw, 
@@ -23,6 +25,8 @@ import personalLoansHero from "@/assets/personal-loans-hero.jpg";
 import homeImprovement from "@/assets/home-improvement.jpg";
 import businessGrowth from "@/assets/business-growth.jpg";
 import cardUsage from "@/assets/card-usage.jpg";
+import travelRewards from "@/assets/travel-rewards.jpg";
+import creditCardsHero from "@/assets/credit-cards-hero.jpg";
 
 const PersonalLoans = () => {
   const scrollToForm = () => {
@@ -108,6 +112,12 @@ const PersonalLoans = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
+      <SEO 
+        title="Personal Loans $1K-$100K | Fast Approval | Monexa"
+        description="Get personal loans from $1,000 to $100,000 with flexible 12-84 month terms. Quick approval, competitive rates, and funding in 24 hours. Apply now!"
+        keywords="personal loans, fast personal loans, online personal loans, debt consolidation loans, quick loan approval, flexible loan terms"
+        structuredData={personalLoanServiceSchema}
+      />
       <Header />
       
       {/* Hero Section - Clean Design */}
@@ -136,26 +146,26 @@ const PersonalLoans = () => {
                 <div className="grid grid-cols-3 gap-3">
                   <div className="space-y-3">
                     <div className="rounded-2xl overflow-hidden aspect-square">
-                      <img src={personalLoansHero} alt="Professional consultation" className="w-full h-full object-cover" />
+                      <img src={personalLoansHero} alt="Personal loan consultation for home, car, or education" className="w-full h-full object-cover" loading="lazy" />
                     </div>
                     <div className="rounded-2xl overflow-hidden aspect-[3/4]">
-                      <img src={homeImprovement} alt="Happy customer" className="w-full h-full object-cover" />
+                      <img src={homeImprovement} alt="Home improvement project funded with personal loan" className="w-full h-full object-cover" loading="lazy" />
                     </div>
                   </div>
                   <div className="space-y-3 pt-6">
                     <div className="rounded-2xl overflow-hidden aspect-[3/4]">
-                      <img src={businessGrowth} alt="Business meeting" className="w-full h-full object-cover" />
+                      <img src={businessGrowth} alt="Small business owner securing personal funding" className="w-full h-full object-cover" loading="lazy" />
                     </div>
                     <div className="rounded-2xl overflow-hidden aspect-square">
-                      <img src={cardUsage} alt="Working professional" className="w-full h-full object-cover" />
+                      <img src={cardUsage} alt="Debt consolidation with personal loans" className="w-full h-full object-cover" loading="lazy" />
                     </div>
                   </div>
                   <div className="space-y-3 pt-3">
                     <div className="rounded-2xl overflow-hidden aspect-[4/5]">
-                      <img src={personalLoansHero} alt="Team collaboration" className="w-full h-full object-cover" />
+                      <img src={travelRewards} alt="Vacation funded with personal loan" className="w-full h-full object-cover" loading="lazy" />
                     </div>
                     <div className="rounded-2xl overflow-hidden aspect-square">
-                      <img src={businessGrowth} alt="Office work" className="w-full h-full object-cover" />
+                      <img src={creditCardsHero} alt="Financial freedom through personal loan funding" className="w-full h-full object-cover" loading="lazy" />
                     </div>
                   </div>
                 </div>
@@ -525,7 +535,7 @@ const PersonalLoans = () => {
             
             {/* Right side - Form */}
             <div className="relative">
-              <LeadSubmissionForm defaultServiceType="personal-loan" variant="embedded" />
+              <LeadSubmissionForm defaultServiceType="get-funded" variant="embedded" />
             </div>
           </div>
         </div>

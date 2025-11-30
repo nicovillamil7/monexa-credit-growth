@@ -4,6 +4,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import LeadSubmissionForm from "@/components/LeadSubmissionForm";
 import InteractiveUseCases from "@/components/InteractiveUseCases";
+import SEO from "@/components/SEO";
+import { creditCardServiceSchema } from "@/lib/seo-schemas";
 import { 
   CreditCard, 
   Gift, 
@@ -23,6 +25,9 @@ import { useCallback, useEffect, useState } from "react";
 import creditCardsHero from "@/assets/credit-cards-hero.jpg";
 import cardUsage from "@/assets/card-usage.jpg";
 import travelRewards from "@/assets/travel-rewards.jpg";
+import businessGrowth from "@/assets/business-growth.jpg";
+import homeImprovement from "@/assets/home-improvement.jpg";
+import personalLoansHero from "@/assets/personal-loans-hero.jpg";
 
 const CreditCards = () => {
   const scrollToForm = () => {
@@ -108,6 +113,12 @@ const CreditCards = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
+      <SEO 
+        title="Best Credit Cards | Rewards & Cashback | Monexa"
+        description="Find your perfect credit card! Compare rewards, cashback, balance transfer, and secured cards. All credit scores welcome. Apply with confidence today."
+        keywords="credit cards, best credit cards, rewards credit cards, cashback cards, balance transfer cards, secured credit cards, credit card approval"
+        structuredData={creditCardServiceSchema}
+      />
       <Header />
       
       {/* Hero Section - Clean Design */}
@@ -136,26 +147,26 @@ const CreditCards = () => {
                 <div className="grid grid-cols-3 gap-3">
                   <div className="space-y-3">
                     <div className="rounded-2xl overflow-hidden aspect-square">
-                      <img src={creditCardsHero} alt="Premium credit cards" className="w-full h-full object-cover" />
+                      <img src={creditCardsHero} alt="Premium credit cards for building credit" className="w-full h-full object-cover" loading="lazy" />
                     </div>
                     <div className="rounded-2xl overflow-hidden aspect-[3/4]">
-                      <img src={cardUsage} alt="Using credit card" className="w-full h-full object-cover" />
+                      <img src={cardUsage} alt="Using credit card for everyday purchases" className="w-full h-full object-cover" loading="lazy" />
                     </div>
                   </div>
                   <div className="space-y-3 pt-6">
                     <div className="rounded-2xl overflow-hidden aspect-[3/4]">
-                      <img src={travelRewards} alt="Travel rewards" className="w-full h-full object-cover" />
+                      <img src={travelRewards} alt="Travel rewards and benefits with credit cards" className="w-full h-full object-cover" loading="lazy" />
                     </div>
                     <div className="rounded-2xl overflow-hidden aspect-square">
-                      <img src={creditCardsHero} alt="Card benefits" className="w-full h-full object-cover" />
+                      <img src={businessGrowth} alt="Business credit cards for entrepreneurs" className="w-full h-full object-cover" loading="lazy" />
                     </div>
                   </div>
                   <div className="space-y-3 pt-3">
                     <div className="rounded-2xl overflow-hidden aspect-[4/5]">
-                      <img src={cardUsage} alt="Shopping with card" className="w-full h-full object-cover" />
+                      <img src={homeImprovement} alt="Home improvement purchases with credit cards" className="w-full h-full object-cover" loading="lazy" />
                     </div>
                     <div className="rounded-2xl overflow-hidden aspect-square">
-                      <img src={travelRewards} alt="Earning rewards" className="w-full h-full object-cover" />
+                      <img src={personalLoansHero} alt="Financial freedom with credit card rewards" className="w-full h-full object-cover" loading="lazy" />
                     </div>
                   </div>
                 </div>
@@ -525,7 +536,7 @@ const CreditCards = () => {
             
             {/* Right side - Form */}
             <div className="relative">
-              <LeadSubmissionForm defaultServiceType="credit-card" variant="embedded" />
+              <LeadSubmissionForm defaultServiceType="get-funded" variant="embedded" />
             </div>
           </div>
         </div>

@@ -4,6 +4,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import LeadSubmissionForm from "@/components/LeadSubmissionForm";
 import InteractiveUseCases from "@/components/InteractiveUseCases";
+import SEO from "@/components/SEO";
+import { creditRepairServiceSchema, faqSchema } from "@/lib/seo-schemas";
 import { 
   FileText, 
   TrendingUp, 
@@ -19,9 +21,15 @@ import {
 } from "lucide-react";
 import useEmblaCarousel from "embla-carousel-react";
 import { useCallback, useEffect, useState } from "react";
-import creditScoreGauge from "@/assets/credit-score-gauge.jpg";
-import creditScorePhone from "@/assets/credit-score-phone.png";
-import personalLoansHero from "@/assets/personal-loans-hero.jpg";
+// Using Unsplash for high-quality lifestyle images
+const happyHomeowners = "https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=800&h=600&fit=crop&q=80&auto=format"; // Family looking at house from outside
+const businessRealEstate = "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=600&fit=crop&q=80&auto=format"; // Commercial building
+const corporateFinance = "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=600&fit=crop&q=80&auto=format"; // Modern corporate office
+const businessSuccess = "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&h=600&fit=crop&q=80&auto=format"; // Business team meeting
+const apartmentLiving = "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&h=600&fit=crop&q=80&auto=format"; // Modern apartment interior
+const collegeEducation = "https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=800&h=600&fit=crop&q=80&auto=format"; // Graduation caps celebration
+const carPurchase = "https://images.unsplash.com/photo-1581540222194-0def2dda95b8?w=800&h=600&fit=crop&q=80&auto=format"; // Normal sedan car
+const businessHandshake = "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&h=600&fit=crop&q=80&auto=format"; // Business deal/handshake
 
 const Repair = () => {
   const scrollToForm = () => {
@@ -105,8 +113,25 @@ const Repair = () => {
     emblaApi.on('reInit', onSelect);
   }, [emblaApi, onSelect]);
 
+  const faqData = [
+    {
+      question: "How long does credit repair take?",
+      answer: "Most clients see improvements within 30-90 days, though results vary based on individual credit situations. We provide monthly updates on your progress."
+    },
+    {
+      question: "Can you remove negative items from my credit report?",
+      answer: "We dispute inaccurate, unverifiable, or unfair items with credit bureaus. If items are accurate, we help you develop strategies to minimize their impact."
+    }
+  ];
+
   return (
     <div className="min-h-screen flex flex-col bg-background">
+      <SEO 
+        title="Credit Repair Services | Fix Your Credit Score | Monexa"
+        description="Professional credit repair services. Dispute errors, remove negative items, boost your credit score. Free credit review. Results in 30-90 days. CROA compliant."
+        keywords="credit repair, fix credit score, dispute credit errors, remove collections, credit repair company, improve credit rating"
+        structuredData={[creditRepairServiceSchema, faqSchema(faqData)]}
+      />
       <Header />
       
       {/* Hero Section - Clean Design */}
@@ -115,10 +140,10 @@ const Repair = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
-                Clean up your credit. Unlock your future.
+                Fix your credit. Unlock your dreams.
               </h1>
               <p className="text-lg text-muted-foreground max-w-lg">
-                Dispute errors, remove negative items, and build a credit profile that opens doors to better rates and more opportunities.
+                Qualify for mortgages, auto loans, and better rates. Remove errors, boost your score, and open doors to home ownership, car financing, and business growth.
               </p>
               <Button 
                 size="lg" 
@@ -135,26 +160,26 @@ const Repair = () => {
                 <div className="grid grid-cols-3 gap-3">
                   <div className="space-y-3">
                     <div className="rounded-2xl overflow-hidden aspect-square">
-                      <img src={creditScoreGauge} alt="Credit score gauge" className="w-full h-full object-cover" />
+                      <img src={happyHomeowners} alt="Family looking at dream house from outside ready to buy with improved credit" className="w-full h-full object-cover" loading="lazy" />
                     </div>
                     <div className="rounded-2xl overflow-hidden aspect-[3/4]">
-                      <img src={personalLoansHero} alt="Financial freedom" className="w-full h-full object-cover" />
+                      <img src={businessSuccess} alt="Business team meeting for funding approval" className="w-full h-full object-cover" loading="lazy" />
                     </div>
                   </div>
                   <div className="space-y-3 pt-6">
                     <div className="rounded-2xl overflow-hidden aspect-[3/4]">
-                      <img src={creditScorePhone} alt="Credit monitoring app" className="w-full h-full object-cover" />
+                      <img src={collegeEducation} alt="College graduation ceremony students throwing caps celebrating education success" className="w-full h-full object-cover" loading="lazy" />
                     </div>
                     <div className="rounded-2xl overflow-hidden aspect-square">
-                      <img src={creditScoreGauge} alt="Score improvement" className="w-full h-full object-cover" />
+                      <img src={apartmentLiving} alt="Modern apartment interior for qualified renters" className="w-full h-full object-cover" loading="lazy" />
                     </div>
                   </div>
                   <div className="space-y-3 pt-3">
                     <div className="rounded-2xl overflow-hidden aspect-[4/5]">
-                      <img src={personalLoansHero} alt="Consultation" className="w-full h-full object-cover" />
+                      <img src={businessHandshake} alt="Business deal handshake after securing funding" className="w-full h-full object-cover" loading="lazy" />
                     </div>
                     <div className="rounded-2xl overflow-hidden aspect-square">
-                      <img src={creditScorePhone} alt="Credit progress" className="w-full h-full object-cover" />
+                      <img src={carPurchase} alt="Normal sedan car purchase approved with better credit score and auto loan" className="w-full h-full object-cover" loading="lazy" />
                     </div>
                   </div>
                 </div>
@@ -185,50 +210,96 @@ const Repair = () => {
           <div className="text-center mb-12">
             <span className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground mb-4">
               <span className="w-2 h-2 rounded-full bg-primary"></span>
-              CREDIT REPAIR
+              WHAT YOU CAN ACHIEVE
             </span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-              Comprehensive credit repair services.
+              Your credit repair opens doors.
             </h2>
             <p className="text-muted-foreground max-w-3xl mx-auto">
-              Our expert team works with credit bureaus and creditors on your behalf to dispute errors, negotiate removals, and develop strategies to improve your credit score.
+              Better credit isn't just a number—it's your ticket to major life milestones. Here's what our clients achieve after repairing their credit with Monexa.
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
             <Card className="bg-card border-border hover:shadow-medium transition-shadow">
               <CardContent className="pt-6 pb-6">
-                <div className="w-12 h-12 rounded-xl bg-muted flex items-center justify-center mb-4">
-                  <FileText className="h-6 w-6 text-foreground" />
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                  <svg className="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                  </svg>
                 </div>
-                <h3 className="text-xl font-semibold mb-2">Error Disputes</h3>
-                <p className="text-muted-foreground text-sm">
-                  Challenge inaccurate information on your credit reports including late payments, collections, charge-offs, and incorrect accounts.
+                <h3 className="text-xl font-semibold mb-2">Buy Your Dream Home</h3>
+                <p className="text-muted-foreground text-sm mb-3">
+                  Qualify for mortgage approvals and secure better interest rates. A 100-point credit score increase can save you $50K+ over the life of your loan.
                 </p>
+                <ul className="space-y-1 text-xs text-muted-foreground">
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="h-3 w-3 text-primary flex-shrink-0" />
+                    Lower mortgage rates
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="h-3 w-3 text-primary flex-shrink-0" />
+                    Easier loan approval
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="h-3 w-3 text-primary flex-shrink-0" />
+                    Qualify to rent apartments
+                  </li>
+                </ul>
               </CardContent>
             </Card>
 
             <Card className="bg-card border-border hover:shadow-medium transition-shadow">
               <CardContent className="pt-6 pb-6">
-                <div className="w-12 h-12 rounded-xl bg-muted flex items-center justify-center mb-4">
-                  <TrendingUp className="h-6 w-6 text-foreground" />
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                  <svg className="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
                 </div>
-                <h3 className="text-xl font-semibold mb-2">Score Optimization</h3>
-                <p className="text-muted-foreground text-sm">
-                  Strategic improvements to boost your score through utilization management, account mix optimization, and payment history coaching.
+                <h3 className="text-xl font-semibold mb-2">Get Approved for Auto Loans</h3>
+                <p className="text-muted-foreground text-sm mb-3">
+                  Drive off the lot with confidence. Better credit means lower monthly payments, reduced interest rates, and access to the vehicles you want.
                 </p>
+                <ul className="space-y-1 text-xs text-muted-foreground">
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="h-3 w-3 text-primary flex-shrink-0" />
+                    Lower APR on car loans
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="h-3 w-3 text-primary flex-shrink-0" />
+                    Higher approval chances
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="h-3 w-3 text-primary flex-shrink-0" />
+                    Save thousands in interest
+                  </li>
+                </ul>
               </CardContent>
             </Card>
 
             <Card className="bg-card border-border hover:shadow-medium transition-shadow">
               <CardContent className="pt-6 pb-6">
-                <div className="w-12 h-12 rounded-xl bg-muted flex items-center justify-center mb-4">
-                  <Users className="h-6 w-6 text-foreground" />
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                  <TrendingUp className="h-6 w-6 text-primary" />
                 </div>
-                <h3 className="text-xl font-semibold mb-2">Expert Coaching</h3>
-                <p className="text-muted-foreground text-sm">
-                  Personalized guidance from credit experts who help you understand your report, build better habits, and maintain long-term credit health.
+                <h3 className="text-xl font-semibold mb-2">Unlock Better Rates</h3>
+                <p className="text-muted-foreground text-sm mb-3">
+                  Access business funding, credit cards with rewards, and personal loans at competitive rates. Good credit saves you money on everything.
                 </p>
+                <ul className="space-y-1 text-xs text-muted-foreground">
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="h-3 w-3 text-primary flex-shrink-0" />
+                    Business funding access
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="h-3 w-3 text-primary flex-shrink-0" />
+                    Premium credit cards
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="h-3 w-3 text-primary flex-shrink-0" />
+                    Lower interest on all loans
+                  </li>
+                </ul>
               </CardContent>
             </Card>
           </div>
@@ -253,22 +324,22 @@ const Repair = () => {
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="relative">
                 <div className="rounded-3xl overflow-hidden shadow-large">
-                  <img src={creditScoreGauge} alt="Credit analysis" className="w-full h-80 object-cover" />
+                  <img src={businessRealEstate} alt="Business partners purchasing commercial warehouse property" className="w-full h-80 object-cover" loading="lazy" />
                 </div>
               </div>
               <div className="space-y-6">
                 <h3 className="text-2xl md:text-3xl font-bold">
-                  We fight for your credit rights.
+                  Get approved for the things that matter.
                 </h3>
                 <p className="text-muted-foreground">
-                  Our team of credit experts analyzes your reports, identifies errors and negative items, and creates a personalized strategy to improve your score. We challenge inaccuracies and negotiate with creditors on your behalf.
+                  Our credit repair service helps you qualify for mortgages, auto loans, and business funding. We've helped 12,000+ clients remove errors, boost their scores, and achieve their financial goals—from buying homes to starting businesses.
                 </p>
                 <div className="grid sm:grid-cols-2 gap-4">
                   {[
-                    { title: "Credit Report Analysis", desc: "Full review of all three bureau reports" },
-                    { title: "Error Identification", desc: "Find inaccurate and disputable items" },
-                    { title: "Dispute Filing", desc: "Professional disputes with bureaus" },
-                    { title: "Progress Tracking", desc: "Regular updates on your improvements" }
+                    { title: "Home Buying", desc: "Qualify for mortgages with better rates" },
+                    { title: "Auto Loans", desc: "Get approved for car financing" },
+                    { title: "Lower Rates", desc: "Save thousands on all credit products" },
+                    { title: "Business Funding", desc: "Access capital to grow your business" }
                   ].map((item, index) => (
                     <div key={index} className="flex items-start gap-3">
                       <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
@@ -283,7 +354,7 @@ const Repair = () => {
                   className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full"
                   onClick={scrollToForm}
                 >
-                  Get Your Free Review
+                  Start Your Journey
                 </Button>
               </div>
             </div>
@@ -292,17 +363,17 @@ const Repair = () => {
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="order-2 lg:order-1 space-y-6">
                 <h3 className="text-2xl md:text-3xl font-bold">
-                  Why choose Monexa for credit repair?
+                  Why Monexa gets results.
                 </h3>
                 <p className="text-muted-foreground">
-                  With years of experience and thousands of satisfied clients, we know what it takes to improve credit scores. Our transparent process and dedicated support team ensure you're never left in the dark.
+                  We've helped 12,000+ clients qualify for mortgages, auto loans, and business funding. Our proven process combines expert dispute filing, strategic score optimization, and personalized coaching to help you achieve real-world financial goals.
                 </p>
                 <div className="space-y-3">
                   {[
-                    { icon: Target, text: "Results-Driven Approach" },
-                    { icon: Shield, text: "CROA Compliant Process" },
-                    { icon: Users, text: "Dedicated Support Team" },
-                    { icon: Zap, text: "Fast, Efficient Service" }
+                    { icon: Target, text: "140M+ Credit Points Increased" },
+                    { icon: Shield, text: "CROA Compliant & Transparent" },
+                    { icon: Users, text: "12,000+ Businesses Funded" },
+                    { icon: Zap, text: "Results in 30-90 Days" }
                   ].map((item, index) => (
                     <div key={index} className="flex items-center gap-3">
                       <div className="w-8 h-8 rounded-lg bg-background flex items-center justify-center">
@@ -317,12 +388,12 @@ const Repair = () => {
                   className="rounded-full border-primary text-primary hover:bg-primary hover:text-primary-foreground"
                   onClick={scrollToForm}
                 >
-                  Talk to an Expert
+                  See If You Qualify
                 </Button>
               </div>
               <div className="order-1 lg:order-2 relative">
                 <div className="rounded-3xl overflow-hidden shadow-large">
-                  <img src={creditScorePhone} alt="Credit monitoring" className="w-full h-80 object-cover" />
+                  <img src={corporateFinance} alt="Professional financial institution office representing trusted credit services" className="w-full h-80 object-cover" loading="lazy" />
                 </div>
               </div>
             </div>

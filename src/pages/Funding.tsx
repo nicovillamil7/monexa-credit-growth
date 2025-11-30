@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ProductCard from "@/components/ProductCard";
+import SEO from "@/components/SEO";
 import { Card, CardContent } from "@/components/ui/card";
 import { 
   DollarSign, 
@@ -24,6 +25,11 @@ import {
 const Funding = () => {
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO 
+        title="Credit Funding Options | Loans & Credit Cards | Monexa"
+        description="Access multiple funding options: personal loans, credit cards, and trade lines. High approval rates, fast decisions, and secure applications. Get prequalified now!"
+        keywords="credit funding, funding options, personal loans, credit cards, trade lines, business funding, fast funding approval"
+      />
       <Header />
 
       {/* Hero Section */}

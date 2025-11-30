@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import LeadSubmissionForm from "@/components/LeadSubmissionForm";
 import InteractiveUseCases from "@/components/InteractiveUseCases";
+import SEO from "@/components/SEO";
 import { 
   TrendingUp, 
   Clock, 
@@ -14,13 +15,18 @@ import {
   Star,
   ChevronLeft,
   ChevronRight,
-  Zap
+  Zap,
+  DollarSign
 } from "lucide-react";
 import useEmblaCarousel from "embla-carousel-react";
 import { useCallback, useEffect, useState } from "react";
 import creditScoreGauge from "@/assets/credit-score-gauge.jpg";
 import creditScorePhone from "@/assets/credit-score-phone.png";
 import businessGrowth from "@/assets/business-growth.jpg";
+import cardUsage from "@/assets/card-usage.jpg";
+import travelRewards from "@/assets/travel-rewards.jpg";
+import homeImprovement from "@/assets/home-improvement.jpg";
+import creditCardsHero from "@/assets/credit-cards-hero.jpg";
 
 const TradeLine = () => {
   const scrollToForm = () => {
@@ -40,39 +46,39 @@ const TradeLine = () => {
 
   const testimonials = [
     {
-      name: "Brandon H.",
-      role: "First-Time Buyer",
-      content: "Trade lines helped me go from no credit to a 720 score in just 2 months. I finally qualified for my first auto loan!",
+      name: "Sarah M.",
+      role: "Recent Graduate",
+      content: "I had zero credit history and kept getting denied. Trade lines built my credit file in 60 days. I applied for my first credit card and got approved with a $3,000 limit!",
       rating: 5
     },
     {
-      name: "Nicole R.",
-      role: "Real Estate Investor",
-      content: "Needed a quick score boost for a property deal. Monexa's trade lines delivered exactly what I needed on time.",
+      name: "James K.",
+      role: "Career Starter",
+      content: "Never had a credit card before. After using trade lines, I finally had enough history to qualify. Got approved for a cashback card and started building my own credit!",
       rating: 5
     },
     {
-      name: "Kevin M.",
-      role: "Recent Immigrant",
-      content: "Moving to the US with no credit history was tough. Trade lines gave me the head start I needed.",
+      name: "Maria R.",
+      role: "Young Professional",
+      content: "The catch-22 was frustrating—couldn't get credit without credit. Trade lines solved it. Now I have 2 credit cards and I'm building my score every month!",
       rating: 5
     },
     {
-      name: "Stephanie L.",
-      role: "Small Business Owner",
-      content: "My business needed better financing terms. After adding trade lines, my personal credit qualified me for better rates.",
+      name: "Kevin L.",
+      role: "New to US",
+      content: "Moving to the US with no credit history was tough. Trade lines gave me the foundation I needed. Applied for 3 cards, got approved for 2. Finally building my American credit!",
+      rating: 5
+    },
+    {
+      name: "Emily T.",
+      role: "First-Time Applicant",
+      content: "Was nervous about applying with no history. Trade lines built my credit file fast. Got my first card with travel rewards—already planning my first trip!",
       rating: 5
     },
     {
       name: "Daniel W.",
       role: "Credit Rebuilder",
-      content: "After bankruptcy, I thought I'd never have good credit again. Trade lines helped me rebuild faster than I imagined.",
-      rating: 5
-    },
-    {
-      name: "Rachel T.",
-      role: "Young Professional",
-      content: "As a 22-year-old with a thin file, trade lines gave me the credit age I needed to get approved for my apartment.",
+      content: "After financial setbacks, I had no active credit. Trade lines helped me establish a positive history again. Now I'm approved and rebuilding the right way!",
       rating: 5
     }
   ];
@@ -106,6 +112,11 @@ const TradeLine = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
+      <SEO 
+        title="Trade Lines | Build Credit & Get Approved for Credit Cards | Monexa"
+        description="No credit card? No problem. Build 5-10 years of credit history instantly with trade lines, then get approved for the credit cards you want. We guide you from zero credit to approved. No hard inquiry required!"
+        keywords="trade lines, build credit fast, get approved for credit card, no credit history, first credit card, authorized user tradelines, build credit from scratch, credit card approval, start building credit"
+      />
       <Header />
       
       {/* Hero Section - Clean Design */}
@@ -113,47 +124,61 @@ const TradeLine = () => {
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-2">
+                <Zap className="h-4 w-4" />
+                <span>Build Credit Fast + Get Approved</span>
+              </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
-                Build credit history fast with trade lines.
+                No credit card? Build history fast and get approved.
               </h1>
               <p className="text-lg text-muted-foreground max-w-lg">
-                Get added as an authorized user to established accounts and benefit from years of positive payment history—instantly.
+                Get added to established accounts with years of perfect payment history. Build your credit file fast so you can apply for and get approved for the credit cards you want—no hard inquiry required.
               </p>
-              <Button 
-                size="lg" 
-                className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full px-8"
-                onClick={scrollToForm}
-              >
-                Open a Trade Line
-              </Button>
+              <div className="flex flex-wrap gap-4">
+                <Button 
+                  size="lg" 
+                  className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full px-8"
+                  onClick={scrollToForm}
+                >
+                  Build My Credit Now
+                </Button>
+                <Button 
+                  size="lg" 
+                  variant="outline"
+                  className="rounded-full"
+                  onClick={() => document.getElementById('funding-uses')?.scrollIntoView({ behavior: 'smooth' })}
+                >
+                  See What You Can Do
+                </Button>
+              </div>
             </div>
             
-            {/* Image Grid */}
+            {/* Image Grid - More Human & Social */}
             <div className="relative">
               <div className="bg-muted rounded-3xl p-6 md:p-8">
                 <div className="grid grid-cols-3 gap-3">
                   <div className="space-y-3">
                     <div className="rounded-2xl overflow-hidden aspect-square">
-                      <img src={creditScoreGauge} alt="Credit score improvement" className="w-full h-full object-cover" />
+                      <img src={travelRewards} alt="Travel and lifestyle with better credit" className="w-full h-full object-cover" />
                     </div>
                     <div className="rounded-2xl overflow-hidden aspect-[3/4]">
-                      <img src={businessGrowth} alt="Financial growth" className="w-full h-full object-cover" />
+                      <img src={cardUsage} alt="Using credit cards for everyday purchases" className="w-full h-full object-cover" />
                     </div>
                   </div>
                   <div className="space-y-3 pt-6">
                     <div className="rounded-2xl overflow-hidden aspect-[3/4]">
-                      <img src={creditScorePhone} alt="Credit monitoring" className="w-full h-full object-cover" />
+                      <img src={creditScorePhone} alt="Track your credit growth" className="w-full h-full object-cover" />
                     </div>
                     <div className="rounded-2xl overflow-hidden aspect-square">
-                      <img src={creditScoreGauge} alt="Score tracking" className="w-full h-full object-cover" />
+                      <img src={homeImprovement} alt="Home projects with extra funding" className="w-full h-full object-cover" />
                     </div>
                   </div>
                   <div className="space-y-3 pt-3">
                     <div className="rounded-2xl overflow-hidden aspect-[4/5]">
-                      <img src={businessGrowth} alt="Credit building" className="w-full h-full object-cover" />
+                      <img src={businessGrowth} alt="Grow your business opportunities" className="w-full h-full object-cover" />
                     </div>
                     <div className="rounded-2xl overflow-hidden aspect-square">
-                      <img src={creditScorePhone} alt="Progress tracking" className="w-full h-full object-cover" />
+                      <img src={creditCardsHero} alt="Access better credit cards" className="w-full h-full object-cover" />
                     </div>
                   </div>
                 </div>
@@ -184,49 +209,49 @@ const TradeLine = () => {
           <div className="text-center mb-12">
             <span className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground mb-4">
               <span className="w-2 h-2 rounded-full bg-primary"></span>
-              TRADE LINES
+              WHY TRADE LINES
             </span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-              Instant credit history boost.
+              Build credit history fast.
             </h2>
             <p className="text-muted-foreground max-w-3xl mx-auto">
-              Trade lines allow you to piggyback on established credit accounts. When you're added as an authorized user, you inherit the account's positive history, age, and utilization—giving your score an immediate boost.
+              No credit? Thin credit file? Trade lines add established accounts to your profile, giving you instant credit age and perfect payment history—so you can finally get approved for the credit cards you want.
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
             <Card className="bg-card border-border hover:shadow-medium transition-shadow">
               <CardContent className="pt-6 pb-6">
-                <div className="w-12 h-12 rounded-xl bg-muted flex items-center justify-center mb-4">
-                  <TrendingUp className="h-6 w-6 text-foreground" />
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                  <TrendingUp className="h-6 w-6 text-primary" />
                 </div>
-                <h3 className="text-xl font-semibold mb-2">Score Boost</h3>
+                <h3 className="text-xl font-semibold mb-2">Get Approved Faster</h3>
                 <p className="text-muted-foreground text-sm">
-                  Benefit from years of positive payment history without waiting to build your own. Many users see significant score increases.
+                  Instantly inherit years of perfect payment history. Build the credit file you need to qualify for credit cards—without waiting years to establish your own history.
                 </p>
               </CardContent>
             </Card>
 
             <Card className="bg-card border-border hover:shadow-medium transition-shadow">
               <CardContent className="pt-6 pb-6">
-                <div className="w-12 h-12 rounded-xl bg-muted flex items-center justify-center mb-4">
-                  <Clock className="h-6 w-6 text-foreground" />
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                  <Clock className="h-6 w-6 text-primary" />
                 </div>
                 <h3 className="text-xl font-semibold mb-2">Fast Results</h3>
                 <p className="text-muted-foreground text-sm">
-                  Trade lines typically report to credit bureaus within 30-60 days. See improvements to your credit profile quickly.
+                  Trade lines report to credit bureaus within 30-60 days. Quickly build the credit history needed to start applying for cards with confidence.
                 </p>
               </CardContent>
             </Card>
 
             <Card className="bg-card border-border hover:shadow-medium transition-shadow">
               <CardContent className="pt-6 pb-6">
-                <div className="w-12 h-12 rounded-xl bg-muted flex items-center justify-center mb-4">
-                  <Shield className="h-6 w-6 text-foreground" />
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                  <Shield className="h-6 w-6 text-primary" />
                 </div>
                 <h3 className="text-xl font-semibold mb-2">No Hard Inquiry</h3>
                 <p className="text-muted-foreground text-sm">
-                  Being added as an authorized user doesn't require a credit check, so there's no hard inquiry to worry about.
+                  Being added as an authorized user doesn't require a credit check. Build your credit profile with zero negative impact.
                 </p>
               </CardContent>
             </Card>
@@ -239,10 +264,10 @@ const TradeLine = () => {
         <div className="container relative">
           <div className="mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              How trade lines<br />work for you.
+              From no credit to approved—<br />here's exactly how.
             </h2>
             <p className="text-muted-foreground max-w-2xl">
-              Trade lines are a proven strategy used by credit professionals to help individuals establish, rebuild, or boost their credit scores quickly and effectively.
+              Trade lines work by adding you as an authorized user on an established credit card with perfect payment history. That entire history gets reported to your credit file—giving you an instant credit foundation so you can apply for and get approved for your own credit cards.
             </p>
           </div>
 
@@ -252,22 +277,22 @@ const TradeLine = () => {
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="relative">
                 <div className="rounded-3xl overflow-hidden shadow-large">
-                  <img src={creditScoreGauge} alt="Credit score improvement" className="w-full h-80 object-cover" />
+                  <img src={travelRewards} alt="Enjoy life with better credit" className="w-full h-80 object-cover" />
                 </div>
               </div>
               <div className="space-y-6">
                 <h3 className="text-2xl md:text-3xl font-bold">
-                  Inherit positive credit history instantly.
+                  Go from zero to qualified—fast.
                 </h3>
                 <p className="text-muted-foreground">
-                  When you're added as an authorized user to an established credit card, the account's payment history, credit age, and utilization can appear on your credit report—giving you the benefit of years of responsible credit use.
+                  No credit history? No problem. When you're added as an authorized user to an established account (often 5-10+ years old), that entire perfect payment history appears on your credit report—instantly creating the credit foundation you need to get approved for cards.
                 </p>
                 <div className="grid sm:grid-cols-2 gap-4">
                   {[
-                    { title: "Authorized User", desc: "Added to an established account" },
-                    { title: "History Reports", desc: "Positive payment history on your report" },
-                    { title: "Credit Age", desc: "Benefit from account's age" },
-                    { title: "Low Utilization", desc: "Improve your overall utilization ratio" }
+                    { title: "Instant Credit File", desc: "Build 5-10 years of history immediately" },
+                    { title: "Credit Score Created", desc: "Establish a credit score where there was none" },
+                    { title: "Approval Ready", desc: "Meet minimum credit requirements for cards" },
+                    { title: "Apply with Confidence", desc: "Submit applications knowing you qualify" }
                   ].map((item, index) => (
                     <div key={index} className="flex items-start gap-3">
                       <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
@@ -282,7 +307,7 @@ const TradeLine = () => {
                   className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full"
                   onClick={scrollToForm}
                 >
-                  Get Started Today
+                  Build My Credit File Now
                 </Button>
               </div>
             </div>
@@ -291,21 +316,21 @@ const TradeLine = () => {
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="order-2 lg:order-1 space-y-6">
                 <h3 className="text-2xl md:text-3xl font-bold">
-                  Who benefits from trade lines?
+                  Perfect for people starting their credit journey.
                 </h3>
                 <p className="text-muted-foreground">
-                  Trade lines are ideal for anyone looking to establish, rebuild, or boost their credit quickly. Whether you're new to credit, recovering from past issues, or preparing for a major purchase—trade lines can help.
+                  Never had a credit card? Can't get approved because you have no credit history? Trade lines solve this catch-22. Build the credit foundation you need so you can finally start applying for—and getting approved for—credit cards.
                 </p>
                 <div className="space-y-3">
                   {[
-                    { icon: Users, text: "New to Credit / Thin Files" },
-                    { icon: BarChart, text: "Rebuilding After Setbacks" },
-                    { icon: Clock, text: "Preparing for Major Purchases" },
-                    { icon: TrendingUp, text: "Seeking Better Loan Terms" }
+                    { icon: Users, text: "No credit card or credit history yet" },
+                    { icon: TrendingUp, text: "Keep getting denied for lack of credit" },
+                    { icon: Zap, text: "Want to build credit history fast" },
+                    { icon: CheckCircle, text: "Ready to get approved for your first cards" }
                   ].map((item, index) => (
                     <div key={index} className="flex items-center gap-3">
-                      <div className="w-8 h-8 rounded-lg bg-background flex items-center justify-center">
-                        <item.icon className="h-4 w-4 text-foreground" />
+                      <div className="w-10 h-10 rounded-lg bg-background flex items-center justify-center">
+                        <item.icon className="h-5 w-5 text-primary" />
                       </div>
                       <span className="font-medium">{item.text}</span>
                     </div>
@@ -316,12 +341,12 @@ const TradeLine = () => {
                   className="rounded-full border-primary text-primary hover:bg-primary hover:text-primary-foreground"
                   onClick={scrollToForm}
                 >
-                  Find Your Trade Line
+                  Start My Credit Journey
                 </Button>
               </div>
               <div className="order-1 lg:order-2 relative">
                 <div className="rounded-3xl overflow-hidden shadow-large">
-                  <img src={creditScorePhone} alt="Credit monitoring app" className="w-full h-80 object-cover" />
+                  <img src={cardUsage} alt="Smart credit card usage" className="w-full h-80 object-cover" />
                 </div>
               </div>
             </div>
@@ -496,34 +521,34 @@ const TradeLine = () => {
                 <Zap className="h-8 w-8 text-primary-foreground" />
               </div>
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                Ready to boost your credit?
+                Ready to get your first credit card?
               </h2>
               <p className="text-primary-foreground/80 mb-6 max-w-lg">
-                Get matched with a trade line that fits your credit goals and timeline. Start building positive credit history today.
+                Build the credit history you need to finally get approved. We'll guide you through building your credit foundation with trade lines, then help you apply for the right credit cards.
               </p>
               <ul className="space-y-3 text-primary-foreground/90">
                 <li className="flex items-center gap-3">
                   <CheckCircle className="h-5 w-5 text-primary-foreground" />
-                  <span>Reports within 30-60 days</span>
+                  <span>Build 5-10 years of credit history instantly</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <CheckCircle className="h-5 w-5 text-primary-foreground" />
-                  <span>No hard credit inquiry</span>
+                  <span>No hard inquiry—build credit without risk</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <CheckCircle className="h-5 w-5 text-primary-foreground" />
-                  <span>Established account history</span>
+                  <span>Create the foundation to get approved</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <CheckCircle className="h-5 w-5 text-primary-foreground" />
-                  <span>Legal and compliant process</span>
+                  <span>Results in 30-60 days, then apply for cards</span>
                 </li>
               </ul>
             </div>
             
             {/* Right side - Form */}
             <div className="relative">
-              <LeadSubmissionForm defaultServiceType="trade-line" variant="embedded" />
+              <LeadSubmissionForm defaultServiceType="get-funded" variant="embedded" />
             </div>
           </div>
         </div>

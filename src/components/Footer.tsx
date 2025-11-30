@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
+import { Facebook, Instagram } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -15,16 +15,22 @@ const Footer = () => {
               Grow your credit. Unlock funding.
             </p>
             <div className="flex gap-4">
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+              <a 
+                href="https://www.facebook.com/profile.php?id=61580150353858" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-primary transition-colors"
+                aria-label="Visit our Facebook page"
+              >
                 <Facebook className="h-5 w-5" />
               </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                <Twitter className="h-5 w-5" />
-              </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                <Linkedin className="h-5 w-5" />
-              </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+              <a 
+                href="https://www.instagram.com/monexa.creditcapital/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-primary transition-colors"
+                aria-label="Visit our Instagram profile"
+              >
                 <Instagram className="h-5 w-5" />
               </a>
             </div>
@@ -67,13 +73,8 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/pricing" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                  Pricing
-                </Link>
-              </li>
-              <li>
-                <Link to="/contact" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                  Contact
+                <Link to="/apply" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                  Apply Now
                 </Link>
               </li>
             </ul>

@@ -3,11 +3,17 @@ import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ProductCard from "@/components/ProductCard";
+import SEO from "@/components/SEO";
 import { Wrench, CreditCard, LineChart, BookOpen } from "lucide-react";
 
 const Build = () => {
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO 
+        title="Build Your Credit Score | Credit Building Tools | Monexa"
+        description="Build strong credit with our credit repair services, secured credit cards, trade lines, and expert guidance. Start establishing your credit history today!"
+        keywords="build credit, build credit score, establish credit, credit building, secured credit cards, credit history"
+      />
       <Header />
 
       {/* Hero Section */}

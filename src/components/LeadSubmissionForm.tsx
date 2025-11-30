@@ -39,25 +39,50 @@ const revenueOptions = [
   { value: "$250,000+", label: "$250,000+" },
 ];
 
-const formSchema = z.object({
-  // Step 1 - Funding Details
-  fundingGoal: z.string().min(1, "Please enter your funding goal"),
-  applicantType: z.enum(["individual", "business"], {
-    required_error: "Please select if you are an individual or business",
-  }),
-  yearlyRevenue: z.string().min(1, "Please select your yearly revenue"),
-  // Step 2 - Credit Information
-  creditScore: z.string().min(1, "Please select your credit score range"),
-  creditProfile: z.array(z.string()).min(1, "Please select at least one option"),
-  // Step 3 - Contact Information
-  firstName: z.string().min(2, "First name is required").max(50),
-  lastName: z.string().min(2, "Last name is required").max(50),
-  email: z.string().email("Invalid email address").max(255),
-  phone: z.string().min(10, "Phone number must be at least 10 digits").max(20),
-  termsAccepted: z.boolean().refine((val) => val === true, {
-    message: "You must accept the terms and conditions",
-  }),
-});
+const serviceTypeOptions = [
+  { value: "credit-repair", label: "Credit Repair - Fix my credit score" },
+  { value: "get-funded", label: "Get Funded - I need business funding" },
+];
+
+// Create a base schema with conditional validation
+const createFormSchema = (serviceType: string) => {
+  const baseFields = {
+    serviceType: z.enum(["credit-repair", "get-funded"], {
+      required_error: "Please select a service type",
+    }),
+    creditScore: z.string().min(1, "Please select your credit score range"),
+    creditProfile: z.array(z.string()).min(1, "Please select at least one option"),
+    firstName: z.string().min(2, "First name is required").max(50),
+    lastName: z.string().min(2, "Last name is required").max(50),
+    email: z.string().email("Invalid email address").max(255),
+    phone: z.string().min(10, "Phone number must be at least 10 digits").max(20),
+    termsAccepted: z.boolean().refine((val) => val === true, {
+      message: "You must accept the terms and conditions",
+    }),
+  };
+
+  // Add funding-specific fields only for "get-funded"
+  if (serviceType === "get-funded") {
+    return z.object({
+      ...baseFields,
+      fundingGoal: z.string().min(1, "Please enter your funding goal"),
+      applicantType: z.enum(["individual", "business"], {
+        required_error: "Please select if you are an individual or business",
+      }),
+      yearlyRevenue: z.string().min(1, "Please select your yearly revenue"),
+    });
+  }
+
+  // For credit repair, funding fields are optional
+  return z.object({
+    ...baseFields,
+    fundingGoal: z.string().optional(),
+    applicantType: z.enum(["individual", "business"]).optional(),
+    yearlyRevenue: z.string().optional(),
+  });
+};
+
+const formSchema = createFormSchema("get-funded"); // Default schema
 
 type FormValues = z.infer<typeof formSchema>;
 
@@ -68,7 +93,7 @@ interface LeadSubmissionFormProps {
 }
 
 export default function LeadSubmissionForm({ 
-  defaultServiceType = "", 
+  defaultServiceType = "get-funded", 
   variant = "default",
   onSuccess 
 }: LeadSubmissionFormProps) {
@@ -77,9 +102,15 @@ export default function LeadSubmissionForm({
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
+  // Normalize service type
+  const normalizedServiceType = defaultServiceType === "credit-repair" || defaultServiceType === "get-funded" 
+    ? defaultServiceType 
+    : "get-funded";
+
   const form = useForm<FormValues>({
-    resolver: zodResolver(formSchema),
+    resolver: zodResolver(createFormSchema(normalizedServiceType)),
     defaultValues: {
+      serviceType: normalizedServiceType as "credit-repair" | "get-funded",
       fundingGoal: "",
       applicantType: undefined,
       yearlyRevenue: "",
@@ -93,12 +124,28 @@ export default function LeadSubmissionForm({
     },
   });
 
-  const steps = [
-    { title: "Funding Details", fields: ["fundingGoal", "applicantType", "yearlyRevenue"] },
-    { title: "Credit Information", fields: ["creditScore", "creditProfile"] },
-    { title: "Contact Information", fields: ["firstName", "lastName", "email", "phone", "termsAccepted"] },
-  ];
+  // Watch service type changes to dynamically adjust form
+  const selectedServiceType = form.watch("serviceType");
 
+  // Dynamic steps based on service type
+  const getSteps = () => {
+    if (selectedServiceType === "credit-repair") {
+      return [
+        { title: "Service Selection", fields: ["serviceType"] },
+        { title: "Credit Information", fields: ["creditScore", "creditProfile"] },
+        { title: "Contact Information", fields: ["firstName", "lastName", "email", "phone", "termsAccepted"] },
+      ];
+    }
+    // get-funded flow
+    return [
+      { title: "Service Selection", fields: ["serviceType"] },
+      { title: "Funding Details", fields: ["fundingGoal", "applicantType", "yearlyRevenue"] },
+      { title: "Credit Information", fields: ["creditScore", "creditProfile"] },
+      { title: "Contact Information", fields: ["firstName", "lastName", "email", "phone", "termsAccepted"] },
+    ];
+  };
+
+  const steps = getSteps();
   const totalSteps = steps.length;
   const progress = ((currentStep + 1) / totalSteps) * 100;
 
@@ -124,10 +171,9 @@ export default function LeadSubmissionForm({
   const onSubmit = async (data: FormValues) => {
     setIsSubmitting(true);
     try {
-      const { error } = await supabase.from("funding_leads").insert({
-        funding_goal: parseInt(data.fundingGoal.replace(/[^0-9]/g, "")),
-        applicant_type: data.applicantType,
-        yearly_revenue: data.yearlyRevenue,
+      // Prepare data based on service type
+      const leadData: any = {
+        service_type: data.serviceType,
         credit_score: data.creditScore,
         credit_profile: data.creditProfile,
         first_name: data.firstName,
@@ -135,8 +181,16 @@ export default function LeadSubmissionForm({
         email: data.email,
         phone: data.phone,
         terms_accepted: data.termsAccepted,
-        service_type: defaultServiceType || "general",
-      });
+      };
+
+      // Add funding-specific fields only if service type is get-funded
+      if (data.serviceType === "get-funded" && data.fundingGoal) {
+        leadData.funding_goal = parseInt(data.fundingGoal.replace(/[^0-9]/g, ""));
+        leadData.applicant_type = data.applicantType;
+        leadData.yearly_revenue = data.yearlyRevenue;
+      }
+
+      const { error } = await supabase.from("funding_leads").insert(leadData);
 
       if (error) throw error;
 
@@ -203,8 +257,47 @@ export default function LeadSubmissionForm({
       <CardContent>
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-            {/* Step 1 - Funding Details */}
+            {/* Step 0 - Service Selection */}
             {currentStep === 0 && (
+              <>
+                <FormField
+                  control={form.control}
+                  name="serviceType"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>What do you need? *</FormLabel>
+                      <FormControl>
+                        <RadioGroup
+                          onValueChange={(value) => {
+                            field.onChange(value);
+                            // Reset form schema when service type changes
+                            form.clearErrors();
+                          }}
+                          value={field.value}
+                          className="flex flex-col space-y-3"
+                        >
+                          {serviceTypeOptions.map((option) => (
+                            <div 
+                              key={option.value}
+                              className="flex items-center space-x-3 p-4 rounded-lg border border-input hover:bg-accent/50 cursor-pointer"
+                            >
+                              <RadioGroupItem value={option.value} id={option.value} />
+                              <label htmlFor={option.value} className="flex-1 cursor-pointer font-medium">
+                                {option.label}
+                              </label>
+                            </div>
+                          ))}
+                        </RadioGroup>
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+              </>
+            )}
+
+            {/* Step 1 - Funding Details (only for get-funded) */}
+            {currentStep === 1 && selectedServiceType === "get-funded" && (
               <>
                 <FormField
                   control={form.control}
@@ -292,8 +385,9 @@ export default function LeadSubmissionForm({
               </>
             )}
 
-            {/* Step 2 - Credit Information */}
-            {currentStep === 1 && (
+            {/* Credit Information - Step 1 for credit-repair, Step 2 for get-funded */}
+            {((currentStep === 1 && selectedServiceType === "credit-repair") || 
+              (currentStep === 2 && selectedServiceType === "get-funded")) && (
               <>
                 <FormField
                   control={form.control}
@@ -368,8 +462,9 @@ export default function LeadSubmissionForm({
               </>
             )}
 
-            {/* Step 3 - Contact Information */}
-            {currentStep === 2 && (
+            {/* Contact Information - Step 2 for credit-repair, Step 3 for get-funded */}
+            {((currentStep === 2 && selectedServiceType === "credit-repair") || 
+              (currentStep === 3 && selectedServiceType === "get-funded")) && (
               <>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <FormField

@@ -5,6 +5,8 @@ import Footer from "@/components/Footer";
 import TrustBadge from "@/components/TrustBadge";
 import ProductCard from "@/components/ProductCard";
 import ValueProp from "@/components/ValueProp";
+import SEO from "@/components/SEO";
+import { organizationSchema } from "@/lib/seo-schemas";
 import { 
   CheckCircle, 
   Zap, 
@@ -21,6 +23,12 @@ import { Card, CardContent } from "@/components/ui/card";
 const Home = () => {
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO 
+        title="Monexa | Credit Repair & Fast Funding Solutions"
+        description="Improve your credit score and access fast funding. Expert credit repair, personal loans up to $100K, credit cards, and trade lines. Free credit review available."
+        keywords="credit repair services, improve credit score, personal loans, credit funding, credit cards, trade lines, fast loan approval"
+        structuredData={organizationSchema}
+      />
       <Header />
       
       {/* Hero Section */}

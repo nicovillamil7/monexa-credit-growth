@@ -11,10 +11,9 @@ import PersonalLoans from "./pages/PersonalLoans";
 import CreditCards from "./pages/CreditCards";
 import TradeLine from "./pages/TradeLine";
 import About from "./pages/About";
-import Pricing from "./pages/Pricing";
 import Apply from "./pages/Apply";
-import SubmitInfo from "./pages/SubmitInfo";
 import NotFound from "./pages/NotFound";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 const queryClient = new QueryClient();
 
@@ -23,6 +22,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
+      <WhatsAppButton />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -33,9 +33,7 @@ const App = () => (
           <Route path="/funding/credit-cards" element={<CreditCards />} />
           <Route path="/funding/trade-line" element={<TradeLine />} />
           <Route path="/about" element={<About />} />
-          <Route path="/pricing" element={<Pricing />} />
           <Route path="/apply" element={<Apply />} />
-          <Route path="/submit-info" element={<SubmitInfo />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

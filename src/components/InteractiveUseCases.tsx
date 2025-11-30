@@ -18,6 +18,8 @@ import homeImprovement from "@/assets/home-improvement.jpg";
 import travelRewards from "@/assets/travel-rewards.jpg";
 import cardUsage from "@/assets/card-usage.jpg";
 import personalLoansHero from "@/assets/personal-loans-hero.jpg";
+import businessGrowth from "@/assets/business-growth.jpg";
+import creditCardsHero from "@/assets/credit-cards-hero.jpg";
 
 interface UseCase {
   icon: LucideIcon;
@@ -56,7 +58,7 @@ const useCasesData: UseCase[] = [
       "Terms up to 72 months"
     ],
     ctaText: "Finance Your Car",
-    image: "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=800&q=80"
+    image: "https://images.unsplash.com/photo-1619405399517-d7fce0f13302?w=800&auto=format&fit=crop&q=80"
   },
   {
     icon: TrendingUp,
@@ -70,7 +72,7 @@ const useCasesData: UseCase[] = [
       "Fund any accredited institution"
     ],
     ctaText: "Fund Your Education",
-    image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&q=80"
+    image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800&auto=format&fit=crop&q=80"
   },
   {
     icon: Plane,
@@ -112,7 +114,7 @@ const useCasesData: UseCase[] = [
       "Manageable monthly payments"
     ],
     ctaText: "Get Emergency Funds",
-    image: personalLoansHero
+    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&auto=format&fit=crop&q=80"
   }
 ];
 
@@ -197,8 +199,9 @@ const InteractiveUseCases = ({ scrollTargetId = "apply-form" }: InteractiveUseCa
               <div className="relative h-full min-h-[480px]">
                 <img 
                   src={selectedUseCase.image} 
-                  alt={selectedUseCase.title}
+                  alt={`${selectedUseCase.title} - ${selectedUseCase.shortDescription} with Monexa credit repair and funding`}
                   className="absolute inset-0 w-full h-full object-cover"
+                  loading="lazy"
                 />
                 {/* Subtle gradient overlay for polish */}
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent to-background/10" />
@@ -293,8 +296,9 @@ const InteractiveUseCases = ({ scrollTargetId = "apply-form" }: InteractiveUseCa
                     <div className="relative h-48 w-full">
                       <img 
                         src={useCase.image} 
-                        alt={useCase.title}
+                        alt={`${useCase.title} - ${useCase.shortDescription} with Monexa credit repair and funding`}
                         className="absolute inset-0 w-full h-full object-cover"
+                        loading="lazy"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent" />
                     </div>

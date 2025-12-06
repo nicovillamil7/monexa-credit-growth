@@ -19,6 +19,7 @@ import {
   Users
 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import valparHero from "@/assets/valpar-hero.png";
 
 const Home = () => {
   return (
@@ -31,25 +32,69 @@ const Home = () => {
       />
       <Header />
       
-      {/* Hero Section */}
-      <section className="relative bg-background py-20 md:py-32 overflow-hidden">
-        <div className="container">
-          <div className="max-w-7xl mx-auto">
-            <div className="max-w-4xl mx-auto text-center">
-              <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-6 animate-fade-in">
-                Your path to better credit and faster funding.
+      {/* Hero Section - Personal Brand */}
+      <section className="relative bg-gradient-to-br from-background via-background to-muted/30 overflow-hidden">
+        {/* Decorative elements */}
+        <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary/5 to-transparent pointer-events-none" />
+        <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
+        
+        <div className="container py-12 md:py-20 lg:py-24">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+            {/* Text Content */}
+            <div className="order-2 lg:order-1 text-center lg:text-left">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full text-sm font-medium text-primary mb-6 animate-fade-in">
+                <Star className="h-4 w-4 fill-primary" />
+                Your Credit Expert
+              </div>
+              
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground mb-6 animate-fade-in leading-tight">
+                Your path to <span className="text-primary">better credit</span> and faster funding.
               </h1>
-              <p className="text-xl md:text-2xl text-muted-foreground mb-8">
-                Monexa helps you repair credit, boost scores, and unlock approvals for loans, credit cards, and trade lines.
+              
+              <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-xl mx-auto lg:mx-0 animate-fade-in" style={{ animationDelay: "0.1s" }}>
+                I help you repair credit, boost scores, and unlock approvals for loans, credit cards, and trade lines — with a personal touch.
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" variant="accent" asChild className="hover-scale">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fade-in" style={{ animationDelay: "0.2s" }}>
+                <Button size="lg" variant="accent" asChild className="hover-scale text-base px-8">
                   <Link to="/apply">Apply Now</Link>
                 </Button>
-                <Button size="lg" variant="outline" asChild>
+                <Button size="lg" variant="outline" asChild className="text-base px-8">
                   <Link to="/apply">Free Credit Review</Link>
                 </Button>
+              </div>
+
+              {/* Quick trust indicators */}
+              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-6 mt-10 pt-8 border-t border-border/50 animate-fade-in" style={{ animationDelay: "0.3s" }}>
+                <div className="flex items-center gap-2">
+                  <CheckCircle className="h-5 w-5 text-accent" />
+                  <span className="text-sm text-muted-foreground">12K+ Clients Helped</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle className="h-5 w-5 text-accent" />
+                  <span className="text-sm text-muted-foreground">$56M+ Funded</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle className="h-5 w-5 text-accent" />
+                  <span className="text-sm text-muted-foreground">4.8★ Rating</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Photo */}
+            <div className="order-1 lg:order-2 flex justify-center lg:justify-end animate-fade-in">
+              <div className="relative">
+                {/* Gold accent ring */}
+                <div className="absolute -inset-4 bg-gradient-to-br from-primary/30 via-primary/10 to-transparent rounded-full blur-2xl" />
+                
+                {/* Image container */}
+                <div className="relative">
+                  <img 
+                    src={valparHero} 
+                    alt="Valpar - Credit Expert and Founder of Monexa" 
+                    className="w-full max-w-md lg:max-w-lg xl:max-w-xl h-auto object-contain drop-shadow-2xl"
+                  />
+                </div>
               </div>
             </div>
           </div>

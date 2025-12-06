@@ -28,9 +28,9 @@ const Header = () => {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <nav className="container flex h-16 items-center justify-between">
+      <nav className="container flex h-20 md:h-24 items-center justify-between">
         <Link to="/" className="flex items-center space-x-2">
-          <img src={monexaLogo} alt="Monexa Credit & Capital - Credit Repair and Funding Services" className="h-20 md:h-24 w-auto" />
+          <img src={monexaLogo} alt="Monexa Credit & Capital - Credit Repair and Funding Services" className="h-24 md:h-32 w-auto" />
         </Link>
 
         {/* Desktop Navigation */}

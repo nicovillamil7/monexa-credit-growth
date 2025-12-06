@@ -93,6 +93,11 @@ const Home = () => {
                     src={valparHero} 
                     alt="Valpar - Credit Expert and Founder of Monexa" 
                     className="w-full max-w-md lg:max-w-lg xl:max-w-xl h-auto object-contain drop-shadow-2xl"
+                    loading="eager"
+                    fetchPriority="high"
+                    decoding="async"
+                    width={600}
+                    height={750}
                   />
                 </div>
               </div>

@@ -34,10 +34,9 @@ const Home = () => {
       
       {/* Hero Section - Personal Brand with Dark Background */}
       <section className="relative bg-[hsl(var(--hero-bg))] overflow-hidden">
-        {/* Decorative elements */}
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary/10 to-transparent pointer-events-none" />
-        <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute top-1/4 right-1/3 w-64 h-64 bg-primary/10 rounded-full blur-2xl pointer-events-none" />
+        {/* Subtle decorative elements - very low opacity */}
+        <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary/5 to-transparent pointer-events-none" />
+        <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl pointer-events-none" />
         
         <div className="container py-12 md:py-20 lg:py-24">
           {/* Side-by-side layout on ALL screen sizes */}
@@ -61,7 +60,7 @@ const Home = () => {
                 <Button size="lg" variant="accent" asChild className="hover-scale text-sm sm:text-base px-4 sm:px-8">
                   <Link to="/apply">Apply Now</Link>
                 </Button>
-                <Button size="lg" variant="outline" asChild className="text-sm sm:text-base px-4 sm:px-8 border-[hsl(var(--hero-muted)/0.3)] text-[hsl(var(--hero-foreground))] hover:bg-[hsl(var(--hero-foreground)/0.1)]">
+                <Button size="lg" variant="outline" asChild className="text-sm sm:text-base px-4 sm:px-8 border-white/50 text-white hover:bg-white/10 hover:border-white">
                   <Link to="/apply">Free Credit Review</Link>
                 </Button>
               </div>

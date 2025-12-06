@@ -110,22 +110,22 @@ const Home = () => {
       {/* Trust Stats Section */}
       <section className="py-16 bg-gradient-primary">
         <div className="container">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-4 gap-2 sm:gap-8 max-w-5xl mx-auto">
             <div className="text-center animate-fade-in">
-              <div className="text-3xl md:text-5xl font-bold text-primary-foreground mb-2">$56M+</div>
-              <div className="text-sm text-primary-foreground/80">Loans Processed</div>
+              <div className="text-xl sm:text-3xl md:text-5xl font-bold text-primary-foreground mb-1 sm:mb-2">$56M+</div>
+              <div className="text-[10px] sm:text-sm text-primary-foreground/80">Loans Processed</div>
             </div>
             <div className="text-center animate-fade-in" style={{ animationDelay: "0.1s" }}>
-              <div className="text-3xl md:text-5xl font-bold text-primary-foreground mb-2">140M+</div>
-              <div className="text-sm text-primary-foreground/80">Points Increased</div>
+              <div className="text-xl sm:text-3xl md:text-5xl font-bold text-primary-foreground mb-1 sm:mb-2">140M+</div>
+              <div className="text-[10px] sm:text-sm text-primary-foreground/80">Points Increased</div>
             </div>
             <div className="text-center animate-fade-in" style={{ animationDelay: "0.2s" }}>
-              <div className="text-3xl md:text-5xl font-bold text-primary-foreground mb-2">12K+</div>
-              <div className="text-sm text-primary-foreground/80">Businesses Supported</div>
+              <div className="text-xl sm:text-3xl md:text-5xl font-bold text-primary-foreground mb-1 sm:mb-2">12K+</div>
+              <div className="text-[10px] sm:text-sm text-primary-foreground/80">Businesses</div>
             </div>
             <div className="text-center animate-fade-in" style={{ animationDelay: "0.3s" }}>
-              <div className="text-3xl md:text-5xl font-bold text-primary-foreground mb-2">4.8★</div>
-              <div className="text-sm text-primary-foreground/80">Average Rating</div>
+              <div className="text-xl sm:text-3xl md:text-5xl font-bold text-primary-foreground mb-1 sm:mb-2">4.8★</div>
+              <div className="text-[10px] sm:text-sm text-primary-foreground/80">Rating</div>
             </div>
           </div>
         </div>

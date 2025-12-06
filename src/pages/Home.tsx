@@ -40,8 +40,8 @@ const Home = () => {
         
         <div className="container py-12 md:py-20 lg:py-24">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
-            {/* Text Content */}
-            <div className="order-2 lg:order-1 text-center lg:text-left">
+            {/* Text Content - appears FIRST on mobile */}
+            <div className="order-1 text-center lg:text-left">
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full text-sm font-medium text-primary mb-6 animate-fade-in">
                 <Star className="h-4 w-4 fill-primary" />
                 Your Credit Expert
@@ -81,18 +81,18 @@ const Home = () => {
               </div>
             </div>
 
-            {/* Photo */}
-            <div className="order-1 lg:order-2 flex justify-center lg:justify-end animate-fade-in">
+            {/* Photo - appears AFTER text on mobile */}
+            <div className="order-2 flex justify-center lg:justify-end animate-fade-in mt-8 lg:mt-0">
               <div className="relative">
                 {/* Gold accent ring */}
                 <div className="absolute -inset-4 bg-gradient-to-br from-primary/30 via-primary/10 to-transparent rounded-full blur-2xl" />
                 
-                {/* Image container */}
+                {/* Image container - smaller on mobile */}
                 <div className="relative">
                   <img 
                     src={valparHero} 
                     alt="Valpar - Credit Expert and Founder of Monexa" 
-                    className="w-full max-w-md lg:max-w-lg xl:max-w-xl h-auto object-contain drop-shadow-2xl"
+                    className="w-full max-w-[200px] sm:max-w-[280px] lg:max-w-lg xl:max-w-xl h-auto object-contain drop-shadow-2xl"
                     loading="eager"
                     fetchPriority="high"
                     decoding="async"

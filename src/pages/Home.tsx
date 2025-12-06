@@ -93,7 +93,7 @@ const Home = () => {
                   <img 
                     src={valparHero} 
                     alt="Valpar - Credit Expert and Founder of Monexa" 
-                    className="w-[120px] sm:w-[200px] md:w-[300px] lg:w-[400px] xl:w-[500px] h-auto object-contain drop-shadow-2xl"
+                    className="w-[160px] sm:w-[220px] md:w-[300px] lg:w-[400px] xl:w-[500px] h-auto object-contain drop-shadow-2xl"
                     loading="eager"
                     fetchPriority="high"
                     decoding="async"

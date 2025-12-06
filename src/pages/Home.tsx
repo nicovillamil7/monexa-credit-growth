@@ -39,33 +39,34 @@ const Home = () => {
         <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
         
         <div className="container py-12 md:py-20 lg:py-24">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
-            {/* Text Content - appears FIRST on mobile */}
-            <div className="order-1 text-center lg:text-left">
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full text-sm font-medium text-primary mb-6 animate-fade-in">
-                <Star className="h-4 w-4 fill-primary" />
+          {/* Side-by-side layout on ALL screen sizes */}
+          <div className="grid grid-cols-[1fr_auto] md:grid-cols-2 gap-4 sm:gap-8 lg:gap-12 items-center">
+            {/* Text Content */}
+            <div className="text-left">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 bg-primary/10 rounded-full text-xs sm:text-sm font-medium text-primary mb-4 sm:mb-6 animate-fade-in">
+                <Star className="h-3 w-3 sm:h-4 sm:w-4 fill-primary" />
                 Your Credit Expert
               </div>
               
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground mb-6 animate-fade-in leading-tight">
+              <h1 className="text-2xl sm:text-4xl lg:text-6xl xl:text-7xl font-bold text-foreground mb-3 sm:mb-6 animate-fade-in leading-tight">
                 Your path to <span className="text-primary">better credit</span> and faster funding.
               </h1>
               
-              <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-xl mx-auto lg:mx-0 animate-fade-in" style={{ animationDelay: "0.1s" }}>
+              <p className="text-sm sm:text-lg md:text-xl text-muted-foreground mb-4 sm:mb-8 max-w-xl animate-fade-in" style={{ animationDelay: "0.1s" }}>
                 I help you repair credit, boost scores, and unlock approvals for loans, credit cards, and trade lines — with a personal touch.
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fade-in" style={{ animationDelay: "0.2s" }}>
-                <Button size="lg" variant="accent" asChild className="hover-scale text-base px-8">
+              <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 animate-fade-in" style={{ animationDelay: "0.2s" }}>
+                <Button size="lg" variant="accent" asChild className="hover-scale text-sm sm:text-base px-4 sm:px-8">
                   <Link to="/apply">Apply Now</Link>
                 </Button>
-                <Button size="lg" variant="outline" asChild className="text-base px-8">
+                <Button size="lg" variant="outline" asChild className="text-sm sm:text-base px-4 sm:px-8">
                   <Link to="/apply">Free Credit Review</Link>
                 </Button>
               </div>
 
-              {/* Quick trust indicators */}
-              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-6 mt-10 pt-8 border-t border-border/50 animate-fade-in" style={{ animationDelay: "0.3s" }}>
+              {/* Quick trust indicators - hidden on very small screens */}
+              <div className="hidden sm:flex flex-wrap items-center gap-6 mt-10 pt-8 border-t border-border/50 animate-fade-in" style={{ animationDelay: "0.3s" }}>
                 <div className="flex items-center gap-2">
                   <CheckCircle className="h-5 w-5 text-accent" />
                   <span className="text-sm text-muted-foreground">12K+ Clients Helped</span>
@@ -81,18 +82,18 @@ const Home = () => {
               </div>
             </div>
 
-            {/* Photo - appears AFTER text on mobile */}
-            <div className="order-2 flex justify-center lg:justify-end animate-fade-in mt-8 lg:mt-0">
+            {/* Photo - side by side on all screens */}
+            <div className="flex justify-end animate-fade-in">
               <div className="relative">
                 {/* Gold accent ring */}
                 <div className="absolute -inset-4 bg-gradient-to-br from-primary/30 via-primary/10 to-transparent rounded-full blur-2xl" />
                 
-                {/* Image container - smaller on mobile */}
+                {/* Image container - responsive sizing */}
                 <div className="relative">
                   <img 
                     src={valparHero} 
                     alt="Valpar - Credit Expert and Founder of Monexa" 
-                    className="w-full max-w-[200px] sm:max-w-[280px] lg:max-w-lg xl:max-w-xl h-auto object-contain drop-shadow-2xl"
+                    className="w-[120px] sm:w-[200px] md:w-[300px] lg:w-[400px] xl:w-[500px] h-auto object-contain drop-shadow-2xl"
                     loading="eager"
                     fetchPriority="high"
                     decoding="async"
@@ -101,6 +102,22 @@ const Home = () => {
                   />
                 </div>
               </div>
+            </div>
+          </div>
+          
+          {/* Trust indicators for mobile - shown below on small screens */}
+          <div className="flex sm:hidden flex-wrap items-center justify-center gap-4 mt-8 pt-6 border-t border-border/50 animate-fade-in" style={{ animationDelay: "0.3s" }}>
+            <div className="flex items-center gap-1.5">
+              <CheckCircle className="h-4 w-4 text-accent" />
+              <span className="text-xs text-muted-foreground">12K+ Clients</span>
+            </div>
+            <div className="flex items-center gap-1.5">
+              <CheckCircle className="h-4 w-4 text-accent" />
+              <span className="text-xs text-muted-foreground">$56M+ Funded</span>
+            </div>
+            <div className="flex items-center gap-1.5">
+              <CheckCircle className="h-4 w-4 text-accent" />
+              <span className="text-xs text-muted-foreground">4.8★ Rating</span>
             </div>
           </div>
         </div>

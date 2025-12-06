@@ -105,19 +105,19 @@ const Home = () => {
             </div>
           </div>
           
-          {/* Trust indicators for mobile - shown below on small screens */}
-          <div className="flex sm:hidden flex-wrap items-center justify-center gap-4 mt-8 pt-6 border-t border-[hsl(var(--hero-muted)/0.2)] animate-fade-in" style={{ animationDelay: "0.3s" }}>
-            <div className="flex items-center gap-1.5">
-              <CheckCircle className="h-4 w-4 text-primary" />
-              <span className="text-xs text-[hsl(var(--hero-muted))]">12K+ Clients</span>
+          {/* Trust indicators for mobile - shown below on small screens, all in one row */}
+          <div className="flex sm:hidden items-center justify-center gap-3 mt-8 pt-6 border-t border-[hsl(var(--hero-muted)/0.2)] animate-fade-in" style={{ animationDelay: "0.3s" }}>
+            <div className="flex items-center gap-1">
+              <CheckCircle className="h-3 w-3 text-primary flex-shrink-0" />
+              <span className="text-[10px] text-[hsl(var(--hero-muted))] whitespace-nowrap">12K+ Clients</span>
             </div>
-            <div className="flex items-center gap-1.5">
-              <CheckCircle className="h-4 w-4 text-primary" />
-              <span className="text-xs text-[hsl(var(--hero-muted))]">$56M+ Funded</span>
+            <div className="flex items-center gap-1">
+              <CheckCircle className="h-3 w-3 text-primary flex-shrink-0" />
+              <span className="text-[10px] text-[hsl(var(--hero-muted))] whitespace-nowrap">$56M+ Funded</span>
             </div>
-            <div className="flex items-center gap-1.5">
-              <CheckCircle className="h-4 w-4 text-primary" />
-              <span className="text-xs text-[hsl(var(--hero-muted))]">4.8★ Rating</span>
+            <div className="flex items-center gap-1">
+              <CheckCircle className="h-3 w-3 text-primary flex-shrink-0" />
+              <span className="text-[10px] text-[hsl(var(--hero-muted))] whitespace-nowrap">4.8★ Rating</span>
             </div>
           </div>
         </div>

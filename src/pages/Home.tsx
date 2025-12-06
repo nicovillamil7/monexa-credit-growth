@@ -32,27 +32,28 @@ const Home = () => {
       />
       <Header />
       
-      {/* Hero Section - Personal Brand */}
-      <section className="relative bg-gradient-to-br from-background via-background to-muted/30 overflow-hidden">
+      {/* Hero Section - Personal Brand with Dark Background */}
+      <section className="relative bg-[hsl(var(--hero-bg))] overflow-hidden">
         {/* Decorative elements */}
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary/5 to-transparent pointer-events-none" />
-        <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary/10 to-transparent pointer-events-none" />
+        <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute top-1/4 right-1/3 w-64 h-64 bg-primary/10 rounded-full blur-2xl pointer-events-none" />
         
         <div className="container py-12 md:py-20 lg:py-24">
           {/* Side-by-side layout on ALL screen sizes */}
           <div className="grid grid-cols-[1fr_auto] md:grid-cols-2 gap-4 sm:gap-8 lg:gap-12 items-center">
             {/* Text Content */}
             <div className="text-left">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 bg-primary/10 rounded-full text-xs sm:text-sm font-medium text-primary mb-4 sm:mb-6 animate-fade-in">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 bg-primary/20 rounded-full text-xs sm:text-sm font-medium text-primary mb-4 sm:mb-6 animate-fade-in">
                 <Star className="h-3 w-3 sm:h-4 sm:w-4 fill-primary" />
                 Your Credit Expert
               </div>
               
-              <h1 className="text-2xl sm:text-4xl lg:text-6xl xl:text-7xl font-bold text-foreground mb-3 sm:mb-6 animate-fade-in leading-tight">
+              <h1 className="text-2xl sm:text-4xl lg:text-6xl xl:text-7xl font-bold text-[hsl(var(--hero-foreground))] mb-3 sm:mb-6 animate-fade-in leading-tight">
                 Your path to <span className="text-primary">better credit</span> and faster funding.
               </h1>
               
-              <p className="text-sm sm:text-lg md:text-xl text-muted-foreground mb-4 sm:mb-8 max-w-xl animate-fade-in" style={{ animationDelay: "0.1s" }}>
+              <p className="text-sm sm:text-lg md:text-xl text-[hsl(var(--hero-muted))] mb-4 sm:mb-8 max-w-xl animate-fade-in" style={{ animationDelay: "0.1s" }}>
                 I help you repair credit, boost scores, and unlock approvals for loans, credit cards, and trade lines — with a personal touch.
               </p>
               
@@ -60,24 +61,24 @@ const Home = () => {
                 <Button size="lg" variant="accent" asChild className="hover-scale text-sm sm:text-base px-4 sm:px-8">
                   <Link to="/apply">Apply Now</Link>
                 </Button>
-                <Button size="lg" variant="outline" asChild className="text-sm sm:text-base px-4 sm:px-8">
+                <Button size="lg" variant="outline" asChild className="text-sm sm:text-base px-4 sm:px-8 border-[hsl(var(--hero-muted)/0.3)] text-[hsl(var(--hero-foreground))] hover:bg-[hsl(var(--hero-foreground)/0.1)]">
                   <Link to="/apply">Free Credit Review</Link>
                 </Button>
               </div>
 
               {/* Quick trust indicators - hidden on very small screens */}
-              <div className="hidden sm:flex flex-wrap items-center gap-6 mt-10 pt-8 border-t border-border/50 animate-fade-in" style={{ animationDelay: "0.3s" }}>
+              <div className="hidden sm:flex flex-wrap items-center gap-6 mt-10 pt-8 border-t border-[hsl(var(--hero-muted)/0.2)] animate-fade-in" style={{ animationDelay: "0.3s" }}>
                 <div className="flex items-center gap-2">
-                  <CheckCircle className="h-5 w-5 text-accent" />
-                  <span className="text-sm text-muted-foreground">12K+ Clients Helped</span>
+                  <CheckCircle className="h-5 w-5 text-primary" />
+                  <span className="text-sm text-[hsl(var(--hero-muted))]">12K+ Clients Helped</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle className="h-5 w-5 text-accent" />
-                  <span className="text-sm text-muted-foreground">$56M+ Funded</span>
+                  <CheckCircle className="h-5 w-5 text-primary" />
+                  <span className="text-sm text-[hsl(var(--hero-muted))]">$56M+ Funded</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle className="h-5 w-5 text-accent" />
-                  <span className="text-sm text-muted-foreground">4.8★ Rating</span>
+                  <CheckCircle className="h-5 w-5 text-primary" />
+                  <span className="text-sm text-[hsl(var(--hero-muted))]">4.8★ Rating</span>
                 </div>
               </div>
             </div>
@@ -86,7 +87,7 @@ const Home = () => {
             <div className="flex justify-end animate-fade-in">
               <div className="relative">
                 {/* Gold accent ring */}
-                <div className="absolute -inset-4 bg-gradient-to-br from-primary/30 via-primary/10 to-transparent rounded-full blur-2xl" />
+                <div className="absolute -inset-4 bg-gradient-to-br from-primary/40 via-primary/20 to-transparent rounded-full blur-2xl" />
                 
                 {/* Image container - responsive sizing */}
                 <div className="relative">
@@ -106,18 +107,18 @@ const Home = () => {
           </div>
           
           {/* Trust indicators for mobile - shown below on small screens */}
-          <div className="flex sm:hidden flex-wrap items-center justify-center gap-4 mt-8 pt-6 border-t border-border/50 animate-fade-in" style={{ animationDelay: "0.3s" }}>
+          <div className="flex sm:hidden flex-wrap items-center justify-center gap-4 mt-8 pt-6 border-t border-[hsl(var(--hero-muted)/0.2)] animate-fade-in" style={{ animationDelay: "0.3s" }}>
             <div className="flex items-center gap-1.5">
-              <CheckCircle className="h-4 w-4 text-accent" />
-              <span className="text-xs text-muted-foreground">12K+ Clients</span>
+              <CheckCircle className="h-4 w-4 text-primary" />
+              <span className="text-xs text-[hsl(var(--hero-muted))]">12K+ Clients</span>
             </div>
             <div className="flex items-center gap-1.5">
-              <CheckCircle className="h-4 w-4 text-accent" />
-              <span className="text-xs text-muted-foreground">$56M+ Funded</span>
+              <CheckCircle className="h-4 w-4 text-primary" />
+              <span className="text-xs text-[hsl(var(--hero-muted))]">$56M+ Funded</span>
             </div>
             <div className="flex items-center gap-1.5">
-              <CheckCircle className="h-4 w-4 text-accent" />
-              <span className="text-xs text-muted-foreground">4.8★ Rating</span>
+              <CheckCircle className="h-4 w-4 text-primary" />
+              <span className="text-xs text-[hsl(var(--hero-muted))]">4.8★ Rating</span>
             </div>
           </div>
         </div>

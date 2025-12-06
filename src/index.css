@@ -48,7 +48,12 @@ All colors MUST be HSL.
     /* Gradient tokens */
     --gradient-primary: linear-gradient(135deg, hsl(43 58% 50%) 0%, hsl(43 48% 35%) 100%);
     --gradient-accent: linear-gradient(135deg, hsl(43 58% 50%) 0%, hsl(38 65% 55%) 100%);
-    --gradient-hero: linear-gradient(135deg, hsl(0 0% 20%) 0%, hsl(43 48% 35%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(0 0% 12%) 0%, hsl(0 0% 18%) 100%);
+    
+    /* Hero dark section colors */
+    --hero-bg: 0 0% 12%;
+    --hero-foreground: 0 0% 98%;
+    --hero-muted: 0 0% 70%;
 
     /* Shadow tokens */
     --shadow-soft: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);

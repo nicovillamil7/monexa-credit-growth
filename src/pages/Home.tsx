@@ -65,19 +65,19 @@ const Home = () => {
                 </Button>
               </div>
 
-              {/* Quick trust indicators - hidden on very small screens */}
-              <div className="hidden sm:flex flex-wrap items-center gap-6 mt-10 pt-8 border-t border-[hsl(var(--hero-muted)/0.2)] animate-fade-in" style={{ animationDelay: "0.3s" }}>
-                <div className="flex items-center gap-2">
-                  <CheckCircle className="h-5 w-5 text-primary" />
-                  <span className="text-sm text-[hsl(var(--hero-muted))]">12K+ Clients Helped</span>
+              {/* Quick trust indicators - all in one row */}
+              <div className="flex items-center justify-center lg:justify-start gap-2 sm:gap-6 mt-6 sm:mt-10 pt-4 sm:pt-8 border-t border-[hsl(var(--hero-muted)/0.2)] animate-fade-in" style={{ animationDelay: "0.3s" }}>
+                <div className="flex items-center gap-1 sm:gap-2">
+                  <CheckCircle className="h-3 w-3 sm:h-5 sm:w-5 text-primary flex-shrink-0" />
+                  <span className="text-[10px] sm:text-sm text-[hsl(var(--hero-muted))] whitespace-nowrap">12K+ Clients</span>
                 </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle className="h-5 w-5 text-primary" />
-                  <span className="text-sm text-[hsl(var(--hero-muted))]">$56M+ Funded</span>
+                <div className="flex items-center gap-1 sm:gap-2">
+                  <CheckCircle className="h-3 w-3 sm:h-5 sm:w-5 text-primary flex-shrink-0" />
+                  <span className="text-[10px] sm:text-sm text-[hsl(var(--hero-muted))] whitespace-nowrap">$56M+ Funded</span>
                 </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle className="h-5 w-5 text-primary" />
-                  <span className="text-sm text-[hsl(var(--hero-muted))]">4.8★ Rating</span>
+                <div className="flex items-center gap-1 sm:gap-2">
+                  <CheckCircle className="h-3 w-3 sm:h-5 sm:w-5 text-primary flex-shrink-0" />
+                  <span className="text-[10px] sm:text-sm text-[hsl(var(--hero-muted))] whitespace-nowrap">4.8★ Rating</span>
                 </div>
               </div>
             </div>
@@ -102,22 +102,6 @@ const Home = () => {
                   />
                 </div>
               </div>
-            </div>
-          </div>
-          
-          {/* Trust indicators for mobile - shown below on small screens, all in one row */}
-          <div className="flex sm:hidden items-center justify-center gap-3 mt-8 pt-6 border-t border-[hsl(var(--hero-muted)/0.2)] animate-fade-in" style={{ animationDelay: "0.3s" }}>
-            <div className="flex items-center gap-1">
-              <CheckCircle className="h-3 w-3 text-primary flex-shrink-0" />
-              <span className="text-[10px] text-[hsl(var(--hero-muted))] whitespace-nowrap">12K+ Clients</span>
-            </div>
-            <div className="flex items-center gap-1">
-              <CheckCircle className="h-3 w-3 text-primary flex-shrink-0" />
-              <span className="text-[10px] text-[hsl(var(--hero-muted))] whitespace-nowrap">$56M+ Funded</span>
-            </div>
-            <div className="flex items-center gap-1">
-              <CheckCircle className="h-3 w-3 text-primary flex-shrink-0" />
-              <span className="text-[10px] text-[hsl(var(--hero-muted))] whitespace-nowrap">4.8★ Rating</span>
             </div>
           </div>
         </div>

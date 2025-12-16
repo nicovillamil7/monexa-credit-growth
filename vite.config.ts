@@ -16,19 +16,22 @@ export default defineConfig(({ mode }) => ({
     },
   },
   build: {
-    // Enable minification
+    // Enable minification with esbuild for faster builds
     minify: 'terser',
     terserOptions: {
       compress: {
-        drop_console: mode === 'production', // Remove console.logs in production
+        drop_console: mode === 'production',
         drop_debugger: true,
+        pure_funcs: mode === 'production' ? ['console.log', 'console.info'] : [],
+      },
+      mangle: {
+        safari10: true,
       },
     },
     // Optimize chunk splitting for better caching
     rollupOptions: {
       output: {
         manualChunks: {
-          // Separate vendor chunks for better caching
           'react-vendor': ['react', 'react-dom', 'react-router-dom'],
           'ui-vendor': ['lucide-react', '@radix-ui/react-accordion', '@radix-ui/react-dialog'],
           'form-vendor': ['react-hook-form', '@hookform/resolvers', 'zod'],
@@ -36,14 +39,20 @@ export default defineConfig(({ mode }) => ({
         },
       },
     },
-    // Increase chunk size warning limit for large vendor bundles
     chunkSizeWarningLimit: 1000,
-    // Enable source maps for production debugging (optional)
     sourcemap: false,
+    // CSS code splitting
+    cssCodeSplit: true,
+    // Target modern browsers for smaller bundles
+    target: 'es2020',
   },
-  // Image optimization hints
-  assetsInlineLimit: 4096, // Inline assets smaller than 4kb
+  // Inline small assets
+  assetsInlineLimit: 4096,
   optimizeDeps: {
     include: ['react', 'react-dom', 'react-router-dom'],
+  },
+  // CSS optimization
+  css: {
+    devSourcemap: false,
   },
 }));

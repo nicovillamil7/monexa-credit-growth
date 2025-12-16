@@ -88,17 +88,17 @@ const Home = () => {
                 {/* Gold accent ring */}
                 <div className="absolute -inset-4 bg-gradient-to-br from-primary/40 via-primary/20 to-transparent rounded-full blur-2xl" />
                 
-                {/* Image container - responsive sizing */}
-                <div className="relative">
+                {/* Image container - responsive sizing with optimized loading */}
+                <div className="relative w-[200px] sm:w-[240px] md:w-[300px] lg:w-[400px] xl:w-[500px] aspect-[4/5]">
                   <img 
                     src={valparHero} 
                     alt="Valpar - Credit Expert and Founder of Monexa" 
-                    className="w-[200px] sm:w-[240px] md:w-[300px] lg:w-[400px] xl:w-[500px] h-auto object-contain drop-shadow-2xl"
+                    className="w-full h-full object-contain drop-shadow-2xl"
                     loading="eager"
                     fetchPriority="high"
                     decoding="async"
-                    width={600}
-                    height={750}
+                    width={500}
+                    height={625}
                   />
                 </div>
               </div>

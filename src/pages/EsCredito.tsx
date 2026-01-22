@@ -14,7 +14,9 @@ import {
   ArrowLeft,
   Star,
   ChevronLeft,
-  ChevronRight
+  ChevronRight,
+  ClipboardList,
+  Phone
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -72,9 +74,10 @@ const EsCredito = () => {
   ];
 
   const steps = [
-    { icon: FileText, title: "Consulta Gratis", description: "Analizamos tu situación sin costo" },
-    { icon: Users, title: "Plan Personalizado", description: "Creamos una estrategia a tu medida" },
-    { icon: Sparkles, title: "Resultados Reales", description: "Mejoras visibles en tu crédito" },
+    { icon: ClipboardList, title: "Llena el Formulario", description: "Completa tus datos en solo 2 minutos", hasCta: true },
+    { icon: Phone, title: "Consulta Gratis", description: "Te contactamos para analizar tu caso", hasCta: false },
+    { icon: Users, title: "Plan Personalizado", description: "Diseñamos una estrategia a tu medida", hasCta: false },
+    { icon: Sparkles, title: "Resultados Reales", description: "Mejoras visibles en tu crédito", hasCta: false },
   ];
 
   const testimonials = [
@@ -151,8 +154,8 @@ const EsCredito = () => {
       
       <LandingHeader onCtaClick={scrollToForm} />
 
-      {/* Hero Section - Compact with dark gradient */}
-      <section className="relative min-h-[85vh] flex items-center pt-20 overflow-hidden bg-gradient-to-br from-foreground via-foreground/95 to-foreground/90">
+      {/* Hero Section - Deep gold gradient */}
+      <section className="relative min-h-[85vh] flex items-center pt-20 overflow-hidden bg-gradient-to-br from-[hsl(43,48%,18%)] via-[hsl(43,50%,22%)] to-[hsl(43,55%,28%)]">
         {/* Animated Background Elements */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-20 left-10 w-48 h-48 bg-primary/20 rounded-full blur-3xl animate-float-slow" />
@@ -309,27 +312,44 @@ const EsCredito = () => {
               Cómo Funciona
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto text-sm">
-              Un proceso simple de 3 pasos para transformar tu crédito.
+              Un proceso simple de 4 pasos para transformar tu crédito.
             </p>
           </div>
 
-          <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-4 max-w-4xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
             {steps.map((step, index) => (
-              <div key={step.title} className="flex flex-col md:flex-row items-center gap-4 animate-fade-in-up" style={{ animationDelay: `${index * 0.15}s` }}>
-                <div className="flex flex-col items-center text-center">
-                  <div className="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center mb-3 relative">
-                    <step.icon className="w-7 h-7 text-primary animate-float-slow" style={{ animationDelay: `${index * 0.3}s` }} />
-                    <div className="absolute -top-2 -right-2 w-6 h-6 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xs font-bold">
-                      {index + 1}
-                    </div>
+              <div 
+                key={step.title} 
+                className={`flex flex-col items-center text-center animate-fade-in-up ${index === 0 ? 'relative' : ''}`}
+                style={{ animationDelay: `${index * 0.15}s` }}
+              >
+                {/* Start Here badge for first step */}
+                {index === 0 && (
+                  <div className="absolute -top-6 left-1/2 -translate-x-1/2 px-3 py-1 bg-success text-white text-xs font-bold rounded-full animate-pulse-glow">
+                    EMPIEZA AQUÍ
                   </div>
-                  <h3 className="font-semibold text-foreground mb-1 text-sm">{step.title}</h3>
-                  <p className="text-xs text-muted-foreground max-w-[160px]">{step.description}</p>
+                )}
+                
+                <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-4 relative ${index === 0 ? 'bg-primary shadow-glow' : 'bg-primary/10'}`}>
+                  <step.icon className={`w-8 h-8 ${index === 0 ? 'text-primary-foreground' : 'text-primary'} animate-float-slow`} style={{ animationDelay: `${index * 0.3}s` }} />
+                  <div className="absolute -top-2 -right-2 w-7 h-7 bg-foreground text-background rounded-full flex items-center justify-center text-sm font-bold">
+                    {index + 1}
+                  </div>
                 </div>
                 
-                {/* Connector Arrow (hidden on last item) */}
-                {index < steps.length - 1 && (
-                  <ArrowRight className="hidden md:block w-5 h-5 text-primary/50 mx-2" />
+                <h3 className="font-semibold text-foreground mb-1">{step.title}</h3>
+                <p className="text-xs text-muted-foreground max-w-[180px] mb-3">{step.description}</p>
+                
+                {/* CTA Button for first step */}
+                {step.hasCta && (
+                  <Button 
+                    onClick={scrollToForm}
+                    size="sm"
+                    className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium rounded-full text-xs px-4"
+                  >
+                    Comenzar Ahora
+                    <ArrowRight className="ml-1 w-3 h-3" />
+                  </Button>
                 )}
               </div>
             ))}

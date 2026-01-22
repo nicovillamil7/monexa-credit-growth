@@ -154,13 +154,14 @@ const EsCredito = () => {
       
       <LandingHeader onCtaClick={scrollToForm} />
 
-      {/* Hero Section - Deep gold gradient */}
-      <section className="relative min-h-[85vh] flex items-center pt-20 overflow-hidden bg-gradient-to-br from-[hsl(43,48%,18%)] via-[hsl(43,50%,22%)] to-[hsl(43,55%,28%)]">
+      {/* Hero Section - Dark background like Home page */}
+      <section className="relative min-h-[85vh] flex items-center pt-20 overflow-hidden bg-[hsl(var(--hero-bg))]">
         {/* Animated Background Elements */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-20 left-10 w-48 h-48 bg-primary/20 rounded-full blur-3xl animate-float-slow" />
+          <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary/5 to-transparent" />
+          <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
+          <div className="absolute top-20 left-10 w-48 h-48 bg-primary/10 rounded-full blur-3xl animate-float-slow" />
           <div className="absolute bottom-10 right-10 w-64 h-64 bg-primary/10 rounded-full blur-3xl animate-float-slow" style={{ animationDelay: "1s" }} />
-          <div className="absolute top-1/3 right-1/4 w-32 h-32 bg-primary/15 rounded-full blur-2xl animate-float-slow" style={{ animationDelay: "2s" }} />
         </div>
 
         <div className="container mx-auto px-4 py-12 relative z-10">
@@ -172,13 +173,13 @@ const EsCredito = () => {
             </div>
 
             {/* Headline */}
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-background mb-4 animate-fade-in-up" style={{ animationDelay: "0.1s" }}>
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[hsl(var(--hero-foreground))] mb-4 animate-fade-in-up" style={{ animationDelay: "0.1s" }}>
               Repara tu crédito.{" "}
               <span className="text-primary">Accede a financiamiento.</span>
             </h1>
 
             {/* Subheadline */}
-            <p className="text-base md:text-lg text-background/70 mb-8 max-w-xl mx-auto animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
+            <p className="text-base md:text-lg text-[hsl(var(--hero-muted))] mb-8 max-w-xl mx-auto animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
               ¿Cansado de que te rechacen? Te ayudamos a mejorar tu puntaje de crédito 
               y obtener la aprobación que necesitas.
             </p>
@@ -198,15 +199,15 @@ const EsCredito = () => {
             <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6 mt-8 animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
               <div className="flex items-center gap-2">
                 <Shield className="w-4 h-4 text-primary" />
-                <span className="text-sm text-background/60">100% Confidencial</span>
+                <span className="text-sm text-[hsl(var(--hero-muted))]">100% Confidencial</span>
               </div>
               <div className="flex items-center gap-2">
                 <Clock className="w-4 h-4 text-primary" />
-                <span className="text-sm text-background/60">Respuesta en 24hrs</span>
+                <span className="text-sm text-[hsl(var(--hero-muted))]">Respuesta en 24hrs</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-primary" />
-                <span className="text-sm text-background/60">Sin Compromiso</span>
+                <span className="text-sm text-[hsl(var(--hero-muted))]">Sin Compromiso</span>
               </div>
             </div>
           </div>
@@ -236,8 +237,8 @@ const EsCredito = () => {
         </div>
       </section>
 
-      {/* Problem Section - Muted background with pattern */}
-      <section className="py-16 bg-muted/50 bg-dot-pattern relative">
+      {/* Problem Section - Muted background (matching Home services section) */}
+      <section className="py-16 bg-muted/30 relative">
         <div className="container mx-auto px-4">
           <div className="text-center mb-10">
             <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-3">
@@ -304,8 +305,8 @@ const EsCredito = () => {
         </div>
       </section>
 
-      {/* How It Works Section - Gradient background */}
-      <section className="py-16 bg-gradient-to-br from-muted/60 via-muted/40 to-background">
+      {/* How It Works Section - Muted background like Home */}
+      <section className="py-16 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-3">

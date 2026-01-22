@@ -13,6 +13,7 @@ import TradeLine from "./pages/TradeLine";
 import About from "./pages/About";
 import Apply from "./pages/Apply";
 import NotFound from "./pages/NotFound";
+import EsCredito from "./pages/EsCredito";
 import WhatsAppButton from "@/components/WhatsAppButton";
 
 const queryClient = new QueryClient();
@@ -34,6 +35,8 @@ const App = () => (
           <Route path="/funding/trade-line" element={<TradeLine />} />
           <Route path="/about" element={<About />} />
           <Route path="/apply" element={<Apply />} />
+          {/* Hidden PPC Landing Pages - Not in navigation */}
+          <Route path="/es/credito" element={<EsCredito />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

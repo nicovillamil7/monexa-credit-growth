@@ -329,7 +329,7 @@ const EsCredito = () => {
         </div>
       </section>
 
-      {/* How It Works Section - Muted background like Home */}
+      {/* How It Works Section - Clean symmetric design */}
       <section className="py-16 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
@@ -341,43 +341,36 @@ const EsCredito = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
+          <div className="grid grid-cols-4 gap-3 md:gap-6 max-w-5xl mx-auto">
             {steps.map((step, index) => (
               <div 
                 key={step.title} 
-                className={`flex flex-col items-center text-center animate-fade-in-up ${index === 0 ? 'relative' : ''}`}
+                className="flex flex-col items-center text-center animate-fade-in-up"
                 style={{ animationDelay: `${index * 0.15}s` }}
               >
-                {/* Start Here badge for first step */}
-                {index === 0 && (
-                  <div className="absolute -top-6 left-1/2 -translate-x-1/2 px-3 py-1 bg-success text-white text-xs font-bold rounded-full animate-pulse-glow">
-                    EMPIEZA AQUÍ
-                  </div>
-                )}
-                
-                <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-4 relative ${index === 0 ? 'bg-primary shadow-glow' : 'bg-primary/10'}`}>
-                  <step.icon className={`w-8 h-8 ${index === 0 ? 'text-primary-foreground' : 'text-primary'} animate-float-slow`} style={{ animationDelay: `${index * 0.3}s` }} />
-                  <div className="absolute -top-2 -right-2 w-7 h-7 bg-foreground text-background rounded-full flex items-center justify-center text-sm font-bold">
+                <div className="w-12 h-12 md:w-16 md:h-16 rounded-2xl flex items-center justify-center mb-3 md:mb-4 relative bg-primary/10">
+                  <step.icon className="w-6 h-6 md:w-8 md:h-8 text-primary" />
+                  <div className="absolute -top-1.5 -right-1.5 md:-top-2 md:-right-2 w-5 h-5 md:w-7 md:h-7 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xs md:text-sm font-bold">
                     {index + 1}
                   </div>
                 </div>
                 
-                <h3 className="font-semibold text-foreground mb-1">{step.title}</h3>
-                <p className="text-xs text-muted-foreground max-w-[180px] mb-3">{step.description}</p>
-                
-                {/* CTA Button for first step */}
-                {step.hasCta && (
-                  <Button 
-                    onClick={scrollToForm}
-                    size="sm"
-                    className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium rounded-full text-xs px-4"
-                  >
-                    Comenzar Ahora
-                    <ArrowRight className="ml-1 w-3 h-3" />
-                  </Button>
-                )}
+                <h3 className="font-semibold text-foreground text-xs md:text-base mb-1">{step.title}</h3>
+                <p className="text-[10px] md:text-xs text-muted-foreground leading-tight">{step.description}</p>
               </div>
             ))}
+          </div>
+
+          {/* Centered CTA below steps */}
+          <div className="text-center mt-10 animate-fade-in-up" style={{ animationDelay: "0.6s" }}>
+            <Button 
+              onClick={scrollToForm}
+              size="lg"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-full px-8"
+            >
+              Comenzar Ahora
+              <ArrowRight className="ml-2 w-5 h-5" />
+            </Button>
           </div>
         </div>
       </section>

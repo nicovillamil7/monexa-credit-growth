@@ -57,12 +57,12 @@ const EsCredito = () => {
     {
       icon: TrendingUp,
       title: "Puntaje bajo",
-      description: "Oportunidades cerradas",
+      description: "Sin opciones de financiamiento",
     },
     {
       icon: FileText,
-      title: "Colecciones activas",
-      description: "Tu crédito sufre",
+      title: "Deudas en cobranza",
+      description: "Afectan tu historial",
     },
   ];
 
@@ -307,13 +307,13 @@ const EsCredito = () => {
         </div>
       </section>
 
-      {/* Aspirational Bridge Section - What becomes possible */}
+      {/* Aspirational Bridge Section - Asymmetric bento-style layout */}
       <section className="py-12 md:py-16 bg-background relative overflow-hidden">
-        {/* Subtle gradient overlay for hope/transition feel */}
-        <div className="absolute inset-0 bg-gradient-to-b from-muted/20 to-transparent pointer-events-none" />
+        {/* Decorative gradient blob */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-primary/5 rounded-full blur-3xl pointer-events-none" />
         
         <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center mb-8">
+          <div className="text-center mb-10">
             <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
               Con mejor crédito, todo cambia
             </h2>
@@ -322,28 +322,62 @@ const EsCredito = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-3 md:grid-cols-6 gap-3 md:gap-4 max-w-4xl mx-auto mb-8">
-            {aspirations.map((item, index) => (
-              <div 
-                key={item.title}
-                className="flex flex-col items-center text-center p-3 md:p-4 bg-muted/20 hover:bg-muted/40 rounded-xl transition-all duration-300 hover:-translate-y-1 animate-fade-in-up group"
-                style={{ animationDelay: `${index * 0.08}s` }}
-              >
-                <div className="w-10 h-10 md:w-12 md:h-12 bg-primary/10 rounded-full flex items-center justify-center mb-2 group-hover:bg-primary/20 transition-colors">
-                  <item.icon className="w-5 h-5 md:w-6 md:h-6 text-primary" />
+          {/* Bento Grid - Asymmetric layout */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 max-w-4xl mx-auto">
+            {/* Large card - Home */}
+            <div className="col-span-2 row-span-2 md:col-span-2 md:row-span-2 relative group">
+              <div className="h-full p-6 md:p-8 bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl border border-primary/20 transition-all duration-300 hover:shadow-glow hover:-translate-y-1 animate-fade-in-up">
+                <div className="w-14 h-14 md:w-16 md:h-16 bg-primary/20 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <Home className="w-7 h-7 md:w-8 md:h-8 text-primary" />
                 </div>
-                <h3 className="text-xs md:text-sm font-semibold text-foreground mb-0.5 leading-tight">{item.title}</h3>
-                <p className="text-[10px] md:text-xs text-muted-foreground leading-tight">{item.description}</p>
+                <h3 className="text-lg md:text-xl font-bold text-foreground mb-2">Tu casa propia</h3>
+                <p className="text-sm text-muted-foreground">Hipoteca aprobada. El sueño de tu hogar está al alcance.</p>
               </div>
-            ))}
-          </div>
+            </div>
 
-          {/* Transition CTA */}
-          <div className="text-center animate-fade-in-up" style={{ animationDelay: "0.5s" }}>
-            <p className="text-sm md:text-base font-medium text-foreground mb-2">
-              El primer paso: repara tu crédito
-            </p>
-            <ArrowDown className="w-5 h-5 text-primary mx-auto animate-bounce" />
+            {/* Smaller cards */}
+            <div className="p-4 md:p-5 bg-muted/30 rounded-xl transition-all duration-300 hover:bg-muted/50 hover:-translate-y-1 animate-fade-in-up group" style={{ animationDelay: "0.1s" }}>
+              <div className="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+                <Car className="w-5 h-5 text-primary" />
+              </div>
+              <h3 className="text-sm font-semibold text-foreground mb-1">Tu carro nuevo</h3>
+              <p className="text-xs text-muted-foreground">Financiamiento fácil</p>
+            </div>
+
+            <div className="p-4 md:p-5 bg-muted/30 rounded-xl transition-all duration-300 hover:bg-muted/50 hover:-translate-y-1 animate-fade-in-up group" style={{ animationDelay: "0.15s" }}>
+              <div className="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+                <Briefcase className="w-5 h-5 text-primary" />
+              </div>
+              <h3 className="text-sm font-semibold text-foreground mb-1">Tu negocio crece</h3>
+              <p className="text-xs text-muted-foreground">Capital disponible</p>
+            </div>
+
+            <div className="p-4 md:p-5 bg-muted/30 rounded-xl transition-all duration-300 hover:bg-muted/50 hover:-translate-y-1 animate-fade-in-up group" style={{ animationDelay: "0.2s" }}>
+              <div className="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+                <Plane className="w-5 h-5 text-primary" />
+              </div>
+              <h3 className="text-sm font-semibold text-foreground mb-1">Esas vacaciones</h3>
+              <p className="text-xs text-muted-foreground">Viaja sin límites</p>
+            </div>
+
+            <div className="p-4 md:p-5 bg-muted/30 rounded-xl transition-all duration-300 hover:bg-muted/50 hover:-translate-y-1 animate-fade-in-up group" style={{ animationDelay: "0.25s" }}>
+              <div className="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+                <GraduationCap className="w-5 h-5 text-primary" />
+              </div>
+              <h3 className="text-sm font-semibold text-foreground mb-1">Universidad</h3>
+              <p className="text-xs text-muted-foreground">Invierte en ti</p>
+            </div>
+
+            {/* Wide card - Tranquility */}
+            <div className="col-span-2 p-4 md:p-5 bg-gradient-to-r from-muted/40 to-muted/20 rounded-xl transition-all duration-300 hover:shadow-lg hover:-translate-y-1 animate-fade-in-up flex items-center gap-4" style={{ animationDelay: "0.3s" }}>
+              <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                <Heart className="w-6 h-6 text-primary" />
+              </div>
+              <div>
+                <h3 className="text-sm font-semibold text-foreground mb-0.5">Tranquilidad financiera</h3>
+                <p className="text-xs text-muted-foreground">Emergencias cubiertas. Paz mental para ti y tu familia.</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>

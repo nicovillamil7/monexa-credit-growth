@@ -25,6 +25,7 @@ import LandingFooter from "@/components/LandingFooter";
 import CountUpNumber from "@/components/CountUpNumber";
 import LeadSubmissionForm from "@/components/LeadSubmissionForm";
 import SEO from "@/components/SEO";
+import valparHero from "@/assets/valpar-hero.png";
 
 const EsCredito = () => {
   const formRef = useRef<HTMLDivElement>(null);
@@ -154,60 +155,83 @@ const EsCredito = () => {
       
       <LandingHeader onCtaClick={scrollToForm} />
 
-      {/* Hero Section - Dark background like Home page */}
-      <section className="relative min-h-[85vh] flex items-center pt-20 overflow-hidden bg-[hsl(var(--hero-bg))]">
-        {/* Animated Background Elements */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary/5 to-transparent" />
-          <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
-          <div className="absolute top-20 left-10 w-48 h-48 bg-primary/10 rounded-full blur-3xl animate-float-slow" />
-          <div className="absolute bottom-10 right-10 w-64 h-64 bg-primary/10 rounded-full blur-3xl animate-float-slow" style={{ animationDelay: "1s" }} />
-        </div>
+      {/* Hero Section - Dark background with split layout like Home page */}
+      <section className="relative bg-[hsl(var(--hero-bg))] overflow-hidden">
+        {/* Subtle decorative elements */}
+        <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary/5 to-transparent pointer-events-none" />
+        <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl pointer-events-none" />
+        
+        <div className="container py-12 md:py-20 lg:py-24">
+          {/* Split layout - text left, image right on desktop */}
+          <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
+            {/* Text Content */}
+            <div className="text-center md:text-left">
+              {/* Badge */}
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/20 border border-primary/30 rounded-full mb-6 animate-fade-in-up">
+                <Sparkles className="w-4 h-4 text-primary" />
+                <span className="text-sm text-primary font-medium">Consulta 100% Gratis</span>
+              </div>
 
-        <div className="container mx-auto px-4 py-12 relative z-10">
-          <div className="max-w-3xl mx-auto text-center">
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/20 border border-primary/30 rounded-full mb-6 animate-fade-in-up">
-              <Sparkles className="w-4 h-4 text-primary animate-float-slow" />
-              <span className="text-sm text-primary font-medium">Consulta 100% Gratis</span>
+              {/* Headline */}
+              <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-[hsl(var(--hero-foreground))] mb-4 animate-fade-in-up leading-tight" style={{ animationDelay: "0.1s" }}>
+                Repara tu crédito.{" "}
+                <span className="text-primary">Accede a financiamiento.</span>
+              </h1>
+
+              {/* Subheadline */}
+              <p className="text-base md:text-lg text-[hsl(var(--hero-muted))] mb-8 max-w-xl mx-auto md:mx-0 animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
+                ¿Cansado de que te rechacen? Te ayudamos a mejorar tu puntaje de crédito 
+                y obtener la aprobación que necesitas.
+              </p>
+
+              {/* CTA Button */}
+              <div className="animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
+                <Button 
+                  onClick={scrollToForm}
+                  size="lg"
+                  className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 py-5 text-base rounded-full shadow-glow animate-pulse-glow"
+                >
+                  Solicita tu Consulta Gratis
+                  <ArrowRight className="ml-2 w-5 h-5" />
+                </Button>
+              </div>
+
+              {/* Trust Indicators */}
+              <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 md:gap-6 mt-8 pt-6 border-t border-[hsl(var(--hero-muted)/0.2)] animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
+                <div className="flex items-center gap-2">
+                  <Shield className="w-4 h-4 text-primary" />
+                  <span className="text-sm text-[hsl(var(--hero-muted))]">100% Confidencial</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Clock className="w-4 h-4 text-primary" />
+                  <span className="text-sm text-[hsl(var(--hero-muted))]">Respuesta en 24hrs</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-primary" />
+                  <span className="text-sm text-[hsl(var(--hero-muted))]">Sin Compromiso</span>
+                </div>
+              </div>
             </div>
 
-            {/* Headline */}
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[hsl(var(--hero-foreground))] mb-4 animate-fade-in-up" style={{ animationDelay: "0.1s" }}>
-              Repara tu crédito.{" "}
-              <span className="text-primary">Accede a financiamiento.</span>
-            </h1>
-
-            {/* Subheadline */}
-            <p className="text-base md:text-lg text-[hsl(var(--hero-muted))] mb-8 max-w-xl mx-auto animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
-              ¿Cansado de que te rechacen? Te ayudamos a mejorar tu puntaje de crédito 
-              y obtener la aprobación que necesitas.
-            </p>
-
-            {/* CTA Button */}
-            <Button 
-              onClick={scrollToForm}
-              size="lg"
-              className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 py-5 text-base rounded-full shadow-glow animate-pulse-glow animate-fade-in-up"
-              style={{ animationDelay: "0.3s" }}
-            >
-              Solicita tu Consulta Gratis
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </Button>
-
-            {/* Trust Indicators */}
-            <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6 mt-8 animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
-              <div className="flex items-center gap-2">
-                <Shield className="w-4 h-4 text-primary" />
-                <span className="text-sm text-[hsl(var(--hero-muted))]">100% Confidencial</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Clock className="w-4 h-4 text-primary" />
-                <span className="text-sm text-[hsl(var(--hero-muted))]">Respuesta en 24hrs</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-primary" />
-                <span className="text-sm text-[hsl(var(--hero-muted))]">Sin Compromiso</span>
+            {/* Photo - Desktop only */}
+            <div className="hidden md:flex justify-end animate-fade-in">
+              <div className="relative">
+                {/* Gold accent ring */}
+                <div className="absolute -inset-4 bg-gradient-to-br from-primary/40 via-primary/20 to-transparent rounded-full blur-2xl" />
+                
+                {/* Image container */}
+                <div className="relative w-[300px] lg:w-[400px] xl:w-[500px] aspect-[4/5]">
+                  <img 
+                    src={valparHero} 
+                    alt="Valpar - Experto en Crédito de Monexa" 
+                    className="w-full h-full object-contain drop-shadow-2xl"
+                    loading="eager"
+                    fetchPriority="high"
+                    decoding="async"
+                    width={500}
+                    height={625}
+                  />
+                </div>
               </div>
             </div>
           </div>

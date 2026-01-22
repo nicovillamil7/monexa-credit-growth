@@ -34,10 +34,10 @@ const EsCredito = () => {
   };
 
   const trustStats = [
-    { value: 500, suffix: "+", label: "Clientes Satisfechos" },
-    { value: 95, suffix: "%", label: "Tasa de Satisfacción" },
-    { value: 4, suffix: "+", label: "Años de Experiencia" },
-    { value: 100, suffix: "+", label: "Puntos Promedio" },
+    { value: 56, prefix: "$", suffix: "M+", label: "Préstamos Procesados" },
+    { value: 140, suffix: "M+", label: "Puntos Aumentados" },
+    { value: 12, suffix: "K+", label: "Negocios Ayudados" },
+    { value: 4.8, suffix: "★", label: "Calificación" },
   ];
 
   const problems = [
@@ -227,8 +227,8 @@ const EsCredito = () => {
                 className="text-center animate-fade-in-up"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="text-3xl md:text-4xl font-bold text-primary-foreground mb-1">
-                  <CountUpNumber end={stat.value} suffix={stat.suffix} />
+                <div className="text-xl sm:text-3xl md:text-5xl font-bold text-primary-foreground mb-1 sm:mb-2">
+                  <CountUpNumber end={stat.value} prefix={stat.prefix} suffix={stat.suffix} />
                 </div>
                 <p className="text-sm text-primary-foreground/80">{stat.label}</p>
               </div>

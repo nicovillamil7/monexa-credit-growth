@@ -16,7 +16,14 @@ import {
   ChevronLeft,
   ChevronRight,
   ClipboardList,
-  Phone
+  Phone,
+  Home,
+  Car,
+  Briefcase,
+  Plane,
+  GraduationCap,
+  Heart,
+  ArrowDown
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -44,19 +51,28 @@ const EsCredito = () => {
   const problems = [
     {
       icon: AlertCircle,
-      title: "No te aprueban préstamos",
-      description: "Los bancos te rechazan por tu historial crediticio",
+      title: "Rechazos constantes",
+      description: "Los bancos dicen 'no'",
     },
     {
       icon: TrendingUp,
-      title: "Tu puntaje es muy bajo",
-      description: "Un puntaje bajo limita tus oportunidades financieras",
+      title: "Puntaje bajo",
+      description: "Oportunidades cerradas",
     },
     {
       icon: FileText,
-      title: "Deudas en cobranza",
-      description: "Las colecciones afectan tu crédito negativamente",
+      title: "Colecciones activas",
+      description: "Tu crédito sufre",
     },
+  ];
+
+  const aspirations = [
+    { icon: Home, title: "Tu casa propia", description: "Hipoteca aprobada" },
+    { icon: Car, title: "Tu carro nuevo", description: "Financiamiento fácil" },
+    { icon: Briefcase, title: "Tu negocio crece", description: "Capital disponible" },
+    { icon: Plane, title: "Esas vacaciones", description: "Viaja sin límites" },
+    { icon: GraduationCap, title: "Universidad", description: "Invierte en ti" },
+    { icon: Heart, title: "Tranquilidad", description: "Emergencias cubiertas" },
   ];
 
   const solutions = [
@@ -261,32 +277,73 @@ const EsCredito = () => {
         </div>
       </section>
 
-      {/* Problem Section - Muted background (matching Home services section) */}
-      <section className="py-16 bg-muted/30 relative">
+      {/* Problem Section - Harder hitting, ultra-short copy */}
+      <section className="py-12 md:py-16 bg-muted/30 relative">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-10">
-            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-3">
-              ¿Tu crédito te está frenando?
+          <div className="text-center mb-8">
+            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
+              Tu crédito te cierra puertas
             </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto text-sm">
-              Muchas personas enfrentan estos problemas. No estás solo.
+            <p className="text-muted-foreground text-sm">
+              Cada "no" duele. No tiene que seguir así.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-5 max-w-4xl mx-auto">
+          <div className="grid grid-cols-3 gap-3 md:gap-5 max-w-3xl mx-auto">
             {problems.map((problem, index) => (
               <Card 
                 key={problem.title}
-                className="p-5 bg-background border-border/50 hover:shadow-glow hover:-translate-y-1 transition-all duration-300 animate-fade-in-up"
+                className="p-4 md:p-5 bg-background border-border/50 hover:shadow-glow hover:-translate-y-1 transition-all duration-300 animate-fade-in-up text-center"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="w-11 h-11 bg-destructive/10 rounded-xl flex items-center justify-center mb-3">
-                  <problem.icon className="w-5 h-5 text-destructive animate-float-slow" style={{ animationDelay: `${index * 0.3}s` }} />
+                <div className="w-10 h-10 md:w-11 md:h-11 bg-destructive/10 rounded-xl flex items-center justify-center mb-2 md:mb-3 mx-auto">
+                  <problem.icon className="w-5 h-5 text-destructive" />
                 </div>
-                <h3 className="text-base font-semibold text-foreground mb-2">{problem.title}</h3>
-                <p className="text-muted-foreground text-sm">{problem.description}</p>
+                <h3 className="text-sm md:text-base font-semibold text-foreground mb-1">{problem.title}</h3>
+                <p className="text-muted-foreground text-xs">{problem.description}</p>
               </Card>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Aspirational Bridge Section - What becomes possible */}
+      <section className="py-12 md:py-16 bg-background relative overflow-hidden">
+        {/* Subtle gradient overlay for hope/transition feel */}
+        <div className="absolute inset-0 bg-gradient-to-b from-muted/20 to-transparent pointer-events-none" />
+        
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="text-center mb-8">
+            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
+              Con mejor crédito, todo cambia
+            </h2>
+            <p className="text-muted-foreground text-sm">
+              Estas puertas se abren:
+            </p>
+          </div>
+
+          <div className="grid grid-cols-3 md:grid-cols-6 gap-3 md:gap-4 max-w-4xl mx-auto mb-8">
+            {aspirations.map((item, index) => (
+              <div 
+                key={item.title}
+                className="flex flex-col items-center text-center p-3 md:p-4 bg-muted/20 hover:bg-muted/40 rounded-xl transition-all duration-300 hover:-translate-y-1 animate-fade-in-up group"
+                style={{ animationDelay: `${index * 0.08}s` }}
+              >
+                <div className="w-10 h-10 md:w-12 md:h-12 bg-primary/10 rounded-full flex items-center justify-center mb-2 group-hover:bg-primary/20 transition-colors">
+                  <item.icon className="w-5 h-5 md:w-6 md:h-6 text-primary" />
+                </div>
+                <h3 className="text-xs md:text-sm font-semibold text-foreground mb-0.5 leading-tight">{item.title}</h3>
+                <p className="text-[10px] md:text-xs text-muted-foreground leading-tight">{item.description}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* Transition CTA */}
+          <div className="text-center animate-fade-in-up" style={{ animationDelay: "0.5s" }}>
+            <p className="text-sm md:text-base font-medium text-foreground mb-2">
+              El primer paso: repara tu crédito
+            </p>
+            <ArrowDown className="w-5 h-5 text-primary mx-auto animate-bounce" />
           </div>
         </div>
       </section>

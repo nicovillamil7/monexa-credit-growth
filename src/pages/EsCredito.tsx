@@ -239,22 +239,22 @@ const EsCredito = () => {
       </section>
 
       {/* Trust Stats Bar - Gold Gradient */}
-      <section className="py-12 bg-gradient-primary relative overflow-hidden">
+      <section className="py-8 md:py-12 bg-gradient-primary relative overflow-hidden">
         {/* Shimmer Effect */}
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent animate-shimmer" style={{ backgroundSize: "200% 100%" }} />
         
         <div className="container mx-auto px-4 relative z-10">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-4 gap-2 md:gap-8">
             {trustStats.map((stat, index) => (
               <div 
                 key={stat.label} 
                 className="text-center animate-fade-in-up"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="text-xl sm:text-3xl md:text-5xl font-bold text-primary-foreground mb-1 sm:mb-2">
+                <div className="text-base sm:text-xl md:text-3xl lg:text-5xl font-bold text-primary-foreground mb-0.5 md:mb-2">
                   <CountUpNumber end={stat.value} prefix={stat.prefix} suffix={stat.suffix} />
                 </div>
-                <p className="text-sm text-primary-foreground/80">{stat.label}</p>
+                <p className="text-[9px] sm:text-xs md:text-sm text-primary-foreground/80 leading-tight">{stat.label}</p>
               </div>
             ))}
           </div>

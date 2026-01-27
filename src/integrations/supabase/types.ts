@@ -16,49 +16,49 @@ export type Database = {
     Tables: {
       funding_leads: {
         Row: {
-          applicant_type: string
+          applicant_type: string | null
           created_at: string
           credit_profile: string[] | null
-          credit_score: string
+          credit_score: string | null
           email: string
           first_name: string
-          funding_goal: number
+          funding_goal: number | null
           id: string
           last_name: string
           phone: string
           service_type: string | null
           terms_accepted: boolean
-          yearly_revenue: string
+          yearly_revenue: string | null
         }
         Insert: {
-          applicant_type: string
+          applicant_type?: string | null
           created_at?: string
           credit_profile?: string[] | null
-          credit_score: string
+          credit_score?: string | null
           email: string
           first_name: string
-          funding_goal: number
+          funding_goal?: number | null
           id?: string
           last_name: string
           phone: string
           service_type?: string | null
           terms_accepted?: boolean
-          yearly_revenue: string
+          yearly_revenue?: string | null
         }
         Update: {
-          applicant_type?: string
+          applicant_type?: string | null
           created_at?: string
           credit_profile?: string[] | null
-          credit_score?: string
+          credit_score?: string | null
           email?: string
           first_name?: string
-          funding_goal?: number
+          funding_goal?: number | null
           id?: string
           last_name?: string
           phone?: string
           service_type?: string | null
           terms_accepted?: boolean
-          yearly_revenue?: string
+          yearly_revenue?: string | null
         }
         Relationships: []
       }

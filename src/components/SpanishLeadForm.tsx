@@ -123,21 +123,23 @@ export default function SpanishLeadForm() {
   const handleContactSubmit = async (data: ContactFormData) => {
     setIsSubmitting(true);
     try {
-      const { data: lead, error } = await supabase
+      // Generate UUID client-side to avoid needing SELECT permission after INSERT
+      const newLeadId = crypto.randomUUID();
+      
+      const { error } = await supabase
         .from("funding_leads")
         .insert({
+          id: newLeadId,
           first_name: data.firstName,
           last_name: data.lastName,
           email: data.email,
           phone: data.phone,
           terms_accepted: true,
-        })
-        .select()
-        .single();
+        });
 
       if (error) throw error;
 
-      setLeadId(lead.id);
+      setLeadId(newLeadId);
       setStep(2);
       toast({
         title: "¡Información guardada!",

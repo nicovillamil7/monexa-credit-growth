@@ -30,7 +30,7 @@ import { Card } from "@/components/ui/card";
 import LandingHeader from "@/components/LandingHeader";
 import LandingFooter from "@/components/LandingFooter";
 import CountUpNumber from "@/components/CountUpNumber";
-import LeadSubmissionForm from "@/components/LeadSubmissionForm";
+import SpanishLeadForm from "@/components/SpanishLeadForm";
 import SEO from "@/components/SEO";
 import valparHero from "@/assets/valpar-hero.png";
 import aspirationHome from "@/assets/aspiration-home.jpg";
@@ -617,9 +617,7 @@ const EsCredito = () => {
 
               {/* Form */}
               <div className="md:col-span-3 animate-scale-in">
-                <div className="bg-background rounded-2xl p-1 shadow-large">
-                  <LeadSubmissionForm variant="embedded" />
-                </div>
+                <SpanishLeadForm />
               </div>
             </div>
           </div>

@@ -319,7 +319,7 @@ const TradeLine = () => {
                   Perfect for people starting their credit journey.
                 </h3>
                 <p className="text-muted-foreground">
-                  Never had a credit card? Can't get approved because you have no credit history? Trade lines solve this catch-22. Build the credit foundation you need so you can finally start applying for—and getting approved for—credit cards.
+                  Never had a credit card? Can't get approved because you have no credit history? Trade lines solve this catch-22. Build the credit foundation you need so you can finally start applying for and getting approved for credit cards.
                 </p>
                 <div className="space-y-3">
                   {[

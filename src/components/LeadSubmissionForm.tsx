@@ -194,6 +194,11 @@ export default function LeadSubmissionForm({
 
       if (error) throw error;
 
+      // Send email notification (fire-and-forget)
+      supabase.functions.invoke("send-lead-notification", {
+        body: { lead: leadData },
+      }).catch((err) => console.error("Notification error:", err));
+
       setIsSubmitted(true);
       toast({
         title: "Success!",

@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import { Card, CardContent } from "@/components/ui/card";
 import { Target, Heart, Shield, Users, TrendingUp, Award, Clock } from "lucide-react";
-import monexaLogo from "@/assets/monexa-logo.png";
+// Logo removed from About page per brand direction
 import businessGrowth from "@/assets/business-growth.jpg";
 import personalLoansHero from "@/assets/personal-loans-hero.jpg";
 import homeImprovement from "@/assets/home-improvement.jpg";

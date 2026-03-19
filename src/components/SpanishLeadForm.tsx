@@ -200,6 +200,12 @@ export default function SpanishLeadForm() {
 
       if (error) throw error;
 
+      // Send email notification (fire-and-forget)
+      const contact = contactForm.getValues();
+      supabase.functions.invoke("send-lead-notification", {
+        body: { lead: { id: leadId, first_name: contact.firstName, last_name: contact.lastName, email: contact.email, phone: contact.phone, service_type: serviceType, credit_score: data.creditScore, credit_profile: data.creditProfile } },
+      }).catch((err) => console.error("Notification error:", err));
+
       setIsComplete(true);
       toast({
         title: "¡Solicitud enviada!",
@@ -262,6 +268,12 @@ export default function SpanishLeadForm() {
         .eq("id", leadId);
 
       if (error) throw error;
+
+      // Send email notification (fire-and-forget)
+      const contact = contactForm.getValues();
+      supabase.functions.invoke("send-lead-notification", {
+        body: { lead: { id: leadId, first_name: contact.firstName, last_name: contact.lastName, email: contact.email, phone: contact.phone, service_type: serviceType, credit_score: data.creditScore, credit_profile: data.creditProfile } },
+      }).catch((err) => console.error("Notification error:", err));
 
       setIsComplete(true);
       toast({

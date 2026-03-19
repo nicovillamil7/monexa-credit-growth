@@ -264,7 +264,7 @@ const TradeLine = () => {
         <div className="container relative">
           <div className="mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              From no credit to approved—<br />here's exactly how.
+              From no credit to approved.<br />Here's exactly how.
             </h2>
             <p className="text-muted-foreground max-w-2xl">
               Trade lines work by adding you as an authorized user on an established credit card with perfect payment history. That entire history gets reported to your credit file—giving you an instant credit foundation so you can apply for and get approved for your own credit cards.

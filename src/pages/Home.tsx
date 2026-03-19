@@ -116,8 +116,8 @@ const Home = () => {
               <div className="text-[10px] sm:text-sm text-primary-foreground/80">Loans Processed</div>
             </div>
             <div className="text-center animate-fade-in" style={{ animationDelay: "0.1s" }}>
-              <div className="text-xl sm:text-3xl md:text-5xl font-bold text-primary-foreground mb-1 sm:mb-2">140M+</div>
-              <div className="text-[10px] sm:text-sm text-primary-foreground/80">Points Increased</div>
+               <div className="text-xl sm:text-3xl md:text-5xl font-bold text-primary-foreground mb-1 sm:mb-2">300+</div>
+               <div className="text-[10px] sm:text-sm text-primary-foreground/80">Avg. Point Increase</div>
             </div>
             <div className="text-center animate-fade-in" style={{ animationDelay: "0.2s" }}>
               <div className="text-xl sm:text-3xl md:text-5xl font-bold text-primary-foreground mb-1 sm:mb-2">12K+</div>

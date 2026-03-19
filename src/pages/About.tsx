@@ -195,7 +195,7 @@ const About = () => {
                       <TrendingUp className="h-6 w-6 text-primary-foreground" />
                     </div>
                     <div>
-                      <h3 className="font-semibold mb-1">140M+ Credit Points Increased</h3>
+                      <h3 className="font-semibold mb-1">300+ Avg. Point Increase</h3>
                       <p className="text-sm text-muted-foreground">Helping people improve their scores and qualify for loans</p>
                     </div>
                   </div>

@@ -132,7 +132,7 @@ const TradeLine = () => {
                 No credit card? Build history fast and get approved.
               </h1>
               <p className="text-lg text-muted-foreground max-w-lg">
-                Get added to established accounts with years of perfect payment history. Build your credit file fast so you can apply for and get approved for the credit cards you want—no hard inquiry required.
+                Get added to established accounts with years of perfect payment history. Build your credit file fast so you can apply for and get approved for the credit cards you want. No hard inquiry required.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Button 

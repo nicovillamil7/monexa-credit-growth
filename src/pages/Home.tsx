@@ -89,7 +89,7 @@ const Home = () => {
                 <div className="absolute -inset-4 bg-gradient-to-br from-primary/40 via-primary/20 to-transparent rounded-full blur-2xl" />
                 
                 {/* Image container - responsive sizing */}
-                <div className="relative w-[250px] sm:w-[240px] md:w-[300px] lg:w-[400px] xl:w-[500px] aspect-[4/5]">
+                <div className="relative w-[220px] sm:w-[240px] md:w-[300px] lg:w-[400px] xl:w-[500px] aspect-[3/4]">
                   <img 
                     src={valparHero} 
                     alt="Valpar - Credit Expert and Founder of Monexa" 
@@ -108,7 +108,7 @@ const Home = () => {
       </section>
 
       {/* Trust Stats Section */}
-      <section className="py-16 bg-gradient-primary">
+      <section className="py-8 sm:py-16 bg-gradient-primary">
         <div className="container">
           <div className="grid grid-cols-4 gap-2 sm:gap-8 max-w-5xl mx-auto">
             <div className="text-center animate-fade-in">
@@ -132,7 +132,7 @@ const Home = () => {
       </section>
 
       {/* Products Section */}
-      <section className="py-20 bg-muted/30">
+      <section className="py-12 sm:py-20 bg-muted/30">
         <div className="container">
           <div className="text-center mb-16 animate-fade-in">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Services</h2>

@@ -46,9 +46,9 @@ const About = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <SEO 
-        title="About Monexa | Trusted Credit Repair & Funding Company"
-        description="Discover how Monexa helps 12,000+ people improve credit scores and access funding. CROA compliant, SOC 2 certified. $56M+ in loans processed, 140M+ credit points increased."
-        keywords="about monexa, credit repair company, trusted credit repair, financial services, CROA compliant, SOC 2 certified, credit repair experts, personal loan company, credit funding services"
+        title="About Monexa | Trusted Credit Optimization & Funding Company"
+        description="Discover how Monexa helps 900+ people improve credit scores and access funding. CROA compliant. $16M+ in loans processed, 300+ average point increase."
+        keywords="about monexa, credit optimization company, trusted credit services, financial services, CROA compliant, credit experts, personal loan company, credit funding services"
         structuredData={aboutPageSchema}
       />
       <Header />

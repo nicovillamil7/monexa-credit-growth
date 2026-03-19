@@ -227,7 +227,7 @@ const TradeLine = () => {
                 </div>
                 <h3 className="text-xl font-semibold mb-2">Get Approved Faster</h3>
                 <p className="text-muted-foreground text-sm">
-                  Instantly inherit years of perfect payment history. Build the credit file you need to qualify for credit cards—without waiting years to establish your own history.
+                  Instantly inherit years of perfect payment history. Build the credit file you need to qualify for credit cards without waiting years to establish your own history.
                 </p>
               </CardContent>
             </Card>

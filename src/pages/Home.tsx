@@ -73,7 +73,7 @@ const Home = () => {
                 </div>
                 <div className="flex items-center gap-1 sm:gap-2">
                   <CheckCircle className="h-3 w-3 sm:h-5 sm:w-5 text-primary flex-shrink-0" />
-                  <span className="text-[10px] sm:text-sm text-[hsl(var(--hero-muted))] whitespace-nowrap">$56M+ Funded</span>
+                  <span className="text-[10px] sm:text-sm text-[hsl(var(--hero-muted))] whitespace-nowrap">$16M+ Funded</span>
                 </div>
                 <div className="flex items-center gap-1 sm:gap-2">
                   <CheckCircle className="h-3 w-3 sm:h-5 sm:w-5 text-primary flex-shrink-0" />

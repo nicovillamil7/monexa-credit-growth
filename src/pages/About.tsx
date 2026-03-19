@@ -66,7 +66,7 @@ const About = () => {
                 Helping 900+ People Achieve<br />Amazing Credit Results
               </h1>
               <p className="text-xl text-muted-foreground max-w-2xl">
-                We believe everyone deserves financial freedom. Our expert credit repair services help you unlock opportunities for loans, mortgages, and better rates through improved credit scores.
+                We believe everyone deserves financial freedom. Our expert credit optimization services help you unlock opportunities for loans, mortgages, and better rates through improved credit scores.
               </p>
             </div>
 

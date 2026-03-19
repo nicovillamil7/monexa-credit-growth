@@ -215,7 +215,7 @@ const TradeLine = () => {
               Build credit history fast.
             </h2>
             <p className="text-muted-foreground max-w-3xl mx-auto">
-              No credit? Thin credit file? Trade lines add established accounts to your profile, giving you instant credit age and perfect payment history—so you can finally get approved for the credit cards you want.
+              No credit? Thin credit file? Trade lines add established accounts to your profile, giving you instant credit age and perfect payment history so you can finally get approved for the credit cards you want.
             </p>
           </div>
 

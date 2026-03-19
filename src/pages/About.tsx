@@ -62,7 +62,6 @@ const About = () => {
         <div className="container relative">
           <div className="max-w-6xl mx-auto">
             <div className="flex flex-col items-center text-center mb-16">
-              <img src={monexaLogo} alt="Monexa Logo - Trusted Credit Repair and Funding Company" className="h-20 md:h-24 w-auto mb-8 drop-shadow-lg" width="200" height="96" />
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4">
                 Helping 12,000+ People Achieve<br />Amazing Credit Results
               </h1>

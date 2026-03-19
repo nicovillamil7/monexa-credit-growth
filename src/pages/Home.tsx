@@ -53,7 +53,7 @@ const Home = () => {
               </h1>
               
               <p className="text-sm sm:text-lg md:text-xl text-[hsl(var(--hero-muted))] mb-4 sm:mb-8 max-w-xl animate-fade-in" style={{ animationDelay: "0.1s" }}>
-                I help you repair credit, boost scores, and unlock approvals for loans, credit cards, and trade lines — with a personal touch.
+                I help you optimize credit, boost scores, and unlock approvals for loans, credit cards, and trade lines with a personal touch.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 animate-fade-in" style={{ animationDelay: "0.2s" }}>

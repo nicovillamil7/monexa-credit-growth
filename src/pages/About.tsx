@@ -244,7 +244,7 @@ const About = () => {
                   </div>
                 </div>
                 <h3 className="font-bold text-lg mb-2">CROA Compliant</h3>
-                <p className="text-sm text-muted-foreground">Credit Repair Organizations Act certified</p>
+                <p className="text-sm text-muted-foreground">Credit Organizations Act certified</p>
               </div>
 
               {/* Data Protection Badge */}

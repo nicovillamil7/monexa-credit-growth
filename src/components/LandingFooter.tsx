@@ -19,11 +19,14 @@ const LandingFooter = () => {
 
           {/* Legal Links */}
           <div className="flex items-center gap-6 text-sm text-muted-foreground">
-            <Link to="/privacy" className="hover:text-foreground transition-colors">
+            <Link to="/legal/privacy" className="hover:text-foreground transition-colors">
               Privacidad
             </Link>
-            <Link to="/terms" className="hover:text-foreground transition-colors">
+            <Link to="/legal/terms" className="hover:text-foreground transition-colors">
               Términos
+            </Link>
+            <Link to="/legal/disclosures" className="hover:text-foreground transition-colors">
+              Divulgaciones
             </Link>
           </div>
 

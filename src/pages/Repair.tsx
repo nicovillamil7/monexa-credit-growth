@@ -127,9 +127,9 @@ const Repair = () => {
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <SEO 
-        title="Credit Repair Services | Fix Your Credit Score | Monexa"
-        description="Professional credit repair services. Dispute errors, remove negative items, boost your credit score. Free credit review. Results in 30-90 days. CROA compliant."
-        keywords="credit repair, fix credit score, dispute credit errors, remove collections, credit repair company, improve credit rating"
+        title="Credit Optimization Services | Fix Your Credit Score | Monexa"
+        description="Professional credit optimization services. Dispute errors, remove negative items, boost your credit score. Free credit review. Results in 30-90 days. CROA compliant."
+        keywords="credit optimization, fix credit score, dispute credit errors, remove collections, credit optimization company, improve credit rating"
         structuredData={[creditRepairServiceSchema, faqSchema(faqData)]}
       />
       <Header />

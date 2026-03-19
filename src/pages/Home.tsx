@@ -120,8 +120,8 @@ const Home = () => {
                <div className="text-[10px] sm:text-sm text-primary-foreground/80">Avg. Point Increase</div>
             </div>
             <div className="text-center animate-fade-in" style={{ animationDelay: "0.2s" }}>
-              <div className="text-xl sm:text-3xl md:text-5xl font-bold text-primary-foreground mb-1 sm:mb-2">12K+</div>
-              <div className="text-[10px] sm:text-sm text-primary-foreground/80">Businesses</div>
+               <div className="text-xl sm:text-3xl md:text-5xl font-bold text-primary-foreground mb-1 sm:mb-2">900+</div>
+               <div className="text-[10px] sm:text-sm text-primary-foreground/80">Clients</div>
             </div>
             <div className="text-center animate-fade-in" style={{ animationDelay: "0.3s" }}>
               <div className="text-xl sm:text-3xl md:text-5xl font-bold text-primary-foreground mb-1 sm:mb-2">4.8★</div>

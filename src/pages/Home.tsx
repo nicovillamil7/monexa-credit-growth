@@ -144,7 +144,7 @@ const Home = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             <ProductCard
               icon={Wrench}
-              title="Credit Repair"
+              title="Credit Optimization"
               description="Clean up your credit and boost your score"
               href="/repair"
               features={[

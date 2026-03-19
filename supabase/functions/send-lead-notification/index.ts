@@ -114,13 +114,15 @@ Deno.serve(async (req) => {
 
     // Enqueue to transactional email queue
     const { error: enqueueError } = await supabase.rpc('enqueue_email', {
-      p_queue_name: 'transactional_emails',
-      p_message_id: messageId,
-      p_to_email: notificationEmail,
-      p_subject: `New Lead: ${lead.first_name} ${lead.last_name} - ${serviceName}`,
-      p_html: html,
-      p_from_name: 'Monexa Notifications',
-      p_reply_to: lead.email,
+      queue_name: 'transactional_emails',
+      payload: {
+        message_id: messageId,
+        to: notificationEmail,
+        subject: `New Lead: ${lead.first_name} ${lead.last_name} - ${serviceName}`,
+        html: html,
+        from_name: 'Monexa Notifications',
+        reply_to: lead.email,
+      },
     })
 
     if (enqueueError) {

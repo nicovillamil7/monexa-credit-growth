@@ -73,15 +73,15 @@ const About = () => {
             {/* Stats */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
               <div className="text-center p-6 rounded-2xl bg-card border border-border hover:shadow-medium transition-shadow">
-                <div className="text-3xl md:text-4xl font-bold text-primary mb-2">$56M+</div>
+                <div className="text-3xl md:text-4xl font-bold text-primary mb-2">$16M+</div>
                 <div className="text-sm text-muted-foreground">Personal Loans Processed</div>
               </div>
               <div className="text-center p-6 rounded-2xl bg-card border border-border hover:shadow-medium transition-shadow">
-                <div className="text-3xl md:text-4xl font-bold text-primary mb-2">140M+</div>
-                <div className="text-sm text-muted-foreground">Credit Score Points Increased</div>
+                <div className="text-3xl md:text-4xl font-bold text-primary mb-2">300+</div>
+                <div className="text-sm text-muted-foreground">Avg. Point Increase</div>
               </div>
               <div className="text-center p-6 rounded-2xl bg-card border border-border hover:shadow-medium transition-shadow">
-                <div className="text-3xl md:text-4xl font-bold text-primary mb-2">12K+</div>
+                <div className="text-3xl md:text-4xl font-bold text-primary mb-2">900+</div>
                 <div className="text-sm text-muted-foreground">Clients with Improved Credit</div>
               </div>
               <div className="text-center p-6 rounded-2xl bg-card border border-border hover:shadow-medium transition-shadow">

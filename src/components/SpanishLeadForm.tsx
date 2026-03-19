@@ -201,8 +201,9 @@ export default function SpanishLeadForm() {
       if (error) throw error;
 
       // Send email notification (fire-and-forget)
+      const contact = contactForm.getValues();
       supabase.functions.invoke("send-lead-notification", {
-        body: { lead: { id: leadId, first_name: contactData?.firstName, last_name: contactData?.lastName, email: contactData?.email, phone: contactData?.phone, service_type: selectedService, credit_score: data.creditScore, credit_profile: data.creditProfile } },
+        body: { lead: { id: leadId, first_name: contact.firstName, last_name: contact.lastName, email: contact.email, phone: contact.phone, service_type: serviceType, credit_score: data.creditScore, credit_profile: data.creditProfile } },
       }).catch((err) => console.error("Notification error:", err));
 
       setIsComplete(true);

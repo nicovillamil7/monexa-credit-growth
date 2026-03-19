@@ -69,7 +69,7 @@ const Home = () => {
               <div className="flex items-center justify-center lg:justify-start gap-2 sm:gap-6 mt-6 sm:mt-10 pt-4 sm:pt-8 border-t border-[hsl(var(--hero-muted)/0.2)] animate-fade-in" style={{ animationDelay: "0.3s" }}>
                 <div className="flex items-center gap-1 sm:gap-2">
                   <CheckCircle className="h-3 w-3 sm:h-5 sm:w-5 text-primary flex-shrink-0" />
-                  <span className="text-[10px] sm:text-sm text-[hsl(var(--hero-muted))] whitespace-nowrap">12K+ Clients</span>
+                  <span className="text-[10px] sm:text-sm text-[hsl(var(--hero-muted))] whitespace-nowrap">900+ Clients</span>
                 </div>
                 <div className="flex items-center gap-1 sm:gap-2">
                   <CheckCircle className="h-3 w-3 sm:h-5 sm:w-5 text-primary flex-shrink-0" />

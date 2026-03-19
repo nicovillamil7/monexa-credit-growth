@@ -567,8 +567,8 @@ const Repair = () => {
               <div className="w-16 h-16 rounded-full bg-primary-foreground/10 flex items-center justify-center mx-auto lg:mx-0 mb-6">
                 <Wrench className="h-8 w-8 text-primary-foreground" />
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                Start your credit repair journey.
+               <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                Start your credit optimization journey.
               </h2>
               <p className="text-primary-foreground/80 mb-6 max-w-lg">
                 Get a free credit review and personalized action plan. Our experts are ready to help you take control of your credit.

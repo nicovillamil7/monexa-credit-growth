@@ -42,7 +42,7 @@ const Footer = () => {
             <ul className="space-y-2">
               <li>
                 <Link to="/repair" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                  Credit Repair
+                  Credit Optimization
                 </Link>
               </li>
               <li>

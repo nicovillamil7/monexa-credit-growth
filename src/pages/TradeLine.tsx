@@ -60,7 +60,7 @@ const TradeLine = () => {
     {
       name: "Maria R.",
       role: "Young Professional",
-      content: "The catch-22 was frustrating—couldn't get credit without credit. Trade lines solved it. Now I have 2 credit cards and I'm building my score every month!",
+      content: "The catch-22 was frustrating. Couldn't get credit without credit. Trade lines solved it. Now I have 2 credit cards and I'm building my score every month!",
       rating: 5
     },
     {

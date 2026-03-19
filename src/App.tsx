@@ -13,6 +13,9 @@ import TradeLine from "./pages/TradeLine";
 import About from "./pages/About";
 import Apply from "./pages/Apply";
 import NotFound from "./pages/NotFound";
+import Terms from "./pages/legal/Terms";
+import Privacy from "./pages/legal/Privacy";
+import Disclosures from "./pages/legal/Disclosures";
 import EsCredito from "./pages/EsCredito";
 import WhatsAppButton from "@/components/WhatsAppButton";
 

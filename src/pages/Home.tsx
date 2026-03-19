@@ -39,8 +39,8 @@ const Home = () => {
         <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl pointer-events-none" />
         
         <div className="container py-12 md:py-20 lg:py-24">
-          {/* Side-by-side layout on ALL screen sizes */}
-          <div className="grid grid-cols-[1fr_auto] md:grid-cols-2 gap-4 sm:gap-8 lg:gap-12 items-center">
+          {/* Stack on mobile, side-by-side on md+ */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
             {/* Text Content */}
             <div className="text-left">
               <div className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 bg-primary/20 rounded-full text-xs sm:text-sm font-medium text-primary mb-4 sm:mb-6 animate-fade-in">
@@ -83,13 +83,13 @@ const Home = () => {
             </div>
 
             {/* Photo - side by side on all screens */}
-            <div className="flex justify-end animate-fade-in">
+            <div className="flex justify-center md:justify-end animate-fade-in">
               <div className="relative">
                 {/* Gold accent ring */}
                 <div className="absolute -inset-4 bg-gradient-to-br from-primary/40 via-primary/20 to-transparent rounded-full blur-2xl" />
                 
-                {/* Image container - responsive sizing with optimized loading */}
-                <div className="relative w-[200px] sm:w-[240px] md:w-[300px] lg:w-[400px] xl:w-[500px] aspect-[4/5]">
+                {/* Image container - responsive sizing */}
+                <div className="relative w-[250px] sm:w-[240px] md:w-[300px] lg:w-[400px] xl:w-[500px] aspect-[4/5]">
                   <img 
                     src={valparHero} 
                     alt="Valpar - Credit Expert and Founder of Monexa" 

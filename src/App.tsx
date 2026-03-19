@@ -13,6 +13,9 @@ import TradeLine from "./pages/TradeLine";
 import About from "./pages/About";
 import Apply from "./pages/Apply";
 import NotFound from "./pages/NotFound";
+import Terms from "./pages/legal/Terms";
+import Privacy from "./pages/legal/Privacy";
+import Disclosures from "./pages/legal/Disclosures";
 import EsCredito from "./pages/EsCredito";
 import WhatsAppButton from "@/components/WhatsAppButton";
 
@@ -37,6 +40,10 @@ const App = () => (
           <Route path="/apply" element={<Apply />} />
           {/* Hidden PPC Landing Pages - Not in navigation */}
           <Route path="/es/credito" element={<EsCredito />} />
+          {/* Legal Pages */}
+          <Route path="/legal/terms" element={<Terms />} />
+          <Route path="/legal/privacy" element={<Privacy />} />
+          <Route path="/legal/disclosures" element={<Disclosures />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

@@ -213,7 +213,7 @@ const About = () => {
                       <Users className="h-6 w-6 text-primary-foreground" />
                     </div>
                     <div>
-                      <h3 className="font-semibold mb-1">12,000+ People Helped</h3>
+                      <h3 className="font-semibold mb-1">900+ People Helped</h3>
                       <p className="text-sm text-muted-foreground">Real people achieving real financial freedom</p>
                     </div>
                   </div>

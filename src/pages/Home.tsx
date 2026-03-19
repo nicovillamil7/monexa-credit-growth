@@ -38,7 +38,7 @@ const Home = () => {
         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary/5 to-transparent pointer-events-none" />
         <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl pointer-events-none" />
         
-        <div className="container py-12 md:py-20 lg:py-24">
+        <div className="container py-10 md:py-20 lg:py-24">
           {/* Stack on mobile, side-by-side on md+ */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
             {/* Text Content */}

@@ -44,9 +44,9 @@ const EsCredito = () => {
   };
 
   const trustStats = [
-    { value: 56, prefix: "$", suffix: "M+", label: "Préstamos Procesados" },
-    { value: 140, suffix: "M+", label: "Puntos Aumentados" },
-    { value: 12, suffix: "K+", label: "Negocios Ayudados" },
+    { value: 16, prefix: "$", suffix: "M+", label: "Préstamos Procesados" },
+    { value: 300, suffix: "+", label: "Aumento Promedio de Puntos" },
+    { value: 900, suffix: "+", label: "Clientes Ayudados" },
     { value: 4.8, suffix: "★", label: "Calificación" },
   ];
 

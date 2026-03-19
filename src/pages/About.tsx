@@ -297,7 +297,7 @@ const About = () => {
               <Button size="lg" variant="accent" asChild>
                 <Link to="/apply">Apply Now</Link>
               </Button>
-              <Button size="lg" variant="outline" className="bg-background/10 border-primary-foreground/20 text-primary-foreground hover:bg-background/20" asChild>
+              <Button size="lg" variant="outline" className="bg-primary/10 border-primary text-primary-foreground hover:bg-primary/20" asChild>
                 <Link to="/contact">Contact Us</Link>
               </Button>
             </div>

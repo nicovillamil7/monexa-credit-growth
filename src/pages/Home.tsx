@@ -112,7 +112,7 @@ const Home = () => {
         <div className="container">
           <div className="grid grid-cols-4 gap-2 sm:gap-8 max-w-5xl mx-auto">
             <div className="text-center animate-fade-in">
-              <div className="text-xl sm:text-3xl md:text-5xl font-bold text-primary-foreground mb-1 sm:mb-2">$56M+</div>
+              <div className="text-xl sm:text-3xl md:text-5xl font-bold text-primary-foreground mb-1 sm:mb-2">$16M+</div>
               <div className="text-[10px] sm:text-sm text-primary-foreground/80">Loans Processed</div>
             </div>
             <div className="text-center animate-fade-in" style={{ animationDelay: "0.1s" }}>

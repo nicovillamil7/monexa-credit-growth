@@ -72,7 +72,7 @@ const TradeLine = () => {
     {
       name: "Emily T.",
       role: "First-Time Applicant",
-      content: "Was nervous about applying with no history. Trade lines built my credit file fast. Got my first card with travel rewards—already planning my first trip!",
+      content: "Was nervous about applying with no history. Trade lines built my credit file fast. Got my first card with travel rewards. Already planning my first trip!",
       rating: 5
     },
     {

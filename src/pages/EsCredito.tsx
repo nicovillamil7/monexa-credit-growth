@@ -544,7 +544,7 @@ const EsCredito = () => {
                         ))}
                       </div>
                       <p className="text-background/90 mb-3 text-sm italic">"{testimonial.text}"</p>
-                      <p className="text-xs font-medium text-background/60">— {testimonial.name}</p>
+                      <p className="text-xs font-medium text-background/60">{testimonial.name}</p>
                     </Card>
                   </div>
                 ))}
@@ -586,7 +586,7 @@ const EsCredito = () => {
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-8">
               <h2 className="text-2xl md:text-3xl font-bold text-primary-foreground mb-3">
-                Comienza hoy — Es gratis
+                Comienza hoy. Es gratis
               </h2>
               <p className="text-primary-foreground/80 max-w-xl mx-auto text-sm">
                 Completa el formulario y un especialista te contactará en menos de 24 horas.

@@ -130,7 +130,7 @@ const CreditCards = () => {
                 Find the perfect card for your lifestyle.
               </h1>
               <p className="text-lg text-muted-foreground max-w-lg">
-                Whether you're building credit, earning rewards, or managing expenses—we match you with cards designed for your goals.
+                Whether you're building credit, earning rewards, or managing expenses, we match you with cards designed for your goals.
               </p>
               <Button 
                 size="lg" 

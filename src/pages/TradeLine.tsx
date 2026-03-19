@@ -533,7 +533,7 @@ const TradeLine = () => {
                 </li>
                 <li className="flex items-center gap-3">
                   <CheckCircle className="h-5 w-5 text-primary-foreground" />
-                  <span>No hard inquiry—build credit without risk</span>
+                  <span>No hard inquiry. Build credit without risk</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <CheckCircle className="h-5 w-5 text-primary-foreground" />

@@ -39,7 +39,7 @@ const LandingFooter = () => {
         {/* Disclaimer */}
         <div className="mt-6 pt-6 border-t border-border/50">
           <p className="text-xs text-muted-foreground text-center max-w-3xl mx-auto">
-            Monexa no es un prestamista ni un asesor financiero. Los servicios de reparación de crédito 
+            Monexa no es un prestamista ni un asesor financiero. Los servicios de optimización de crédito 
             y las referencias de financiamiento están sujetos a términos y condiciones. Los resultados 
             pueden variar según la situación individual de cada cliente.
           </p>

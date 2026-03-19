@@ -284,7 +284,7 @@ const Home = () => {
               Ready to unlock funding?
             </h2>
             <p className="text-lg text-primary-foreground/90 mb-8">
-              Join thousands of customers who've improved their credit and accessed the funding they need.
+              Join hundreds of customers who've improved their credit and accessed the funding they need.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" variant="accent" asChild>

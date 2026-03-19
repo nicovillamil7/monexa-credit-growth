@@ -46,7 +46,7 @@ const Build = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             <ProductCard
               icon={Wrench}
-              title="Credit Repair"
+              title="Credit Optimization"
               description="Clean up errors and negative items"
               href="/repair"
               features={[

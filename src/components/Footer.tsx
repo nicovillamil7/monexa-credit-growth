@@ -106,7 +106,7 @@ const Footer = () => {
         <div className="border-t border-border mt-8 pt-8 text-center text-sm text-muted-foreground">
           <p className="mb-4">
             Monexa is not a law firm or a credit reporting agency. Results vary and are not guaranteed. 
-            Services comply with applicable federal and state credit-repair regulations. Some products may 
+            Services comply with applicable federal and state credit optimization regulations. Some products may 
             require identity verification and additional documentation. Terms and conditions apply.
           </p>
           <p>&copy; {new Date().getFullYear()} Monexa. All rights reserved.</p>

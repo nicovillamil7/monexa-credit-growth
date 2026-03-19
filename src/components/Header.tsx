@@ -113,7 +113,7 @@ const Header = () => {
                 onClick={() => setIsOpen(false)}
                 className="text-lg font-medium text-foreground hover:text-primary transition-colors"
               >
-                Credit Repair
+                Credit Optimization
               </Link>
 
               <div className="space-y-2">

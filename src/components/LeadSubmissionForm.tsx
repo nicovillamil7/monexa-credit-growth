@@ -40,7 +40,7 @@ const revenueOptions = [
 ];
 
 const serviceTypeOptions = [
-  { value: "credit-repair", label: "Credit Repair - Fix my credit score" },
+  { value: "credit-repair", label: "Credit Optimization - Fix my credit score" },
   { value: "get-funded", label: "Get Funded - I need business funding" },
 ];
 

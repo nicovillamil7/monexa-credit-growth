@@ -129,7 +129,7 @@ const PersonalLoans = () => {
                 Your goals deserve the right funding.
               </h1>
               <p className="text-lg text-muted-foreground max-w-lg">
-                Whether it's a new home, a car, college tuition, or that dream vacation—we help you get there with personalized loan solutions.
+                Whether it's a new home, a car, college tuition, or that dream vacation, we help you get there with personalized loan solutions.
               </p>
               <Button 
                 size="lg" 
@@ -511,7 +511,7 @@ const PersonalLoans = () => {
                 Ready to make it happen?
               </h2>
               <p className="text-primary-foreground/80 mb-6 max-w-lg">
-                Whether it's a home, car, education, or vacation—your goals are within reach. Fill out the form and get matched with the right loan for you.
+                Whether it's a home, car, education, or vacation, your goals are within reach. Fill out the form and get matched with the right loan for you.
               </p>
               <ul className="space-y-3 text-primary-foreground/90">
                 <li className="flex items-center gap-3">

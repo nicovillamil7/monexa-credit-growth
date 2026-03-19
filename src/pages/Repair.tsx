@@ -127,9 +127,9 @@ const Repair = () => {
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <SEO 
-        title="Credit Repair Services | Fix Your Credit Score | Monexa"
-        description="Professional credit repair services. Dispute errors, remove negative items, boost your credit score. Free credit review. Results in 30-90 days. CROA compliant."
-        keywords="credit repair, fix credit score, dispute credit errors, remove collections, credit repair company, improve credit rating"
+        title="Credit Optimization Services | Fix Your Credit Score | Monexa"
+        description="Professional credit optimization services. Dispute errors, remove negative items, boost your credit score. Free credit review. Results in 30-90 days. CROA compliant."
+        keywords="credit optimization, fix credit score, dispute credit errors, remove collections, credit optimization company, improve credit rating"
         structuredData={[creditRepairServiceSchema, faqSchema(faqData)]}
       />
       <Header />
@@ -212,11 +212,11 @@ const Repair = () => {
               <span className="w-2 h-2 rounded-full bg-primary"></span>
               WHAT YOU CAN ACHIEVE
             </span>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-              Your credit repair opens doors.
+             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+              Your credit optimization opens doors.
             </h2>
             <p className="text-muted-foreground max-w-3xl mx-auto">
-              Better credit isn't just a number—it's your ticket to major life milestones. Here's what our clients achieve after repairing their credit with Monexa.
+              Better credit isn't just a number, it's your ticket to major life milestones. Here's what our clients achieve after optimizing their credit with Monexa.
             </p>
           </div>
 
@@ -332,7 +332,7 @@ const Repair = () => {
                   Get approved for the things that matter.
                 </h3>
                 <p className="text-muted-foreground">
-                  Our credit repair service helps you qualify for mortgages, auto loans, and business funding. We've helped 12,000+ clients remove errors, boost their scores, and achieve their financial goals—from buying homes to starting businesses.
+                  Our credit optimization service helps you qualify for mortgages, auto loans, and business funding. We've helped 900+ clients remove errors, boost their scores, and achieve their financial goals, from buying homes to starting businesses.
                 </p>
                 <div className="grid sm:grid-cols-2 gap-4">
                   {[
@@ -366,13 +366,13 @@ const Repair = () => {
                   Why Monexa gets results.
                 </h3>
                 <p className="text-muted-foreground">
-                  We've helped 12,000+ clients qualify for mortgages, auto loans, and business funding. Our proven process combines expert dispute filing, strategic score optimization, and personalized coaching to help you achieve real-world financial goals.
+                  We've helped 900+ clients qualify for mortgages, auto loans, and business funding. Our proven process combines expert dispute filing, strategic score optimization, and personalized coaching to help you achieve real-world financial goals.
                 </p>
                 <div className="space-y-3">
                   {[
-                    { icon: Target, text: "140M+ Credit Points Increased" },
+                    { icon: Target, text: "300+ Avg. Point Increase" },
                     { icon: Shield, text: "CROA Compliant & Transparent" },
-                    { icon: Users, text: "12,000+ Businesses Funded" },
+                    { icon: Users, text: "900+ Clients Helped" },
                     { icon: Zap, text: "Results in 30-90 Days" }
                   ].map((item, index) => (
                     <div key={index} className="flex items-center gap-3">
@@ -567,8 +567,8 @@ const Repair = () => {
               <div className="w-16 h-16 rounded-full bg-primary-foreground/10 flex items-center justify-center mx-auto lg:mx-0 mb-6">
                 <Wrench className="h-8 w-8 text-primary-foreground" />
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                Start your credit repair journey.
+               <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                Start your credit optimization journey.
               </h2>
               <p className="text-primary-foreground/80 mb-6 max-w-lg">
                 Get a free credit review and personalized action plan. Our experts are ready to help you take control of your credit.

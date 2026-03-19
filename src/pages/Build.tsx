@@ -11,7 +11,7 @@ const Build = () => {
     <div className="min-h-screen flex flex-col">
       <SEO 
         title="Build Your Credit Score | Credit Building Tools | Monexa"
-        description="Build strong credit with our credit repair services, secured credit cards, trade lines, and expert guidance. Start establishing your credit history today!"
+        description="Build strong credit with our credit optimization services, secured credit cards, trade lines, and expert guidance. Start establishing your credit history today!"
         keywords="build credit, build credit score, establish credit, credit building, secured credit cards, credit history"
       />
       <Header />
@@ -46,7 +46,7 @@ const Build = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             <ProductCard
               icon={Wrench}
-              title="Credit Repair"
+              title="Credit Optimization"
               description="Clean up errors and negative items"
               href="/repair"
               features={[

@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import { Card, CardContent } from "@/components/ui/card";
 import { Target, Heart, Shield, Users, TrendingUp, Award, Clock } from "lucide-react";
-import monexaLogo from "@/assets/monexa-logo.png";
+// Logo removed from About page per brand direction
 import businessGrowth from "@/assets/business-growth.jpg";
 import personalLoansHero from "@/assets/personal-loans-hero.jpg";
 import homeImprovement from "@/assets/home-improvement.jpg";
@@ -17,8 +17,8 @@ const aboutPageSchema = {
   "@context": "https://schema.org",
   "@type": "FinancialService",
   "name": "Monexa",
-  "alternateName": "Monexa Credit Repair & Funding",
-  "description": "Trusted credit repair and funding services helping people improve credit scores, access personal loans, credit cards, and achieve financial freedom.",
+  "alternateName": "Monexa Credit Optimization & Funding",
+  "description": "Trusted credit optimization and funding services helping people improve credit scores, access personal loans, credit cards, and achieve financial freedom.",
   "url": "https://monexa.com/about",
   "logo": "https://storage.googleapis.com/gpt-engineer-file-uploads/XywMxhqpYLTRD9hg4YTpmD5QQxx2/uploads/1762646067243-monexa-logo-light.png",
   "address": {
@@ -46,9 +46,9 @@ const About = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <SEO 
-        title="About Monexa | Trusted Credit Repair & Funding Company"
-        description="Discover how Monexa helps 12,000+ people improve credit scores and access funding. CROA compliant, SOC 2 certified. $56M+ in loans processed, 140M+ credit points increased."
-        keywords="about monexa, credit repair company, trusted credit repair, financial services, CROA compliant, SOC 2 certified, credit repair experts, personal loan company, credit funding services"
+        title="About Monexa | Trusted Credit Optimization & Funding Company"
+        description="Discover how Monexa helps 900+ people improve credit scores and access funding. CROA compliant. $16M+ in loans processed, 300+ average point increase."
+        keywords="about monexa, credit optimization company, trusted credit services, financial services, CROA compliant, credit experts, personal loan company, credit funding services"
         structuredData={aboutPageSchema}
       />
       <Header />
@@ -62,27 +62,26 @@ const About = () => {
         <div className="container relative">
           <div className="max-w-6xl mx-auto">
             <div className="flex flex-col items-center text-center mb-16">
-              <img src={monexaLogo} alt="Monexa Logo - Trusted Credit Repair and Funding Company" className="h-20 md:h-24 w-auto mb-8 drop-shadow-lg" width="200" height="96" />
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4">
-                Helping 12,000+ People Achieve<br />Amazing Credit Results
+                Helping 900+ People Achieve<br />Amazing Credit Results
               </h1>
               <p className="text-xl text-muted-foreground max-w-2xl">
-                We believe everyone deserves financial freedom. Our expert credit repair services help you unlock opportunities for loans, mortgages, and better rates through improved credit scores.
+                We believe everyone deserves financial freedom. Our expert credit optimization services help you unlock opportunities for loans, mortgages, and better rates through improved credit scores.
               </p>
             </div>
 
             {/* Stats */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
               <div className="text-center p-6 rounded-2xl bg-card border border-border hover:shadow-medium transition-shadow">
-                <div className="text-3xl md:text-4xl font-bold text-primary mb-2">$56M+</div>
+                <div className="text-3xl md:text-4xl font-bold text-primary mb-2">$16M+</div>
                 <div className="text-sm text-muted-foreground">Personal Loans Processed</div>
               </div>
               <div className="text-center p-6 rounded-2xl bg-card border border-border hover:shadow-medium transition-shadow">
-                <div className="text-3xl md:text-4xl font-bold text-primary mb-2">140M+</div>
-                <div className="text-sm text-muted-foreground">Credit Score Points Increased</div>
+                <div className="text-3xl md:text-4xl font-bold text-primary mb-2">300+</div>
+                <div className="text-sm text-muted-foreground">Avg. Point Increase</div>
               </div>
               <div className="text-center p-6 rounded-2xl bg-card border border-border hover:shadow-medium transition-shadow">
-                <div className="text-3xl md:text-4xl font-bold text-primary mb-2">12K+</div>
+                <div className="text-3xl md:text-4xl font-bold text-primary mb-2">900+</div>
                 <div className="text-sm text-muted-foreground">Clients with Improved Credit</div>
               </div>
               <div className="text-center p-6 rounded-2xl bg-card border border-border hover:shadow-medium transition-shadow">
@@ -164,12 +163,12 @@ const About = () => {
           <div className="max-w-6xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
               <div>
-                <h2 className="text-3xl md:text-4xl font-bold mb-6">Expert Credit Repair Services for Real People</h2>
+                <h2 className="text-3xl md:text-4xl font-bold mb-6">Expert Credit Optimization for Real People</h2>
                 <p className="text-lg text-muted-foreground mb-4">
-                  We help everyday people unlock financial opportunities and achieve their dreams—from buying homes and cars to securing business loans and qualifying for credit cards.
+                  We help everyday people unlock financial opportunities and achieve their dreams, from buying homes and cars to securing business loans and qualifying for credit cards.
                 </p>
                 <p className="text-muted-foreground">
-                  Our professional credit repair experts use proven strategies and advanced technology to dispute credit report errors, remove negative items, and boost your credit score in 30-90 days.
+                  Our professional credit experts use proven strategies and advanced technology to dispute credit report errors, remove negative items, and boost your credit score in 30-90 days.
                 </p>
               </div>
               <div className="grid grid-cols-2 gap-4">
@@ -196,7 +195,7 @@ const About = () => {
                       <TrendingUp className="h-6 w-6 text-primary-foreground" />
                     </div>
                     <div>
-                      <h3 className="font-semibold mb-1">140M+ Credit Points Increased</h3>
+                      <h3 className="font-semibold mb-1">300+ Avg. Point Increase</h3>
                       <p className="text-sm text-muted-foreground">Helping people improve their scores and qualify for loans</p>
                     </div>
                   </div>
@@ -214,7 +213,7 @@ const About = () => {
                       <Users className="h-6 w-6 text-primary-foreground" />
                     </div>
                     <div>
-                      <h3 className="font-semibold mb-1">12,000+ People Helped</h3>
+                      <h3 className="font-semibold mb-1">900+ People Helped</h3>
                       <p className="text-sm text-muted-foreground">Real people achieving real financial freedom</p>
                     </div>
                   </div>
@@ -245,7 +244,7 @@ const About = () => {
                   </div>
                 </div>
                 <h3 className="font-bold text-lg mb-2">CROA Compliant</h3>
-                <p className="text-sm text-muted-foreground">Credit Repair Organizations Act certified</p>
+                <p className="text-sm text-muted-foreground">Credit Organizations Act certified</p>
               </div>
 
               {/* Data Protection Badge */}
@@ -298,7 +297,7 @@ const About = () => {
               <Button size="lg" variant="accent" asChild>
                 <Link to="/apply">Apply Now</Link>
               </Button>
-              <Button size="lg" variant="outline" className="bg-background/10 border-primary-foreground/20 text-primary-foreground hover:bg-background/20" asChild>
+              <Button size="lg" variant="outline" className="bg-primary/10 border-primary text-primary-foreground hover:bg-primary/20" asChild>
                 <Link to="/contact">Contact Us</Link>
               </Button>
             </div>

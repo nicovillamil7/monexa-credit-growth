@@ -60,7 +60,7 @@ const TradeLine = () => {
     {
       name: "Maria R.",
       role: "Young Professional",
-      content: "The catch-22 was frustrating—couldn't get credit without credit. Trade lines solved it. Now I have 2 credit cards and I'm building my score every month!",
+      content: "The catch-22 was frustrating. Couldn't get credit without credit. Trade lines solved it. Now I have 2 credit cards and I'm building my score every month!",
       rating: 5
     },
     {
@@ -72,7 +72,7 @@ const TradeLine = () => {
     {
       name: "Emily T.",
       role: "First-Time Applicant",
-      content: "Was nervous about applying with no history. Trade lines built my credit file fast. Got my first card with travel rewards—already planning my first trip!",
+      content: "Was nervous about applying with no history. Trade lines built my credit file fast. Got my first card with travel rewards. Already planning my first trip!",
       rating: 5
     },
     {
@@ -132,7 +132,7 @@ const TradeLine = () => {
                 No credit card? Build history fast and get approved.
               </h1>
               <p className="text-lg text-muted-foreground max-w-lg">
-                Get added to established accounts with years of perfect payment history. Build your credit file fast so you can apply for and get approved for the credit cards you want—no hard inquiry required.
+                Get added to established accounts with years of perfect payment history. Build your credit file fast so you can apply for and get approved for the credit cards you want. No hard inquiry required.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Button 
@@ -215,7 +215,7 @@ const TradeLine = () => {
               Build credit history fast.
             </h2>
             <p className="text-muted-foreground max-w-3xl mx-auto">
-              No credit? Thin credit file? Trade lines add established accounts to your profile, giving you instant credit age and perfect payment history—so you can finally get approved for the credit cards you want.
+              No credit? Thin credit file? Trade lines add established accounts to your profile, giving you instant credit age and perfect payment history so you can finally get approved for the credit cards you want.
             </p>
           </div>
 
@@ -227,7 +227,7 @@ const TradeLine = () => {
                 </div>
                 <h3 className="text-xl font-semibold mb-2">Get Approved Faster</h3>
                 <p className="text-muted-foreground text-sm">
-                  Instantly inherit years of perfect payment history. Build the credit file you need to qualify for credit cards—without waiting years to establish your own history.
+                  Instantly inherit years of perfect payment history. Build the credit file you need to qualify for credit cards without waiting years to establish your own history.
                 </p>
               </CardContent>
             </Card>
@@ -264,10 +264,10 @@ const TradeLine = () => {
         <div className="container relative">
           <div className="mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              From no credit to approved—<br />here's exactly how.
+              From no credit to approved.<br />Here's exactly how.
             </h2>
             <p className="text-muted-foreground max-w-2xl">
-              Trade lines work by adding you as an authorized user on an established credit card with perfect payment history. That entire history gets reported to your credit file—giving you an instant credit foundation so you can apply for and get approved for your own credit cards.
+              Trade lines work by adding you as an authorized user on an established credit card with perfect payment history. That entire history gets reported to your credit file, giving you an instant credit foundation so you can apply for and get approved for your own credit cards.
             </p>
           </div>
 
@@ -282,10 +282,10 @@ const TradeLine = () => {
               </div>
               <div className="space-y-6">
                 <h3 className="text-2xl md:text-3xl font-bold">
-                  Go from zero to qualified—fast.
+                  Go from zero to qualified. Fast.
                 </h3>
                 <p className="text-muted-foreground">
-                  No credit history? No problem. When you're added as an authorized user to an established account (often 5-10+ years old), that entire perfect payment history appears on your credit report—instantly creating the credit foundation you need to get approved for cards.
+                  No credit history? No problem. When you're added as an authorized user to an established account (often 5-10+ years old), that entire perfect payment history appears on your credit report, instantly creating the credit foundation you need to get approved for cards.
                 </p>
                 <div className="grid sm:grid-cols-2 gap-4">
                   {[
@@ -319,7 +319,7 @@ const TradeLine = () => {
                   Perfect for people starting their credit journey.
                 </h3>
                 <p className="text-muted-foreground">
-                  Never had a credit card? Can't get approved because you have no credit history? Trade lines solve this catch-22. Build the credit foundation you need so you can finally start applying for—and getting approved for—credit cards.
+                  Never had a credit card? Can't get approved because you have no credit history? Trade lines solve this catch-22. Build the credit foundation you need so you can finally start applying for and getting approved for credit cards.
                 </p>
                 <div className="space-y-3">
                   {[

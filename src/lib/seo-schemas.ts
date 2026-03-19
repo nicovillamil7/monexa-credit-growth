@@ -4,7 +4,7 @@ export const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "FinancialService",
   "name": "Monexa",
-  "description": "Credit repair and funding services to help you improve your credit score and access personal loans, credit cards, and trade lines.",
+  "description": "Credit optimization and funding services to help you improve your credit score and access personal loans, credit cards, and trade lines.",
   "url": "https://monexa.com",
   "logo": "https://storage.googleapis.com/gpt-engineer-file-uploads/XywMxhqpYLTRD9hg4YTpmD5QQxx2/uploads/1762646067243-monexa-logo-light.png",
   "sameAs": [
@@ -26,9 +26,9 @@ export const organizationSchema = {
 export const creditRepairServiceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
-  "serviceType": "Credit Repair",
-  "name": "Credit Repair Services",
-  "description": "Professional credit repair services including error disputes, credit score optimization, and expert coaching to improve your credit profile.",
+  "serviceType": "Credit Optimization",
+  "name": "Credit Optimization Services",
+  "description": "Professional credit optimization services including error disputes, credit score optimization, and expert coaching to improve your credit profile.",
   "provider": {
     "@type": "FinancialService",
     "name": "Monexa"

@@ -26,8 +26,8 @@ const Home = () => {
     <div className="min-h-screen flex flex-col">
       <SEO 
         title="Monexa | Credit Repair & Fast Funding Solutions"
-        description="Improve your credit score and access fast funding. Expert credit repair, personal loans up to $100K, credit cards, and trade lines. Free credit review available."
-        keywords="credit repair services, improve credit score, personal loans, credit funding, credit cards, trade lines, fast loan approval"
+        description="Improve your credit score and access fast funding. Expert credit optimization, personal loans up to $100K, credit cards, and trade lines. Free credit review available."
+        keywords="credit optimization services, improve credit score, personal loans, credit funding, credit cards, trade lines, fast loan approval"
         structuredData={organizationSchema}
       />
       <Header />
@@ -38,7 +38,7 @@ const Home = () => {
         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary/5 to-transparent pointer-events-none" />
         <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl pointer-events-none" />
         
-        <div className="container py-12 md:py-20 lg:py-24">
+        <div className="container py-10 md:py-20 lg:py-24">
           {/* Stack on mobile, side-by-side on md+ */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
             {/* Text Content */}
@@ -53,14 +53,14 @@ const Home = () => {
               </h1>
               
               <p className="text-sm sm:text-lg md:text-xl text-[hsl(var(--hero-muted))] mb-4 sm:mb-8 max-w-xl animate-fade-in" style={{ animationDelay: "0.1s" }}>
-                I help you repair credit, boost scores, and unlock approvals for loans, credit cards, and trade lines — with a personal touch.
+                I help you optimize credit, boost scores, and unlock approvals for loans, credit cards, and trade lines with a personal touch.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 animate-fade-in" style={{ animationDelay: "0.2s" }}>
                 <Button size="lg" variant="accent" asChild className="hover-scale text-sm sm:text-base px-4 sm:px-8">
                   <Link to="/apply">Apply Now</Link>
                 </Button>
-                <Button size="lg" asChild className="text-sm sm:text-base px-4 sm:px-8 bg-transparent border-2 border-white text-white font-medium hover:bg-white hover:text-[hsl(var(--hero-bg))]">
+                <Button size="lg" asChild className="text-sm sm:text-base px-4 sm:px-8 bg-transparent border-2 border-primary text-primary font-medium hover:bg-primary hover:text-primary-foreground">
                   <Link to="/apply">Free Credit Review</Link>
                 </Button>
               </div>
@@ -69,11 +69,11 @@ const Home = () => {
               <div className="flex items-center justify-center lg:justify-start gap-2 sm:gap-6 mt-6 sm:mt-10 pt-4 sm:pt-8 border-t border-[hsl(var(--hero-muted)/0.2)] animate-fade-in" style={{ animationDelay: "0.3s" }}>
                 <div className="flex items-center gap-1 sm:gap-2">
                   <CheckCircle className="h-3 w-3 sm:h-5 sm:w-5 text-primary flex-shrink-0" />
-                  <span className="text-[10px] sm:text-sm text-[hsl(var(--hero-muted))] whitespace-nowrap">12K+ Clients</span>
+                  <span className="text-[10px] sm:text-sm text-[hsl(var(--hero-muted))] whitespace-nowrap">900+ Clients</span>
                 </div>
                 <div className="flex items-center gap-1 sm:gap-2">
                   <CheckCircle className="h-3 w-3 sm:h-5 sm:w-5 text-primary flex-shrink-0" />
-                  <span className="text-[10px] sm:text-sm text-[hsl(var(--hero-muted))] whitespace-nowrap">$56M+ Funded</span>
+                  <span className="text-[10px] sm:text-sm text-[hsl(var(--hero-muted))] whitespace-nowrap">$16M+ Funded</span>
                 </div>
                 <div className="flex items-center gap-1 sm:gap-2">
                   <CheckCircle className="h-3 w-3 sm:h-5 sm:w-5 text-primary flex-shrink-0" />
@@ -112,16 +112,16 @@ const Home = () => {
         <div className="container">
           <div className="grid grid-cols-4 gap-2 sm:gap-8 max-w-5xl mx-auto">
             <div className="text-center animate-fade-in">
-              <div className="text-xl sm:text-3xl md:text-5xl font-bold text-primary-foreground mb-1 sm:mb-2">$56M+</div>
+              <div className="text-xl sm:text-3xl md:text-5xl font-bold text-primary-foreground mb-1 sm:mb-2">$16M+</div>
               <div className="text-[10px] sm:text-sm text-primary-foreground/80">Loans Processed</div>
             </div>
             <div className="text-center animate-fade-in" style={{ animationDelay: "0.1s" }}>
-              <div className="text-xl sm:text-3xl md:text-5xl font-bold text-primary-foreground mb-1 sm:mb-2">140M+</div>
-              <div className="text-[10px] sm:text-sm text-primary-foreground/80">Points Increased</div>
+               <div className="text-xl sm:text-3xl md:text-5xl font-bold text-primary-foreground mb-1 sm:mb-2">300+</div>
+               <div className="text-[10px] sm:text-sm text-primary-foreground/80">Avg. Point Increase</div>
             </div>
             <div className="text-center animate-fade-in" style={{ animationDelay: "0.2s" }}>
-              <div className="text-xl sm:text-3xl md:text-5xl font-bold text-primary-foreground mb-1 sm:mb-2">12K+</div>
-              <div className="text-[10px] sm:text-sm text-primary-foreground/80">Businesses</div>
+               <div className="text-xl sm:text-3xl md:text-5xl font-bold text-primary-foreground mb-1 sm:mb-2">900+</div>
+               <div className="text-[10px] sm:text-sm text-primary-foreground/80">Clients</div>
             </div>
             <div className="text-center animate-fade-in" style={{ animationDelay: "0.3s" }}>
               <div className="text-xl sm:text-3xl md:text-5xl font-bold text-primary-foreground mb-1 sm:mb-2">4.8★</div>
@@ -144,7 +144,7 @@ const Home = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             <ProductCard
               icon={Wrench}
-              title="Credit Repair"
+              title="Credit Optimization"
               description="Clean up your credit and boost your score"
               href="/repair"
               features={[
@@ -284,13 +284,13 @@ const Home = () => {
               Ready to unlock funding?
             </h2>
             <p className="text-lg text-primary-foreground/90 mb-8">
-              Join thousands of customers who've improved their credit and accessed the funding they need.
+              Join hundreds of customers who've improved their credit and accessed the funding they need.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" variant="accent" asChild>
                 <Link to="/apply">Apply Now</Link>
               </Button>
-              <Button size="lg" variant="outline" className="bg-background/10 border-primary-foreground/20 text-primary-foreground hover:bg-background/20" asChild>
+              <Button size="lg" variant="outline" className="bg-primary/10 border-primary text-primary-foreground hover:bg-primary/20" asChild>
                 <Link to="/apply">Free Credit Review</Link>
               </Button>
             </div>

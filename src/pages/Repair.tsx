@@ -370,9 +370,9 @@ const Repair = () => {
                 </p>
                 <div className="space-y-3">
                   {[
-                    { icon: Target, text: "140M+ Credit Points Increased" },
+                    { icon: Target, text: "300+ Avg. Point Increase" },
                     { icon: Shield, text: "CROA Compliant & Transparent" },
-                    { icon: Users, text: "12,000+ Businesses Funded" },
+                    { icon: Users, text: "900+ Clients Helped" },
                     { icon: Zap, text: "Results in 30-90 Days" }
                   ].map((item, index) => (
                     <div key={index} className="flex items-center gap-3">

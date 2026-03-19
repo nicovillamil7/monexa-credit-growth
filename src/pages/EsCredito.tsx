@@ -544,7 +544,7 @@ const EsCredito = () => {
                         ))}
                       </div>
                       <p className="text-background/90 mb-3 text-sm italic">"{testimonial.text}"</p>
-                      <p className="text-xs font-medium text-background/60">— {testimonial.name}</p>
+                      <p className="text-xs font-medium text-background/60">{testimonial.name}</p>
                     </Card>
                   </div>
                 ))}

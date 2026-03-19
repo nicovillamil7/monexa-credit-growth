@@ -40,6 +40,10 @@ const App = () => (
           <Route path="/apply" element={<Apply />} />
           {/* Hidden PPC Landing Pages - Not in navigation */}
           <Route path="/es/credito" element={<EsCredito />} />
+          {/* Legal Pages */}
+          <Route path="/legal/terms" element={<Terms />} />
+          <Route path="/legal/privacy" element={<Privacy />} />
+          <Route path="/legal/disclosures" element={<Disclosures />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

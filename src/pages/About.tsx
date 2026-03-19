@@ -17,8 +17,8 @@ const aboutPageSchema = {
   "@context": "https://schema.org",
   "@type": "FinancialService",
   "name": "Monexa",
-  "alternateName": "Monexa Credit Repair & Funding",
-  "description": "Trusted credit repair and funding services helping people improve credit scores, access personal loans, credit cards, and achieve financial freedom.",
+  "alternateName": "Monexa Credit Optimization & Funding",
+  "description": "Trusted credit optimization and funding services helping people improve credit scores, access personal loans, credit cards, and achieve financial freedom.",
   "url": "https://monexa.com/about",
   "logo": "https://storage.googleapis.com/gpt-engineer-file-uploads/XywMxhqpYLTRD9hg4YTpmD5QQxx2/uploads/1762646067243-monexa-logo-light.png",
   "address": {

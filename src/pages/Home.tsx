@@ -60,7 +60,7 @@ const Home = () => {
                 <Button size="lg" variant="accent" asChild className="hover-scale text-sm sm:text-base px-4 sm:px-8">
                   <Link to="/apply">Apply Now</Link>
                 </Button>
-                <Button size="lg" asChild className="text-sm sm:text-base px-4 sm:px-8 bg-transparent border-2 border-white text-white font-medium hover:bg-white hover:text-[hsl(var(--hero-bg))]">
+                <Button size="lg" asChild className="text-sm sm:text-base px-4 sm:px-8 bg-transparent border-2 border-primary text-primary font-medium hover:bg-primary hover:text-primary-foreground">
                   <Link to="/apply">Free Credit Review</Link>
                 </Button>
               </div>

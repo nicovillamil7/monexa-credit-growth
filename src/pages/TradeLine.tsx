@@ -285,7 +285,7 @@ const TradeLine = () => {
                   Go from zero to qualified. Fast.
                 </h3>
                 <p className="text-muted-foreground">
-                  No credit history? No problem. When you're added as an authorized user to an established account (often 5-10+ years old), that entire perfect payment history appears on your credit report—instantly creating the credit foundation you need to get approved for cards.
+                  No credit history? No problem. When you're added as an authorized user to an established account (often 5-10+ years old), that entire perfect payment history appears on your credit report, instantly creating the credit foundation you need to get approved for cards.
                 </p>
                 <div className="grid sm:grid-cols-2 gap-4">
                   {[

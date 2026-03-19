@@ -212,11 +212,11 @@ const Repair = () => {
               <span className="w-2 h-2 rounded-full bg-primary"></span>
               WHAT YOU CAN ACHIEVE
             </span>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-              Your credit repair opens doors.
+             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+              Your credit optimization opens doors.
             </h2>
             <p className="text-muted-foreground max-w-3xl mx-auto">
-              Better credit isn't just a number—it's your ticket to major life milestones. Here's what our clients achieve after repairing their credit with Monexa.
+              Better credit isn't just a number, it's your ticket to major life milestones. Here's what our clients achieve after optimizing their credit with Monexa.
             </p>
           </div>
 

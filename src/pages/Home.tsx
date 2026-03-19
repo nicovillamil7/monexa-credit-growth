@@ -108,7 +108,7 @@ const Home = () => {
       </section>
 
       {/* Trust Stats Section */}
-      <section className="py-16 bg-gradient-primary">
+      <section className="py-8 sm:py-16 bg-gradient-primary">
         <div className="container">
           <div className="grid grid-cols-4 gap-2 sm:gap-8 max-w-5xl mx-auto">
             <div className="text-center animate-fade-in">

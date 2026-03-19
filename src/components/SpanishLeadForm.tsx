@@ -268,6 +268,11 @@ export default function SpanishLeadForm() {
 
       if (error) throw error;
 
+      // Send email notification (fire-and-forget)
+      supabase.functions.invoke("send-lead-notification", {
+        body: { lead: { id: leadId, first_name: contactData?.firstName, last_name: contactData?.lastName, email: contactData?.email, phone: contactData?.phone, service_type: selectedService, credit_score: data.creditScore, credit_profile: data.creditProfile } },
+      }).catch((err) => console.error("Notification error:", err));
+
       setIsComplete(true);
       toast({
         title: "¡Solicitud enviada!",

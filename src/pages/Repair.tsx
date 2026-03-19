@@ -366,7 +366,7 @@ const Repair = () => {
                   Why Monexa gets results.
                 </h3>
                 <p className="text-muted-foreground">
-                  We've helped 12,000+ clients qualify for mortgages, auto loans, and business funding. Our proven process combines expert dispute filing, strategic score optimization, and personalized coaching to help you achieve real-world financial goals.
+                  We've helped 900+ clients qualify for mortgages, auto loans, and business funding. Our proven process combines expert dispute filing, strategic score optimization, and personalized coaching to help you achieve real-world financial goals.
                 </p>
                 <div className="space-y-3">
                   {[

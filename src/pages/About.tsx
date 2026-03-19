@@ -163,12 +163,12 @@ const About = () => {
           <div className="max-w-6xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
               <div>
-                <h2 className="text-3xl md:text-4xl font-bold mb-6">Expert Credit Repair Services for Real People</h2>
+                <h2 className="text-3xl md:text-4xl font-bold mb-6">Expert Credit Optimization for Real People</h2>
                 <p className="text-lg text-muted-foreground mb-4">
-                  We help everyday people unlock financial opportunities and achieve their dreams—from buying homes and cars to securing business loans and qualifying for credit cards.
+                  We help everyday people unlock financial opportunities and achieve their dreams, from buying homes and cars to securing business loans and qualifying for credit cards.
                 </p>
                 <p className="text-muted-foreground">
-                  Our professional credit repair experts use proven strategies and advanced technology to dispute credit report errors, remove negative items, and boost your credit score in 30-90 days.
+                  Our professional credit experts use proven strategies and advanced technology to dispute credit report errors, remove negative items, and boost your credit score in 30-90 days.
                 </p>
               </div>
               <div className="grid grid-cols-2 gap-4">

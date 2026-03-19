@@ -83,13 +83,13 @@ const Home = () => {
             </div>
 
             {/* Photo - side by side on all screens */}
-            <div className="flex justify-end animate-fade-in">
+            <div className="flex justify-center md:justify-end animate-fade-in">
               <div className="relative">
                 {/* Gold accent ring */}
                 <div className="absolute -inset-4 bg-gradient-to-br from-primary/40 via-primary/20 to-transparent rounded-full blur-2xl" />
                 
-                {/* Image container - responsive sizing with optimized loading */}
-                <div className="relative w-[200px] sm:w-[240px] md:w-[300px] lg:w-[400px] xl:w-[500px] aspect-[4/5]">
+                {/* Image container - responsive sizing */}
+                <div className="relative w-[250px] sm:w-[240px] md:w-[300px] lg:w-[400px] xl:w-[500px] aspect-[4/5]">
                   <img 
                     src={valparHero} 
                     alt="Valpar - Credit Expert and Founder of Monexa" 

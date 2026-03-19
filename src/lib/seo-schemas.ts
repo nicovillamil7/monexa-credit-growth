@@ -26,9 +26,9 @@ export const organizationSchema = {
 export const creditRepairServiceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
-  "serviceType": "Credit Repair",
-  "name": "Credit Repair Services",
-  "description": "Professional credit repair services including error disputes, credit score optimization, and expert coaching to improve your credit profile.",
+  "serviceType": "Credit Optimization",
+  "name": "Credit Optimization Services",
+  "description": "Professional credit optimization services including error disputes, credit score optimization, and expert coaching to improve your credit profile.",
   "provider": {
     "@type": "FinancialService",
     "name": "Monexa"

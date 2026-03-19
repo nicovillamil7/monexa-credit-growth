@@ -19,11 +19,14 @@ const LandingFooter = () => {
 
           {/* Legal Links */}
           <div className="flex items-center gap-6 text-sm text-muted-foreground">
-            <Link to="/privacy" className="hover:text-foreground transition-colors">
+            <Link to="/legal/privacy" className="hover:text-foreground transition-colors">
               Privacidad
             </Link>
-            <Link to="/terms" className="hover:text-foreground transition-colors">
+            <Link to="/legal/terms" className="hover:text-foreground transition-colors">
               Términos
+            </Link>
+            <Link to="/legal/disclosures" className="hover:text-foreground transition-colors">
+              Divulgaciones
             </Link>
           </div>
 
@@ -36,7 +39,7 @@ const LandingFooter = () => {
         {/* Disclaimer */}
         <div className="mt-6 pt-6 border-t border-border/50">
           <p className="text-xs text-muted-foreground text-center max-w-3xl mx-auto">
-            Monexa no es un prestamista ni un asesor financiero. Los servicios de reparación de crédito 
+            Monexa no es un prestamista ni un asesor financiero. Los servicios de optimización de crédito 
             y las referencias de financiamiento están sujetos a términos y condiciones. Los resultados 
             pueden variar según la situación individual de cada cliente.
           </p>

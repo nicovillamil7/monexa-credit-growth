@@ -332,7 +332,7 @@ const Repair = () => {
                   Get approved for the things that matter.
                 </h3>
                 <p className="text-muted-foreground">
-                  Our credit repair service helps you qualify for mortgages, auto loans, and business funding. We've helped 12,000+ clients remove errors, boost their scores, and achieve their financial goals—from buying homes to starting businesses.
+                  Our credit optimization service helps you qualify for mortgages, auto loans, and business funding. We've helped 900+ clients remove errors, boost their scores, and achieve their financial goals, from buying homes to starting businesses.
                 </p>
                 <div className="grid sm:grid-cols-2 gap-4">
                   {[

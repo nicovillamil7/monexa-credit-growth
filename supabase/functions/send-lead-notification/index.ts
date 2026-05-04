@@ -1,9 +1,18 @@
-import { sendLovableEmail } from 'npm:@lovable.dev/email-js'
 import { createClient } from 'npm:@supabase/supabase-js@2'
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type, x-supabase-client-platform, x-supabase-client-platform-version, x-supabase-client-runtime, x-supabase-client-runtime-version',
+}
+
+function escapeHtml(value: unknown): string {
+  if (value === null || value === undefined) return ''
+  return String(value)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;')
 }
 
 Deno.serve(async (req) => {
@@ -12,18 +21,36 @@ Deno.serve(async (req) => {
   }
 
   try {
-    const apiKey = Deno.env.get('LOVABLE_API_KEY')
-    if (!apiKey) throw new Error('LOVABLE_API_KEY is not configured')
-
     const supabaseUrl = Deno.env.get('SUPABASE_URL')
-    const supabaseAnonKey = Deno.env.get('SUPABASE_ANON_KEY')
-    if (!supabaseUrl || !supabaseAnonKey) throw new Error('Supabase config missing')
+    const serviceRoleKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')
+    if (!supabaseUrl || !serviceRoleKey) throw new Error('Supabase config missing')
 
     const notificationEmail = Deno.env.get('NOTIFICATION_EMAIL')
     if (!notificationEmail) throw new Error('NOTIFICATION_EMAIL is not configured')
 
-    const { lead } = await req.json()
-    if (!lead) throw new Error('Lead data is required')
+    const body = await req.json().catch(() => ({}))
+    const leadId: string | undefined = body?.leadId || body?.lead?.id
+    if (!leadId || typeof leadId !== 'string') {
+      return new Response(JSON.stringify({ success: false, error: 'leadId required' }), {
+        status: 400,
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      })
+    }
+
+    // Lookup the lead from DB using service role — prevents fabricated data
+    const supabase = createClient(supabaseUrl, serviceRoleKey)
+    const { data: lead, error: fetchError } = await supabase
+      .from('funding_leads')
+      .select('*')
+      .eq('id', leadId)
+      .maybeSingle()
+
+    if (fetchError || !lead) {
+      return new Response(JSON.stringify({ success: false, error: 'Lead not found' }), {
+        status: 404,
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      })
+    }
 
     const serviceLabels: Record<string, string> = {
       'credit-optimization': 'Credit Optimization',
@@ -33,7 +60,7 @@ Deno.serve(async (req) => {
       'get-funded': 'Business Funding',
     }
 
-    const serviceName = serviceLabels[lead.service_type] || lead.service_type || 'Not specified'
+    const serviceName = serviceLabels[lead.service_type as string] || lead.service_type || 'Not specified'
 
     const html = `
       <!DOCTYPE html>
@@ -60,25 +87,25 @@ Deno.serve(async (req) => {
           <div class="body">
             <div class="field">
               <div class="label">Name</div>
-              <div class="value">${lead.first_name} ${lead.last_name}</div>
+              <div class="value">${escapeHtml(lead.first_name)} ${escapeHtml(lead.last_name)}</div>
             </div>
             <div class="field">
               <div class="label">Email</div>
-              <div class="value">${lead.email}</div>
+              <div class="value">${escapeHtml(lead.email)}</div>
             </div>
             <div class="field">
               <div class="label">Phone</div>
-              <div class="value">${lead.phone}</div>
+              <div class="value">${escapeHtml(lead.phone)}</div>
             </div>
             <div class="divider"></div>
             <div class="field">
               <div class="label">Service Requested</div>
-              <div class="value">${serviceName}</div>
+              <div class="value">${escapeHtml(serviceName)}</div>
             </div>
             ${lead.credit_score ? `
             <div class="field">
               <div class="label">Credit Score</div>
-              <div class="value">${lead.credit_score}</div>
+              <div class="value">${escapeHtml(lead.credit_score)}</div>
             </div>` : ''}
             ${lead.funding_goal ? `
             <div class="field">
@@ -88,17 +115,17 @@ Deno.serve(async (req) => {
             ${lead.applicant_type ? `
             <div class="field">
               <div class="label">Applicant Type</div>
-              <div class="value">${lead.applicant_type}</div>
+              <div class="value">${escapeHtml(lead.applicant_type)}</div>
             </div>` : ''}
             ${lead.yearly_revenue ? `
             <div class="field">
               <div class="label">Yearly Revenue</div>
-              <div class="value">${lead.yearly_revenue}</div>
+              <div class="value">${escapeHtml(lead.yearly_revenue)}</div>
             </div>` : ''}
-            ${lead.credit_profile && lead.credit_profile.length > 0 ? `
+            ${Array.isArray(lead.credit_profile) && lead.credit_profile.length > 0 ? `
             <div class="field">
               <div class="label">Credit Profile</div>
-              <div class="value">${lead.credit_profile.join(', ')}</div>
+              <div class="value">${escapeHtml(lead.credit_profile.join(', '))}</div>
             </div>` : ''}
           </div>
           <div class="footer">
@@ -109,10 +136,8 @@ Deno.serve(async (req) => {
       </html>
     `
 
-    const supabase = createClient(supabaseUrl, supabaseAnonKey)
-    const messageId = `lead-notification-${lead.id || crypto.randomUUID()}`
+    const messageId = `lead-notification-${lead.id}`
 
-    // Enqueue to transactional email queue
     const { error: enqueueError } = await supabase.rpc('enqueue_email', {
       queue_name: 'transactional_emails',
       payload: {
@@ -127,7 +152,7 @@ Deno.serve(async (req) => {
 
     if (enqueueError) {
       console.error('Failed to enqueue email:', enqueueError)
-      throw new Error(`Failed to enqueue notification: ${enqueueError.message}`)
+      throw new Error('Failed to enqueue notification')
     }
 
     return new Response(JSON.stringify({ success: true, message_id: messageId }), {
@@ -136,8 +161,7 @@ Deno.serve(async (req) => {
     })
   } catch (error) {
     console.error('Error in send-lead-notification:', error)
-    const errorMessage = error instanceof Error ? error.message : 'Unknown error'
-    return new Response(JSON.stringify({ success: false, error: errorMessage }), {
+    return new Response(JSON.stringify({ success: false, error: 'Internal error' }), {
       status: 500,
       headers: { ...corsHeaders, 'Content-Type': 'application/json' },
     })

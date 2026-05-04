@@ -57,7 +57,7 @@ const Home = () => {
               </p>
               
               <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 animate-fade-in" style={{ animationDelay: "0.2s" }}>
-                <Button size="lg" variant="accent" asChild className="hover-scale text-sm sm:text-base px-4 sm:px-8">
+                <Button size="lg" asChild className="hover-scale text-sm sm:text-base px-4 sm:px-8 bg-blue-600 hover:bg-blue-700 text-white">
                   <Link to="/apply">Apply Now</Link>
                 </Button>
                 <Button size="lg" asChild className="text-sm sm:text-base px-4 sm:px-8 bg-transparent border-2 border-primary text-primary font-medium hover:bg-primary hover:text-primary-foreground">

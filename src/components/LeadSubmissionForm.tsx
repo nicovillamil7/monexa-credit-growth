@@ -215,7 +215,7 @@ export default function LeadSubmissionForm({
       });
       onSuccess?.();
     } catch (error) {
-      console.error("Error submitting lead:", error);
+      if (import.meta.env.DEV) console.error("Error submitting lead:", error);
       toast({
         title: "Error",
         description: "There was a problem submitting your application. Please try again.",

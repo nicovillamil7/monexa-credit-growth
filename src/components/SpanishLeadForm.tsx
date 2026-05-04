@@ -146,7 +146,7 @@ export default function SpanishLeadForm() {
         description: "Tu información de contacto ha sido registrada.",
       });
     } catch (error) {
-      console.error("Error saving lead:", error);
+      if (import.meta.env.DEV) console.error("Error saving lead:", error);
       toast({
         title: "Error",
         description: "Hubo un problema al guardar tu información. Intenta de nuevo.",
@@ -173,7 +173,7 @@ export default function SpanishLeadForm() {
       setServiceType(type);
       setStep(3);
     } catch (error) {
-      console.error("Error updating service type:", error);
+      if (import.meta.env.DEV) console.error("Error updating service type:", error);
       toast({
         title: "Error",
         description: "Hubo un problema. Intenta de nuevo.",
@@ -203,8 +203,8 @@ export default function SpanishLeadForm() {
       // Send email notification (fire-and-forget)
       const contact = contactForm.getValues();
       supabase.functions.invoke("send-lead-notification", {
-        body: { lead: { id: leadId, first_name: contact.firstName, last_name: contact.lastName, email: contact.email, phone: contact.phone, service_type: serviceType, credit_score: data.creditScore, credit_profile: data.creditProfile } },
-      }).catch((err) => console.error("Notification error:", err));
+        body: { leadId },
+      }).catch((err) => { if (import.meta.env.DEV) console.error("Notification error:", err); });
 
       setIsComplete(true);
       toast({
@@ -212,7 +212,7 @@ export default function SpanishLeadForm() {
         description: "Nos pondremos en contacto contigo pronto.",
       });
     } catch (error) {
-      console.error("Error updating credit info:", error);
+      if (import.meta.env.DEV) console.error("Error updating credit info:", error);
       toast({
         title: "Error",
         description: "Hubo un problema. Intenta de nuevo.",
@@ -242,7 +242,7 @@ export default function SpanishLeadForm() {
 
       setStep(4); // Go to credit info step
     } catch (error) {
-      console.error("Error updating funding info:", error);
+      if (import.meta.env.DEV) console.error("Error updating funding info:", error);
       toast({
         title: "Error",
         description: "Hubo un problema. Intenta de nuevo.",
@@ -272,8 +272,8 @@ export default function SpanishLeadForm() {
       // Send email notification (fire-and-forget)
       const contact = contactForm.getValues();
       supabase.functions.invoke("send-lead-notification", {
-        body: { lead: { id: leadId, first_name: contact.firstName, last_name: contact.lastName, email: contact.email, phone: contact.phone, service_type: serviceType, credit_score: data.creditScore, credit_profile: data.creditProfile } },
-      }).catch((err) => console.error("Notification error:", err));
+        body: { leadId },
+      }).catch((err) => { if (import.meta.env.DEV) console.error("Notification error:", err); });
 
       setIsComplete(true);
       toast({
@@ -281,7 +281,7 @@ export default function SpanishLeadForm() {
         description: "Nos pondremos en contacto contigo pronto.",
       });
     } catch (error) {
-      console.error("Error updating credit info:", error);
+      if (import.meta.env.DEV) console.error("Error updating credit info:", error);
       toast({
         title: "Error",
         description: "Hubo un problema. Intenta de nuevo.",

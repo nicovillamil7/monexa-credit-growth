@@ -190,14 +190,23 @@ export default function LeadSubmissionForm({
         leadData.yearly_revenue = data.yearlyRevenue;
       }
 
-      const { error } = await supabase.from("funding_leads").insert(leadData);
+      const { data: inserted, error } = await supabase
+        .from("funding_leads")
+        .insert(leadData)
+        .select("id")
+        .single();
 
       if (error) throw error;
 
-      // Send email notification (fire-and-forget)
-      supabase.functions.invoke("send-lead-notification", {
-        body: { lead: leadData },
-      }).catch((err) => console.error("Notification error:", err));
+      // Send email notification (fire-and-forget) — pass only the lead id;
+      // the edge function looks up the record server-side.
+      supabase.functions
+        .invoke("send-lead-notification", {
+          body: { leadId: inserted?.id },
+        })
+        .catch((err) => {
+          if (import.meta.env.DEV) console.error("Notification error:", err);
+        });
 
       setIsSubmitted(true);
       toast({

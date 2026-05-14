@@ -15,7 +15,7 @@ const LandingHeader = ({ onCtaClick }: LandingHeaderProps) => {
           <img 
             src={monexaLogo} 
             alt="Monexa Credit & Capital" 
-            className="h-24 md:h-32 w-auto"
+            className="h-24 md:h-32 w-auto object-fill"
           />
         </Link>
 
